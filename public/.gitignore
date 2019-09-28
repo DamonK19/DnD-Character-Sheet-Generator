@@ -1,0 +1,9 @@
+# never commit compiled code
+stylesheets/*
+
+# Temporary Sass files
+.sass-cache/
+
+# Compiled source for deployment
+dist/
+tests/**/*input.css

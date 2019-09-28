@@ -1,0 +1,30 @@
+//------------------------------------//
+//  $ISLAND
+//------------------------------------//
+
+// Harry Robert's "island"
+.island,
+.islet,
+.landmark,
+.landmarklet {
+  display: block;
+  @include clearfix;
+
+  > :last-child { margin-bottom: 0; }
+}
+
+.island {
+  @include padding-vertical($base-spacing-unit);
+}
+
+.islet {
+  @include padding-vertical($half-spacing-unit);
+}
+
+.landmark {
+  margin-bottom: 2 * $base-spacing-unit;
+}
+
+.landmarklet {
+  margin-bottom: $base-spacing-unit;
+}

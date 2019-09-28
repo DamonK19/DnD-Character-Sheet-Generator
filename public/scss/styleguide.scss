@@ -1,0 +1,55 @@
+@import "base/functions";
+@import "vars";
+@import "base/mixins";
+
+.sg-landmark {
+  margin-bottom: 3 * $base-spacing-unit;
+}
+
+.sg-heading {
+  padding: 0 0 .2em;
+  border-bottom: 2px solid $gray;
+}
+
+.sg-demo-block {
+  background-color: $gray;
+  color: $white;
+  padding: $half-spacing-unit;
+  margin: 0 0 $base-spacing-unit;
+}
+
+.sg-colors li {
+  border: 1px solid $gray-light;
+  background: $white;
+  padding: .4rem;
+  margin-bottom: $half-spacing-unit;
+}
+
+.sg-swatch {
+  display: block;
+  height: 100px;
+  width: 100px;
+  position: relative;
+
+  &:after {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 100px;
+  }
+}
+
+@for $i from 1 through length($styleguide-colors) {
+  .sg-colors li:nth-of-type(#{$i}) .sg-swatch {
+    background: nth($styleguide-colors, $i);
+
+    &:after {
+      content: "#{nth($styleguide-colors, $i)}";
+    }
+  }
+}
+
+.sg-colors .sg-label {
+  display: block;
+  margin-top: $base-spacing-unit;
+}

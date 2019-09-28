@@ -1,0 +1,35 @@
+//------------------------------------//
+//  $FUNCTIONS
+//------------------------------------//
+
+// px2em
+//   Convert pixels to ems
+@function px2em($px) {
+  @if unitless($px) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
+    @return px2em($px * 1px);
+  } @else if unit($px) == em {
+    @return $px;
+  }
+  @return ($px / 16px) * 1em;
+}
+
+// get-breakpoint-width
+//   Get a breakpoint's width from the map.
+@function get-breakpoint-width($name, $breakpoints: $media-breakpoints) {
+  @if map-has-key($breakpoints, $name) {
+    @return map-get($breakpoints, $name);
+  } @else {
+    @error "Breakpoint #{$name} wasn't found in $media-breakpoints.";
+  }
+}
+
+// get-feature
+//   Get a media feature's definition from the map.
+@function get-feature($name, $features: $media-features) {
+  @if map-has-key($features, $name) {
+    @return map-get($features, $name);
+  } @else {
+    @return false;
+  }
+}

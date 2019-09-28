@@ -1,0 +1,109 @@
+/*
+  spaceBase version: 4.0.0
+  http://spacebase.space150.com
+*/
+.sg-landmark {
+  margin-bottom: 5.25rem;
+}
+
+.sg-heading {
+  padding: 0 0 0.2em;
+  border-bottom: 2px solid #999999;
+}
+
+.sg-demo-block {
+  background-color: #999999;
+  color: #ffffff;
+  padding: 0.875rem;
+  margin: 0 0 1.75rem;
+}
+
+.sg-colors li {
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  padding: 0.4rem;
+  margin-bottom: 0.875rem;
+}
+
+.sg-swatch {
+  display: block;
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+.sg-swatch:after {
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 100px;
+}
+
+.sg-colors li:nth-of-type(1) .sg-swatch {
+  background: #000000;
+}
+.sg-colors li:nth-of-type(1) .sg-swatch:after {
+  content: "#000000";
+}
+
+.sg-colors li:nth-of-type(2) .sg-swatch {
+  background: #666666;
+}
+.sg-colors li:nth-of-type(2) .sg-swatch:after {
+  content: "#666666";
+}
+
+.sg-colors li:nth-of-type(3) .sg-swatch {
+  background: #999999;
+}
+.sg-colors li:nth-of-type(3) .sg-swatch:after {
+  content: "#999999";
+}
+
+.sg-colors li:nth-of-type(4) .sg-swatch {
+  background: #cccccc;
+}
+.sg-colors li:nth-of-type(4) .sg-swatch:after {
+  content: "#cccccc";
+}
+
+.sg-colors li:nth-of-type(5) .sg-swatch {
+  background: #ffffff;
+}
+.sg-colors li:nth-of-type(5) .sg-swatch:after {
+  content: "#ffffff";
+}
+
+.sg-colors li:nth-of-type(6) .sg-swatch {
+  background: #7abcb5;
+}
+.sg-colors li:nth-of-type(6) .sg-swatch:after {
+  content: "#7abcb5";
+}
+
+.sg-colors li:nth-of-type(7) .sg-swatch {
+  background: #41a29c;
+}
+.sg-colors li:nth-of-type(7) .sg-swatch:after {
+  content: "#41a29c";
+}
+
+.sg-colors li:nth-of-type(8) .sg-swatch {
+  background: #e48d38;
+}
+.sg-colors li:nth-of-type(8) .sg-swatch:after {
+  content: "#e48d38";
+}
+
+.sg-colors li:nth-of-type(9) .sg-swatch {
+  background: #c46e35;
+}
+.sg-colors li:nth-of-type(9) .sg-swatch:after {
+  content: "#c46e35";
+}
+
+.sg-colors .sg-label {
+  display: block;
+  margin-top: 1.75rem;
+}
+
+/*# sourceMappingURL=styleguide.css.map */

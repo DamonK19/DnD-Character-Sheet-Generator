@@ -1,0 +1,58 @@
+//------------------------------------//
+//  $SHARED
+//------------------------------------//
+
+// All elements will adopt `box-sizing:border-box;`
+// as per paulirish.com/2012/box-sizing-border-box-ftw
+* {
+  &,
+  &:before,
+  &:after { box-sizing: border-box; }
+}
+
+
+// Remove gap between elements and the bottom of their containers
+audio,
+canvas,
+img,
+svg,
+video { vertical-align: middle; }
+
+// Fluid images
+img {
+  max-width: 100%;
+  -ms-interpolation-mode: bicubic;
+}
+
+// Non-fluid images if you specify `width` and/or `height` attributes
+img[width],
+img[height] { max-width: none; }
+
+
+@if $reset != true {
+  // Where `margin-bottom` is concerned, this value will be the same as the
+  // base line-height. This allows us to keep a consistent vertical rhythm.
+  // As per: csswizardry.com/2012/06/single-direction-margin-declarations
+  h1,h2,h3,h4,h5,h6,hgroup,hr,
+  ul,ol,dl,
+  blockquote,p,address,
+  table,
+  fieldset,figure,figcaption,
+  pre {
+    margin-top: 0;
+    margin-bottom: $base-spacing-unit;
+    ul,ol { margin-bottom: 0; }
+  }
+
+  // Where `margin-left` is concerned, we want to try and indent certain elements
+  // by a consistent amount
+  ul,ol,dd {
+    margin-left: $base-spacing-unit;
+    padding: 0;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+}

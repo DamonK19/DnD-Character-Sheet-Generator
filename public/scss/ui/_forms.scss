@@ -1,0 +1,133 @@
+//------------------------------------//
+//  $FORMS
+//------------------------------------//
+
+form { margin: 0; }
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  // Browsers set a default `min-width: min-content;` on fieldsets,
+  // unlike e.g. `<div>`s, which have `min-width: 0;` by default.
+  // So we reset that to ensure fieldsets behave more like a standard block element.
+  // See https://github.com/twbs/bootstrap/issues/12359
+  // and https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%; // Correct the text wrapping in Edge and IE
+  white-space: normal;
+  color: inherit; // Correct the color inheritance from `fieldset` elements in IE
+}
+
+label { display: inline-block; }
+
+// Textural form controls
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .325em 1em;
+  font-size: 1rem;
+  line-height: $line-height-ratio;
+  color: $gray-dark;
+  background-color: $white;
+  background-clip: padding-box;
+  border: 1px solid $gray;
+  border-radius: 0;
+  transition: border-color ease-in-out .15s;
+
+  // Unstyle the caret on `<select>`s in IE10+
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  // Customize the `:focus` state to imitate native WebKit styles
+  @include form-control-focus($primary);
+
+  // Placeholder
+  @include placeholder {
+    color: $primary;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+
+  // Disabled and read-only inputs
+  &:disabled,
+  &[readonly] {
+    background-color: $gray-light;
+    opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+  }
+}
+
+select.form-control {
+  &:not([size]):not([multiple]) {
+    height: calc(#{$base-font-size} * #{$line-height-ratio} + .325em * 2 + 2px);
+  }
+
+  &:focus::-ms-value {
+    // Suppress the nested default white text on blue background highlight given to
+    // the selected option text when the (still closed) <select> receives focus
+    // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
+    // match the appearance of the native widget.
+    // See https://github.com/twbs/bootstrap/issues/19398
+    color: $gray-dark;
+    background-color: $white;
+  }
+}
+
+// Make file inputs better match text inputs by forcing them to new lines
+.form-control-file {
+  display: block;
+  width: 100%;
+}
+
+
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms
+.form-group {
+  margin-bottom: $half-spacing-unit;
+}
+
+
+// Checkboxes and radios
+//
+// Indent the labels to position radios/checkboxes as hanging controls
+.radio,
+.checkbox {
+  position: relative;
+  display: block;
+  margin-bottom: .3em;
+
+  label {
+    padding-left: 22px;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  margin-top: .3em;
+  margin-left: -22px;
+}
+
+// Disabled inputs
+input[type="radio"],
+input[type="checkbox"] {
+  &:disabled { cursor: not-allowed; }
+}
+
+// Form control validation states
+.has-error {
+  @include form-control-validation($state-error, darken($state-error, 5%));
+}
+
+.has-success {
+  @include form-control-validation($state-success, darken($state-success, 5%));
+}
