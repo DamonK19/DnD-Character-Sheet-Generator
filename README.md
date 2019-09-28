@@ -11,6 +11,7 @@ YO GUYS. I finally did the thing. Got a simple myPHPAdmin backend hooked up to a
 
 - Open MAMP and go to it's preferences (IDK what this would be in windows, sorry doods) and select the **Web Server** tab.
 - After that, direct the document root to the root of this repo you cloned.
+- Go back to the main MAMP thing and click **Start Servers**
 - Next, click **install.php**. This includes the things you need to get your databases loaded.
 - Lastly, go into our **public** directory, this is where our homepage will be with all dat CRUD functionality.  
 
