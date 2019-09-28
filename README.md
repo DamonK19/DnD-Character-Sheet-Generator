@@ -2,7 +2,7 @@
 
 YO GUYS. I finally did the thing. Got a simple myPHPAdmin backend hooked up to a front end called spaceBase that I use pretty frequently.
 
-##Things ya need, dawg
+## Things ya need, dawg
 - Download [MAMP](https://www.mamp.info/en/downloads/). Great tool for running databases easily locally.
 
 - [SASS](https://sass-lang.com/install). This sweet tool helps us manage our code with ease. Watching and compiling all our stuff in a single place. Get it with Node by running `npm install -g sass`
