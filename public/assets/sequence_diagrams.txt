@@ -1,0 +1,27 @@
+THE FOLLWOING CAN BE DROPPED INTO https://sequencediagram.org FOR
+CREATING THE SEQUENCE DIAGRAMS FOR THE PROJECT...
+----------------------------------------------------------------
+CRUD PROFILES: -------------------------------------------------
+title Managing Profile/Character/Spells/Items
+User->UI:manageEntityButton
+UI -> PHP:dataHandlingOfEntity()
+PHP -> Database:actOnEntity()
+PHP -> Javascript: displayConfirmation()
+Database -> PHP: confirmationMessage()
+PHP -> UI: showMessage()
+UI -> User: result()
+----------------------------------------------------------------
+PRINT CHARACTER SHEET: -----------------------------------------
+title Printing Character Sheet
+User->UI:printCharacterSheetButton
+UI ->Javascript: gatherValues()
+Javascript --> UI:gatherValuesOnPage
+Javascript ->User: recieve file of current character sheet
+----------------------------------------------------------------
+DICE ROLLER: ---------------------------------------------------
+title Automatic Dice Roll
+User->UI:rollDicebutton
+UI ->Javascript: rollDice()
+Javascript -> UI:displayValue
+UI ->User: result
+----------------------------------------------------------------
