@@ -81,5 +81,5 @@ CREATE TABLE proficiency(
 
 CREATE TABLE background(
 
->>>>>>> Stashed changes
+
 );
