@@ -15,14 +15,14 @@ var scoreList = document.getElementsByClassName('ability-score');
 //     };
 // }
 
-// for (var i = 0; i < generateList.length; i++) {
-//   scoreList[i].textContent = getRandom();
-// }
-
 for (var i = 0; i < generateList.length; i++) {
-      var current_generater = generateList[i];
-      current_generater.onclick = function() {
-        console.log("ugh");
-        
-      }
+  scoreList[i].textContent = getRandom();
 }
+
+// for (var i = 0; i < generateList.length; i++) {
+//       var current_generater = generateList[i];
+//       current_generater.onclick = function() {
+//         console.log("ugh");
+//
+//       }
+// }
