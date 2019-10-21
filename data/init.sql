@@ -2,16 +2,21 @@ CREATE DATABASE test;
 
 use test;
 
-CREATE TABLE users (
-	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+CREATE TABLE users
+(
+	id INT(11),
+	UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	firstname VARCHAR(30) NOT NULL,
 	lastname VARCHAR(30) NOT NULL,
 	email VARCHAR(50) NOT NULL,
 	age INT(3),
 	location VARCHAR(50),
 	date TIMESTAMP
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Nathan
 );
 CREATE TABLE characters
 (
@@ -69,6 +74,7 @@ CREATE TABLE race(
 	PRIMARY KEY(race)
  
 
+<<<<<<< HEAD
 );
 
 CREATE TABLE cclass(
@@ -82,4 +88,6 @@ CREATE TABLE proficiency(
 CREATE TABLE background(
 
 
+=======
+>>>>>>> Nathan
 );
