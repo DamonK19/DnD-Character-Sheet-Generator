@@ -2,7 +2,7 @@
 
 <div class="grid-wrapper one-whole">
   <div class ="grid one-whole text-center" style="font-family: 'Bookmania'">
-    Start by Entering in your Character Name, Player name and choose your Class, Background and Allignment
+    Start by Entering in your Character Name, Player name and choose your Class, Background, Allignment and how you would like to choose your stats.
   </div>
 </div>
 
