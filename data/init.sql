@@ -4,7 +4,7 @@ use test;
 
 CREATE TABLE users
 (
-	id INT(11) AUTO_INCREMENT PRIMARY KEY,
+	pid INT(11) AUTO_INCREMENT PRIMARY KEY,
 	firstname VARCHAR(30) NOT NULL,
 	lastname VARCHAR(30) NOT NULL,
 	email VARCHAR(50) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE equipment
 	equipment_name varchar(30) NOT NULL,
 	cID int(3) NOT NULL,
 	equipped BOOLEAN,
-	PRIMARY KEY(equipmentname),
+	PRIMARY KEY(equipment_name),
 	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
@@ -77,7 +77,7 @@ CREATE TABLE spells
 	spell_level int (1) NOT NULL,
 	spell_description VARCHAR(500),
 	cID int(3) NOT NULL,
-	PRIMARY KEY(spellname),
+	PRIMARY KEY(spell_name),
 	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
@@ -115,7 +115,7 @@ CREATE TABLE raceMod(
 	race_int_mod INT,
 	race_wis_mod INT,
 	race_chr_mod INT,
-	FOREIGN KEY(race_name)
+	FOREIGN KEY(race_name) REFERENCES race(race_name)
 );
 
 CREATE TABLE class_name(
@@ -127,7 +127,7 @@ CREATE TABLE class_name(
 
 CREATE TABLE class_skills(
 	class_skill_name VARCHAR(30),
-	class_name varchar(30)
+	class_name varchar(30),
 	FOREIGN KEY(class_name) REFERENCES class_name(class_name)
 );
 
@@ -138,9 +138,9 @@ CREATE TABLE class_equipment(
 );
 
 CREATE TABLE skills(
-	cid int,
-	skill_name varchar(30)
-	FOREIGN KEY(cid) REFERENCES characters(cID)
+	cID int,
+	skill_name varchar(30),
+	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
 CREATE TABLE background(
