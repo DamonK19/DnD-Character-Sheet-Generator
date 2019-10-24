@@ -10,16 +10,49 @@
   <form>
     Character Name: <input type="text" name="fname"><br>
     Player Name: <input type="text" name="lname"><br>
+
+    <?php
+    $mysqli = NEW MySQLi('localhost','root','root','test');
+    $resultSet = $mysqli->query("SELECT race_name FROM race")
+     ?>
+
     Race: <select name="races">
-
+      <?php
+      while($rows = $resultSet->fetch_assoc())
+      {
+        $race_name = $rows['race_name'];
+        echo "<option value='$race_name'>$race_name</option>";
+      }
+       ?>
     </select>
   </br>
+
+  <?php
+  $mysqli = NEW MySQLi('localhost','root','root','test');
+  $resultSet = $mysqli->query("SELECT class_name FROM class_name")
+   ?>
     Class: <select name="classes">
-
+      <?php
+      while($rows = $resultSet->fetch_assoc())
+      {
+        $class_name = $rows['class_name'];
+        echo "<option value='$class_name'>$class_name</option>";
+      }
+       ?>
     </select>
   </br>
+  <?php
+  $mysqli = NEW MySQLi('localhost','root','root','test');
+  $resultSet = $mysqli->query("SELECT background_name FROM background")
+   ?>
     Background: <select name="backgrounds">
-
+      <?php
+      while($rows = $resultSet->fetch_assoc())
+      {
+        $background_name = $rows['background_name'];
+        echo "<option value='$background_name'>$background_name</option>";
+      }
+       ?>
     </select>
   </br>
     Allignment: <select name ="goodVsEvil">
@@ -34,7 +67,8 @@
     </select>
   </br>
     Attribute Selection Method: <select name="attributeSelect">
-
+      <option value = "roll">Roll for attributes</option>
+      <option value = "array">Use Standard Array</option>
     </select>
   <input type="submit" value="Submit">
 

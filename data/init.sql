@@ -95,12 +95,6 @@ CREATE TABLE stats(
 CREATE TABLE race(
 	race_name VARCHAR(30) NOT NULL,
 	speed VARCHAR(30) NOT NULL,
-	race_str_mod INT(3) NOT NULL,
-	race_dex_mod INT(3) NOT NULL,
-	race_con_mod INT(3) NOT NULL,
-	race_int_mod INT(3) NOT NULL,
-	race_wis_mod INT(3) NOT NULL,
-	race_chr_mod INT(3) NOT NULL,
 	PRIMARY KEY(race_name)
 
 
