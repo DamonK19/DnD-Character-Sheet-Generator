@@ -4,13 +4,13 @@ use test;
 
 CREATE TABLE users
 (
-	id INT(11),
-	UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	firstname VARCHAR(30) NOT NULL,
 	lastname VARCHAR(30) NOT NULL,
 	email VARCHAR(50) NOT NULL,
 	age INT(3),
 	location VARCHAR(50),
+	pID int(3) NOT NULL,
 	date TIMESTAMP
 <<<<<<< HEAD
 =======
@@ -18,36 +18,33 @@ CREATE TABLE users
 =======
 >>>>>>> Damon
 );
+
 CREATE TABLE characters
 (
-	cID int(3) NOT NULL ,
+	cID int(3) NOT NULL PRIMARY KEY,
 	pID int(3) NOT NULL,
 	charactername VARCHAR(30) NOT NULL,
 	racename VARCHAR(30) NOT NULL,
 	background VARCHAR(5000) NOT NULL,
 	proficiencies VARCHAR(500) NOT NULL,
-	PRIMARY KEY(cID),
 	FOREIGN KEY(pID) REFERENCES users(pID)
-
 );
 
 CREATE TABLE equipment
 (
-	equipmentname varchar(30) NOT NULL,
+	equipmentname varchar(30) NOT NULL PRIMARY KEY,
 	cID int(3) NOT NULL,
 	equipped BOOLEAN,
 	equipmodarray int(7) NOT NULL,
-	PRIMARY KEY(equipmentname),
 	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
 CREATE TABLE spells
 (
-	spellname varchar(30) NOT NULL,
+	spellname varchar(30) NOT NULL PRIMARY KEY,
 	spelllevel int (1) NOT NULL,
 	spelldescription VARCHAR(500),
 	cID int(3) NOT NULL,
-	PRIMARY KEY(spellname),
 	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
