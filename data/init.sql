@@ -12,6 +12,11 @@ CREATE TABLE users
 	age INT(3),
 	location VARCHAR(50),
 	date TIMESTAMP
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Damon
 );
 CREATE TABLE characters
 (
@@ -67,6 +72,22 @@ CREATE TABLE race(
 	racewis INT(3) NOT NULL,
 	racecha INT(3) NOT NULL,
 	PRIMARY KEY(race)
- 
 
+
+<<<<<<< HEAD
+=======
+);
+
+CREATE TABLE cclass(
+
+);
+
+CREATE TABLE proficiency(
+
+);
+
+CREATE TABLE background(
+
+>>>>>>> Stashed changes
+>>>>>>> Damon
 );

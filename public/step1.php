@@ -15,7 +15,7 @@
 			<!-- BUTTON -->
 			<div class="ability-score-button generate"></div>
 			<!-- RESULT -->
-			<div class="ability-score">Roll</div>
+			<div id="roller_1" class="ability-score">Roll</div>
 		</div>
 	<!-- // ABILITY SCORE BLOCK -->
 	</div>
@@ -23,7 +23,7 @@
 		<!-- ABILITY SCORE BLOCK -->
 		<div class="ability-score-block charisma">
 			<!-- RESULT -->
-			<div class="ability-score">Roll</div>
+			<div id="roller_2" class="ability-score">Roll</div>
 			<!-- BUTTON -->
 			<div class="ability-score-button generate"></div>
 		</div>
@@ -33,7 +33,7 @@
 		<!-- ABILITY SCORE BLOCK -->
 		<div class="ability-score-block dexterity">
 			<!-- RESULT -->
-			<div class="ability-score">Roll</div>
+			<div id="roller_3" class="ability-score">Roll</div>
 			<!-- BUTTON -->
 			<div class="ability-score-button generate"></div>
 		</div>
@@ -43,7 +43,7 @@
 		<!-- ABILITY SCORE BLOCK -->
 		<div class="ability-score-block intelligence">
 			<!-- RESULT -->
-			<div class="ability-score">Roll</div>
+			<div id="roller_4" class="ability-score">Roll</div>
 			<!-- BUTTON -->
 			<div class="ability-score-button generate"></div>
 		</div>
@@ -53,7 +53,7 @@
 		<!-- ABILITY SCORE BLOCK -->
 		<div class="ability-score-block wisdom">
 			<!-- RESULT -->
-			<div class="ability-score">Roll</div>
+			<div id="roller_5" class="ability-score">Roll</div>
 			<!-- BUTTON -->
 			<div class="ability-score-button generate"></div>
 		</div>
