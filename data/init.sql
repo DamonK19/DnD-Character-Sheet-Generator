@@ -56,7 +56,7 @@ CREATE TABLE stats(
 );
 
 CREATE TABLE race(
-	racename VARCHAR(30) NOT NULL,
+	racename VARCHAR(30) NOT NULL PRIMARY KEY,
 	speed VARCHAR(30) NOT NULL,
 	racestr INT(3) NOT NULL,
 	racedex INT(3) NOT NULL,
@@ -64,5 +64,4 @@ CREATE TABLE race(
 	raceint INT(3) NOT NULL,
 	racewis INT(3) NOT NULL,
 	racecha INT(3) NOT NULL,
-	PRIMARY KEY(race)
 	);
