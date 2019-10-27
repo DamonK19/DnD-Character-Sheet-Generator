@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <?php require "templates/header.php"; ?>
+<?php require "templates/header.php"; ?>
 <?php require "templates/entitiyselect.php"; ?>
-    <body>
-    <div class="grid-wrapper one-whole centered">
+
+<div class="grid-wrapper one-whole centered">
     <div class="grid one-whole">
 
         <form action="step5.php" method="post">
@@ -19,6 +17,4 @@
         </form>
     </div>
 </div>
-</body>
 <?php require "templates/footer.php"; ?>
-</html>
