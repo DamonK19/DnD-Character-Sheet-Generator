@@ -1594,6 +1594,10 @@ table {
   text-decoration: none;
 }
 
+button {
+  background-color: #FF0000;
+}
+
 html {
   font: 1em/1.75 Arial, Helvetica, sans-serif;
   color: #000000;
