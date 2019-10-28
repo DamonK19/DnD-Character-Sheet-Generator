@@ -1,7 +1,6 @@
-
 <!-- EXAMPLE OF USING TEMPLATED PHP FILES -->
 <?php include "templates/header.php"; ?>
-<?php // include "templates/splash.php"; ?>
+
 
 <div class="grid-wrapper one-whole">
 	<div class="grid one-whole text-center" style="font-family: 'Bookmainia'">
@@ -60,5 +59,7 @@
 	<!-- // ABILITY SCORE BLOCK -->
 	</div>
 </div>
+
+
 <!-- EXAMPLE OF USING TEMPLATED PHP FILES -->
 <?php include "templates/footer.php"; ?>
