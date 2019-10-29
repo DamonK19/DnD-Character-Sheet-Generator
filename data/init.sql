@@ -4,7 +4,7 @@ use test;
 
 CREATE TABLE users
 (
-	pid INT(11) AUTO_INCREMENT PRIMARY KEY,
+	id INT(11) AUTO_INCREMENT PRIMARY KEY,
 	firstname VARCHAR(30) NOT NULL,
 	lastname VARCHAR(30) NOT NULL,
 	email VARCHAR(50) NOT NULL,
@@ -13,6 +13,7 @@ CREATE TABLE users
 	date TIMESTAMP
 
 );
+
 CREATE TABLE characters
 (
 	cID int(3) NOT NULL ,
@@ -25,7 +26,7 @@ CREATE TABLE characters
 	class_name varchar(30),
 	allignment VARCHAR(30),
 	PRIMARY KEY(cID),
-	FOREIGN KEY(pID) REFERENCES users(pID)
+	FOREIGN KEY(pID) REFERENCES users(id)
 );
 
 CREATE TABLE equipment
