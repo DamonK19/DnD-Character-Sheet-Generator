@@ -2,14 +2,15 @@
 
 <div class="grid-wrapper one-whole">
   <div class ="grid one-whole text-center" style="font-family: 'Bookmania'">
-    Start by Entering in your Character Name, Player name and choose your Class, Background, Allignment and how you would like to choose your stats.
+    Start by Entering in your Character Name, Player name and choose your Class,
+     Background, Allignment and how you would like to choose your stats.
   </div>
 </div>
 
 <div class="grid-wrapper one-whole centered">
-  <form>
-    Character Name: <input type="text" name="fname"><br>
-    Player Name: <input type="text" name="lname"><br>
+  <form action="insertCharacter.php" method="post">
+    Character Name: <input type="text" name="cname"><br>
+    Player Name: <input type="text" name="pname"><br>
 
     <?php
     $mysqli = NEW MySQLi('localhost','root','root','test');
@@ -43,7 +44,7 @@
   </br>
   <?php
   $mysqli = NEW MySQLi('localhost','root','root','test');
-  $resultSet = $mysqli->query("SELECT background_name FROM background")
+  $resultSet = $mysqli->query("SELECT background_name FROM background");
    ?>
     Background: <select name="backgrounds">
       <?php
@@ -75,5 +76,5 @@
   </form>
 </div>
 
-<?php include "templates/navigator.php"; ?>
+
 <?php include "templates/footer.php"; ?>
