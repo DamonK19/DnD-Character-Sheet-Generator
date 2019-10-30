@@ -8,5 +8,9 @@
   <div class="slide bg-2"></div>
   <div class="slide bg-3"></div>
 </div>
+<div class="button-home-container">
+  <button class="button-home btn-home-mix-nb retro-mix-primary">&nbsp;&nbsp;LOGIN&nbsp;&nbsp;</button>
+  <button class="button-home btn-home-mix-nb retro-mix-primary">&nbsp;SIGN UP&nbsp;</button>
+</div>
 
 <?php include "templates/footer.php"; ?>

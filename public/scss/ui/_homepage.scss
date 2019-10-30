@@ -40,3 +40,79 @@
   background-image: url('../assets/images/dnd3.jpg');
   display: none;
 }
+
+// button-home
+.button-home-container {
+    text-align: center;
+    margin: 40% auto 0;
+    width: auto;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+.button-home::before, .button-home::after {
+    position: absolute;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    content: "";
+    border-color: #212529;
+    border-style: solid;
+    border-width: 4px;
+}
+.button-home::before {
+    top: -4px;
+    left: 0;
+    border-right: 2px;
+    border-left: 2px;
+}
+
+.button-home::after {
+    top: 0;
+    left: -4px;
+    border-top: 2px;
+    border-bottom: 2px;
+}
+.button-home {
+  position: relative;
+    display: inline-block;
+    padding: 10px 12px;
+    margin: 4px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #212529;
+    background-color: #fff;
+    box-shadow: inset -4px -4px #adafbc;
+    font-family: 'Press Start 2P', cursive;
+    z-index: 10000;
+}
+
+.retro-mix-primary {
+    color: #FFF;
+    background-color: #DD0502;
+    box-shadow: inset -4px -4px 4px 0px #4D030B;
+    z-index: 10000;
+}
+
+.retro-mix-primary:hover, .retro-mix-primary:visited {
+  background-color: #D6A73B;
+  box-shadow: inset -6px -6px 4px 0px #5C3508;
+}
+.retro-mix-primary:active {
+    box-shadow: inset 4px 4px 4px 0px #5C3508;
+}
+.btn-home-mix-nb{
+  border: none;
+  border-radius: 10px;
+  border: 4px solid black;
+  box-sizing: content-box;
+  z-index: 10000;
+}
+.btn-home-mix-nb::before, .btn-home-mix-nb::after {
+  content: none;
+}
