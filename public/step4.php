@@ -1,6 +1,6 @@
 <?php require "templates/header.php"; ?>
         <h3>Step 4: Skills</h3> <p>
-            Choose your skills. Skills from background are already selected.
+            Select your skills. Skills from background are already selected.
         
     
 
