@@ -11,7 +11,7 @@
 @import "base/push";
 @import "base/shared";
 @import "base/helpers";
-
+@import "ui/step4";
 @import "ui/fonts";
 @import "ui/typography";
 @import "ui/forms";
@@ -19,5 +19,14 @@
 @import "ui/island";
 @import "ui/lists";
 @import "ui/layout";
+<<<<<<< HEAD
 @import "ui/step7";
+=======
+
+@import "ui/splash";
+@import "ui/step1";
+@import "ui/homepage";
+
+
+>>>>>>> master
 @import "ui/print";
