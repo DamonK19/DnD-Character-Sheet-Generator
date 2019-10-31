@@ -1,0 +1,39 @@
+.ability-score-block {
+  height: 200px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.ability-score-button {
+  position: absolute;
+  bottom: 20px;
+  width: 20%;
+  height: 40px;
+  margin: auto 40%;
+}
+
+.ability-score {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  font-size: 60px;
+  top: 30px;
+}
+
+.strength {
+  background-image: url('../assets/images/strength.png');
+}
+.charisma {
+  background-image: url('../assets/images/charisma.png');
+}
+.dexterity {
+  background-image: url('../assets/images/dexterity.png');
+}
+.intelligence {
+  background-image: url('../assets/images/intelligence.png');
+}
+.wisdom {
+  background-image: url('../assets/images/wisdom.png');
+}
