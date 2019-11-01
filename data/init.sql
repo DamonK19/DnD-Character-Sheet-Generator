@@ -5,18 +5,16 @@ use test;
 CREATE TABLE users
 (
 	id INT(11) AUTO_INCREMENT PRIMARY KEY,
-	firstname VARCHAR(30) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+	password varchar(30) NOT NULL,
 	lastname VARCHAR(30) NOT NULL,
-	email VARCHAR(50) NOT NULL,
-	age INT(3),
-	location VARCHAR(50),
 	date TIMESTAMP
 
 );
 
 CREATE TABLE characters
 (
-	cID int(3) NOT NULL ,
+	cID int(3) NOT NULL AUTO_INCREMENT,
 	pID int(3) NOT NULL,
 	character_name VARCHAR(30) NOT NULL,
 	player_name VARCHAR(30) NOT NULL,
@@ -98,8 +96,6 @@ CREATE TABLE race(
 	speed VARCHAR(30) NOT NULL,
 	PRIMARY KEY(race_name)
 
-
-
 );
 
 CREATE TABLE raceMod(
@@ -161,21 +157,30 @@ CREATE TABLE background_personality(
 
 CREATE TABLE background_bonds(
 	background_name VARCHAR(30),
-	background_bonds VARCHAR(255),
+	background_bond VARCHAR(255),
 	bonds_roll INT,
 	FOREIGN KEY(background_name) REFERENCES background(background_name)
 );
 
 CREATE TABLE background_ideals(
 	background_name VARCHAR(30),
-	background_personality VARCHAR(255),
+	background_ideal VARCHAR(255),
 	personality_roll INT,
 	FOREIGN KEY(background_name) REFERENCES background(background_name)
 );
 
 CREATE TABLE background_flaws(
 	background_name VARCHAR(30),
-	background_personality VARCHAR(255),
+	background_flaw VARCHAR(255),
 	personality_roll INT,
 	FOREIGN KEY(background_name) REFERENCES background(background_name)
+);
+
+CREATE TABLE characteristics(
+	cID int,
+	personality VARCHAR(255),
+	ideal VARCHAR(255),
+	bond VARCHAR(255),
+	flaw VARCHAR(255),
+	FOREIGN KEY(cID) REFERENCES characters(cID)
 );

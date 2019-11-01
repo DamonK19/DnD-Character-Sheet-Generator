@@ -1,38 +1,16 @@
 
-<!-- EXAMPLE OF USING TEMPLATED PHP FILES -->
 <?php include "templates/header.php"; ?>
-
-<div class="grid-wrapper one-whole">
-	<div class="grid desk-one-quarter">
-		<ul>
-			<li><a href="create.php"><strong>Create</strong></a> - add a user</li>
-		</ul>
-	</div>
-	<div class="grid desk-one-quarter">
-		<ul>
-			<li><a href="read.php"><strong>Read</strong></a> - find a user</li>
-		</ul>
-	</div>
-	<div class="grid desk-one-quarter">
-		<ul>
-			<li><a href="update.php"><strong>Update</strong></a> - edit a user</li>
-		</ul>
-	</div>
-	<div class="grid desk-one-quarter">
-		<ul>
-			<li><a href="delete.php"><strong>Delete</strong></a> - delete a user</li>
-		</ul>
-	</div>
+<div class="logo">
+  <img src="assets/images/logo.png" alt="">
+</div>
+<div class="slideshows">
+  <div class="slide bg-1"></div>
+  <div class="slide bg-2"></div>
+  <div class="slide bg-3"></div>
+</div>
+<div class="button-home-container">
+  <button onclick="window.location.href='login.php';" class="button-home btn-home-mix-nb retro-mix-primary">&nbsp;&nbsp;LOGIN&nbsp;&nbsp;</button>
+  <button onclick="window.location.href='create.php';" class="button-home btn-home-mix-nb retro-mix-primary">&nbsp;SIGN UP&nbsp;</button>
 </div>
 
-<div class="grid-wrapper one-whole">
-	<div class="grid one-wholer text-center">
-		<button class="btn generate">Click me</button>
-	</div>
-	<div class="grid one-wholer text-center">
-		<div class="number">Roll</button>
-	</div>
-</div>
-
-<!-- EXAMPLE OF USING TEMPLATED PHP FILES -->
 <?php include "templates/footer.php"; ?>

@@ -1,5 +1,29 @@
 <?php include "templates/header.php"; ?>
 
+<?php
+
+  session_start();
+  $con=mysqli_connect("localhost","root","root","test");
+  // Check connection
+  if (mysqli_connect_errno()){
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+  if(isset($_POST['char_submit'])){
+  // Perform query
+    $sql = "INSERT INTO characters(pID, character_name, player_name, race_name, background, hit_points, class_name, allignment)
+    VALUES('$_SESSION[id]', '$_POST[cname]', '$_POST[pname]', '$_POST[races]', '$_POST[backgrounds]', 1, '$_POST[classes]', '$_POST[goodVsEvil] $_POST[lawVsChaos]')";
+
+    mysqli_query($con, $sql);
+
+    $last_id = mysqli_insert_id($con);
+
+    $_SESSION['cid'] = $last_id;
+    header('Location: step1.php');
+  }
+
+?>
+
+
 <div class="grid-wrapper one-whole">
   <div class ="grid one-whole text-center" style="font-family: 'Bookmania'">
     Start by Entering in your Character Name, Player name and choose your Class,
@@ -8,51 +32,49 @@
 </div>
 
 <div class="grid-wrapper one-whole centered">
-  <form action="insertCharacter.php" method="post">
+  <form action="" method="post">
     Character Name: <input type="text" name="cname"><br>
     Player Name: <input type="text" name="pname"><br>
 
     <?php
-    $mysqli = NEW MySQLi('localhost','root','root','test');
-    $resultSet = $mysqli->query("SELECT race_name FROM race")
+      $mysqli = NEW MySQLi('localhost','root','root','test');
+      $resultSet = $mysqli->query("SELECT race_name FROM race")
      ?>
 
     Race: <select name="races">
       <?php
-      while($rows = $resultSet->fetch_assoc())
-      {
-        $race_name = $rows['race_name'];
-        echo "<option value='$race_name'>$race_name</option>";
-      }
+        while($rows = $resultSet->fetch_assoc())
+        {
+          $race_name = $rows['race_name'];
+          echo "<option value='$race_name'>$race_name</option>";
+        }
        ?>
     </select>
   </br>
 
   <?php
-  $mysqli = NEW MySQLi('localhost','root','root','test');
-  $resultSet = $mysqli->query("SELECT class_name FROM class_name")
+    $mysqli = NEW MySQLi('localhost','root','root','test');
+    $resultSet = $mysqli->query("SELECT class_name FROM class_name")
    ?>
     Class: <select name="classes">
       <?php
-      while($rows = $resultSet->fetch_assoc())
-      {
-        $class_name = $rows['class_name'];
-        echo "<option value='$class_name'>$class_name</option>";
-      }
+        while($rows = $resultSet->fetch_assoc()){
+          $class_name = $rows['class_name'];
+          echo "<option value='$class_name'>$class_name</option>";
+        }
        ?>
     </select>
   </br>
   <?php
-  $mysqli = NEW MySQLi('localhost','root','root','test');
-  $resultSet = $mysqli->query("SELECT background_name FROM background");
+    $mysqli = NEW MySQLi('localhost','root','root','test');
+    $resultSet = $mysqli->query("SELECT background_name FROM background");
    ?>
     Background: <select name="backgrounds">
       <?php
-      while($rows = $resultSet->fetch_assoc())
-      {
-        $background_name = $rows['background_name'];
-        echo "<option value='$background_name'>$background_name</option>";
-      }
+        while($rows = $resultSet->fetch_assoc()){
+          $background_name = $rows['background_name'];
+          echo "<option value='$background_name'>$background_name</option>";
+        }
        ?>
     </select>
   </br>
@@ -71,7 +93,7 @@
       <option value = "roll">Roll for attributes</option>
       <option value = "array">Use Standard Array</option>
     </select>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" name="char_submit" id="char_submit">
 
   </form>
 </div>

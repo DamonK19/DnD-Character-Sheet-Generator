@@ -1,26 +1,23 @@
+<?php require "templates/header.php"; ?>
 <?php
-
+  include("../config.php");
 /**
  * Use an HTML form to create a new entry in the
  * users table.
  *
  */
 
-require "../config.php";
-require "../common.php";
+
 
 if (isset($_POST['submit'])) {
-  if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
+
 
   try  {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $new_user = array(
-      "firstname" => $_POST['firstname'],
-      "lastname"  => $_POST['lastname'],
-      "email"     => $_POST['email'],
-      "age"       => $_POST['age'],
-      "location"  => $_POST['location']
+      "password"  => $_POST['password'],
+      "email"     => $_POST['email']
     );
 
     $sql = sprintf(
@@ -37,26 +34,26 @@ if (isset($_POST['submit'])) {
   }
 }
 ?>
-<?php require "templates/header.php"; ?>
+
 
   <?php if (isset($_POST['submit']) && $statement) : ?>
-    <blockquote><?php echo escape($_POST['firstname']); ?> successfully added.</blockquote>
+    <blockquote><?php echo $_POST['email']; ?> successfully added.</blockquote>
   <?php endif; ?>
 
   <h2>Add a user</h2>
 
   <form method="post">
-    <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
-    <label for="firstname">First Name</label>
-    <input type="text" name="firstname" id="firstname">
-    <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" id="lastname">
-    <label for="email">Email Address</label>
+
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email">
+    <label for="password">Password</label>
+    <input type="text" name="password" id="password">
+    <!-- <label for="email">Email Address</label>
     <input type="text" name="email" id="email">
     <label for="age">Age</label>
     <input type="text" name="age" id="age">
     <label for="location">Location</label>
-    <input type="text" name="location" id="location">
+    <input type="text" name="location" id="location"> -->
     <input type="submit" name="submit" value="Submit">
   </form>
 
