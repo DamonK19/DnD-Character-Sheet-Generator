@@ -1,11 +1,11 @@
 <?php require "templates/header.php"; ?>
         <h3>Step 5: Skills</h3> <p>
             Select your skills. Skills from background are already selected.
-        
-    
+
+
 
         <form action="step6.php" method="post">
-        
+
         <div class="grid-wrapper">
         <div class="grid  one-third">
           <div class="grid-wrapper">

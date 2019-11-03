@@ -61,7 +61,6 @@ if (isset($_POST['stat_submit'])) {
 			</div>
 			<div class="grid one-third centered text-center">
 				<input type="text" name="dexterity" id="dexterity">
-
 				<!-- ABILITY SCORE BLOCK -->
 				<div class="ability-score-block dexterity">
 					<!-- RESULT -->
