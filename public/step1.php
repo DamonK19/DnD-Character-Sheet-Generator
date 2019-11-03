@@ -71,9 +71,9 @@ if (isset($_POST['stat_submit'])) {
 			<!-- // ABILITY SCORE BLOCK -->
 			</div>
 			<div class="grid one-third centered text-center">
+				<input type="text" name="intelligence" id="intelligence">
 				<!-- ABILITY SCORE BLOCK -->
 				<div class="ability-score-block intelligence">
-					<input type="text" name="intelligence" id="intelligence">
 					<!-- RESULT -->
 					<div id="roller_4" class="ability-score">Roll</div>
 					<!-- BUTTON -->
