@@ -25,9 +25,7 @@
         }else{
           echo "Invalid email and password";
         }
-
     }
-
   }
 ?>
 <!--
@@ -43,6 +41,6 @@
    <input type="submit" value="Submit" name="but_submit" id="but_submit">
 </form>
 
-  <a href="homepage.php">Back to home</a>
+  <a href="index.php">Back to home</a>
 
 <?php require "templates/footer.php"; ?>

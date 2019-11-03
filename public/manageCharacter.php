@@ -3,7 +3,8 @@
 
 <?php
   session_start();
-echo $_SESSION['id']; ?>
+  echo $_SESSION['id'];
+?>
 
 <div class="grid-wrapper one-whole">
 	<div class="grid desk-one-quarter">

@@ -6,12 +6,8 @@
  * users table.
  *
  */
-
-
-
+ 
 if (isset($_POST['submit'])) {
-
-
   try  {
     $connection = new PDO($dsn, $username, $password, $options);
 
@@ -35,7 +31,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-
   <?php if (isset($_POST['submit']) && $statement) : ?>
     <blockquote><?php echo $_POST['email']; ?> successfully added.</blockquote>
   <?php endif; ?>
@@ -43,17 +38,10 @@ if (isset($_POST['submit'])) {
   <h2>Add a user</h2>
 
   <form method="post">
-
     <label for="email">Email</label>
     <input type="text" name="email" id="email">
     <label for="password">Password</label>
     <input type="text" name="password" id="password">
-    <!-- <label for="email">Email Address</label>
-    <input type="text" name="email" id="email">
-    <label for="age">Age</label>
-    <input type="text" name="age" id="age">
-    <label for="location">Location</label>
-    <input type="text" name="location" id="location"> -->
     <input type="submit" name="submit" value="Submit">
   </form>
 
