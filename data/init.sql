@@ -7,9 +7,7 @@ CREATE TABLE users
 	id INT(11) AUTO_INCREMENT PRIMARY KEY,
 	email VARCHAR(30) NOT NULL,
 	password varchar(30) NOT NULL,
-	lastname VARCHAR(30) NOT NULL,
 	date TIMESTAMP
-
 );
 
 CREATE TABLE characters
