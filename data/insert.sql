@@ -13,18 +13,18 @@ VALUES
 
   INSERT INTO class_name
   VALUES
-  ('Barbarian'),
-  ('Bard'),
-  ('Cleric'),
-  ('Druid'),
-  ('Fighter'),
-  ('Monk'),
-  ('Paladin'),
-  ('Ranger'),
-  ('Rogue'),
-  ('Sorcerer'),
-  ('Warlock'),
-  ('Wizard');
+  ('Barbarian','2','12'),
+  ('Bard','2','8'),
+  ('Cleric','2','8'),
+  ('Druid','2','8'),
+  ('Fighter','2','10'),
+  ('Monk','2','8'),
+  ('Paladin','2','10'),
+  ('Ranger','2','10'),
+  ('Rogue','2','8'),
+  ('Sorcerer','2','6'),
+  ('Warlock','2','8'),
+  ('Wizard','2','6');
 
   INSERT INTO skills
   VALUES
