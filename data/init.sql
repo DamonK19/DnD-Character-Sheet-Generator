@@ -4,7 +4,7 @@ use dnd;
 
 CREATE TABLE users
 (
-	id INT(11) AUTO_INCREMENT PRIMARY KEY,
+	id INT AUTO_INCREMENT PRIMARY KEY,
 	email VARCHAR(30) NOT NULL,
 	password varchar(30) NOT NULL,
 	date TIMESTAMP
@@ -12,8 +12,8 @@ CREATE TABLE users
 
 CREATE TABLE characters
 (
-	cID INT(3) NOT NULL AUTO_INCREMENT,
-	pID INT(3) NOT NULL,
+	cID INT NOT NULL AUTO_INCREMENT,
+	pID INT NOT NULL,
 	character_name VARCHAR(30) NOT NULL,
 	player_name VARCHAR(30) NOT NULL,
 	race_name VARCHAR(30) NOT NULL,
@@ -28,8 +28,8 @@ CREATE TABLE characters
 CREATE TABLE equipment
 (
 	equipment_name varchar(30) NOT NULL,
-	cID INT(3) NOT NULL,
-	equipped BOOLEAN,
+	cID INT NOT NULL,
+	equipped BIT,
 	PRIMARY KEY(equipment_name),
 	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
@@ -71,21 +71,22 @@ CREATE TABLE weapons_mod(
 CREATE TABLE spells
 (
 	spell_name varchar(30) NOT NULL,
-	spell_level TINYINT (1) NOT NULL,
+	spell_level TINYINT NOT NULL,
 	spell_description VARCHAR(500),
-	cID INT(3) NOT NULL,
+	equipped BIT NOT NULL,  
+	cID INT NOT NULL,
 	PRIMARY KEY(spell_name),
 	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
 CREATE TABLE stats(
-	cID INT(3) NOT NULL,
-	strength TINYINT (3) NOT NULL,
-	dexterity TINYINT (3) NOT NULL,
-	constitution TINYINT (3) NOT NULL,
-	intelligence TINYINT (3) NOT NULL,
-	wisdom TINYINT (3) NOT NULL,
-	charisma TINYINT (3) NOT NULL,
+	cID INT NOT NULL,
+	strength TINYINT NOT NULL,
+	dexterity TINYINT NOT NULL,
+	constitution TINYINT NOT NULL,
+	intelligence TINYINT NOT NULL,
+	wisdom TINYINT NOT NULL,
+	charisma TINYINT NOT NULL,
 	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
@@ -116,20 +117,19 @@ CREATE TABLE class_name(
 
 CREATE TABLE class_skills(
 	class_skill_name VARCHAR(30),
-	class_name varchar(30),
+	class_name VARCHAR(30),
+	quanity TINYINT,
 	FOREIGN KEY(class_name) REFERENCES class_name(class_name)
+);
+
+CREATE TABLE skills(
+	skill_name varchar(30)
 );
 
 CREATE TABLE class_equipment(
 	class_name VARCHAR(30),
 	option_1 VARCHAR(30),
 	option_2 VARCHAR(30)
-);
-
-CREATE TABLE skills(
-	cID INT,
-	skill_name varchar(30),
-	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
 CREATE TABLE background(
