@@ -3,7 +3,7 @@
 <?php
 
   session_start();
-  $con=mysqli_connect("localhost","root","root","test");
+  $con=mysqli_connect("localhost","root","root","dnd");
   // Check connection
   if (mysqli_connect_errno()){
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -37,7 +37,7 @@
     Player Name: <input type="text" name="pname"><br>
 
     <?php
-      $mysqli = NEW MySQLi('localhost','root','root','test');
+      $mysqli = NEW MySQLi('localhost','root','root','dnd');
       $resultSet = $mysqli->query("SELECT race_name FROM race")
      ?>
 
@@ -53,7 +53,7 @@
   </br>
 
   <?php
-    $mysqli = NEW MySQLi('localhost','root','root','test');
+    $mysqli = NEW MySQLi('localhost','root','root','dnd');
     $resultSet = $mysqli->query("SELECT class_name FROM class_name")
    ?>
     Class: <select name="classes">
@@ -66,7 +66,7 @@
     </select>
   </br>
   <?php
-    $mysqli = NEW MySQLi('localhost','root','root','test');
+    $mysqli = NEW MySQLi('localhost','root','root','dnd');
     $resultSet = $mysqli->query("SELECT background_name FROM background");
    ?>
     Background: <select name="backgrounds">

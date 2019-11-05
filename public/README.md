@@ -61,7 +61,7 @@ You can remove (if downloaded from Git):
 - `package.json`
 - `Gemfile*`
 - `Rakefile`
-- `test`
+- `dnd`
 
 ## Credits
 

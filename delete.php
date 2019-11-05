@@ -13,7 +13,7 @@ try {
     $sql = file_get_contents("data/delete.sql");
     $connection->exec($sql);
     
-    echo "test database deleted";
+    echo "dnd database deleted";
 } catch(PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
 }

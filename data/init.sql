@@ -1,6 +1,6 @@
-CREATE DATABASE test;
+CREATE DATABASE dnd;
 
-use test;
+use dnd;
 
 CREATE TABLE users
 (

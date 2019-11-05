@@ -14,7 +14,7 @@
   <div class = "grid one-whole text-center" style="font-family: 'Bookmania'">
 
     <?php
-      $mysqli = NEW MySQLi('localhost','root','root','test');
+      $mysqli = NEW MySQLi('localhost','root','root','dnd');
       $resultSet = $mysqli->query("SELECT * FROM characters WHERE cID = '$_SESSION[cid]' AND pID = '$_SESSION[id]'");
       $row = $resultSet->fetch_assoc();
       $background = $row["background"];
@@ -22,7 +22,7 @@
      ?>
 
      <?php
-      $mysqli = NEW MySQLi('localhost','root','root','test');
+      $mysqli = NEW MySQLi('localhost','root','root','dnd');
       $resultSet = $mysqli->query("SELECT background_personality FROM background_personality WHERE background_name = '$background'")
       ?>
 
@@ -40,7 +40,7 @@
   <div class = "grid one-whole text-center" style="font-family: 'Bookmania'">
 
     <?php
-      $mysqli = NEW MySQLi('localhost','root','root','test');
+      $mysqli = NEW MySQLi('localhost','root','root','dnd');
       $resultSet = $mysqli->query("SELECT background_ideal FROM background_ideals WHERE background_name = '$background'")
      ?>
 
@@ -58,7 +58,7 @@
   <div class = "grid one-whole text-center" style="font-family: 'Bookmania'">
 
     <?php
-      $mysqli = NEW MySQLi('localhost','root','root','test');
+      $mysqli = NEW MySQLi('localhost','root','root','dnd');
       $resultSet = $mysqli->query("SELECT background_flaw FROM background_flaws WHERE background_name = '$background'")
      ?>
 
@@ -76,7 +76,7 @@
   <div class = "grid one-whole text-center" style="font-family: 'Bookmania'">
 
     <?php
-      $mysqli = NEW MySQLi('localhost','root','root','test');
+      $mysqli = NEW MySQLi('localhost','root','root','dnd');
       $resultSet = $mysqli->query("SELECT background_flaw FROM background_flaws WHERE background_name = '$background'")
      ?>
 
