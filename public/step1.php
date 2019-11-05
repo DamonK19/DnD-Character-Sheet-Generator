@@ -23,8 +23,8 @@ if (isset($_POST['stat_submit'])) {
       echo $sql . "<br>" . $error->getMessage();
   }
 
-	// After execution, go to step4...
-	header('Location: step4.php');
+	// After execution, go to step3...
+	header('Location: step3.php');
 }
 ?>
 
