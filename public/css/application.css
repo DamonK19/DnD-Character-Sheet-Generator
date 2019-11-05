@@ -1599,6 +1599,13 @@ button {
   background-color: #FFF000;
 }
 
+@font-face {
+  font-family: "Bookmainia";
+  src: url("../fonts/texgyrebonum-regular-webfont.eot");
+  src: url("../fonts/texgyrebonum-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texgyrebonum-regular-webfont.woff") format("woff"), url("../fonts/texgyrebonum-regular-webfont.ttf") format("truetype"), url("../fonts/texgyrebonum-regular-webfont.svg#tex_gyre_bonumregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   font: 1em/1.75 Arial, Helvetica, sans-serif;
   color: #000000;
@@ -1909,6 +1916,10 @@ body {
   margin-right: auto;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
+}
+
+button {
+  background-color: #FFF000;
 }
 
 #splashscreen {
