@@ -64,4 +64,19 @@
   echo "Flaw: ", $row['flaw'];
   echo "<br>";
 
+
+  $mysqli = NEW MySQLi('localhost','root','root','dnd');
+  $resultSet = $mysqli->query("SELECT * FROM spells WHERE equipped = 1");
+  $row = $resultSet->fetch_assoc();
+
+  echo "Spell Name: ", $row['spell_name'];
+  echo "<br>";
+  echo "Spell Description: ", $row['spell_description'];
+  echo "<br>";
+
+  $mysqli = NEW MySQLi('localhost','root','root','dnd');
+  $resultSet = $mysqli->query("SELECT * FROM equipment WHERE equipped = 1");
+  $row = $resultSet->fetch_assoc();
+
+  echo "Equipment Name: ", $row['equipment_name'];
  ?>
