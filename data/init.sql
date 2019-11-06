@@ -28,10 +28,8 @@ CREATE TABLE characters
 CREATE TABLE equipment
 (
 	equipment_name varchar(30) NOT NULL,
-	cID INT NOT NULL,
 	equipped BIT,
-	PRIMARY KEY(equipment_name),
-	FOREIGN KEY(cID) REFERENCES characters(cID)
+	PRIMARY KEY(equipment_name)
 );
 
 CREATE TABLE armor(
@@ -74,9 +72,7 @@ CREATE TABLE spells
 	spell_level TINYINT NOT NULL,
 	spell_description VARCHAR(2000),
 	equipped BIT NOT NULL,  
-	cID INT NOT NULL,
-	PRIMARY KEY(spell_name),
-	FOREIGN KEY(cID) REFERENCES characters(cID)
+	PRIMARY KEY(spell_name)
 );
 
 CREATE TABLE stats(
