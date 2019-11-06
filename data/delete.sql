@@ -1,1 +1,1 @@
-DROP DATABASE test;
+DROP DATABASE dnd;
