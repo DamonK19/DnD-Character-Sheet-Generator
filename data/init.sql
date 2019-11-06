@@ -116,12 +116,18 @@ CREATE TABLE class_name(
 );
 
 CREATE TABLE class_skills(
-	class_skill_name VARCHAR(30),
 	class_name VARCHAR(30),
+	class_skill_name VARCHAR(30),
 	quanity TINYINT,
 	FOREIGN KEY(class_name) REFERENCES class_name(class_name)
 );
-
+CREATE TABLE class_skill(
+	cID INT NOT NULL,
+	class_skill1 VARCHAR(30),
+	class_skill2 VARCHAR(30),
+	class_skill3 VARCHAR(30),
+	FOREIGN KEY(cID) REFERENCES characters(cID)
+);
 CREATE TABLE skills(
 	skill_name varchar(30)
 );

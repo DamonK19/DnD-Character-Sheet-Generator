@@ -28,4 +28,6 @@ VALUES
 
   INSERT INTO skills
   VALUES
-  ('Acrobatics','Animal Handling','Arcana','Athletics','Deception','History','Insight','Intimidation','Investigation','Medicine','Nature','Perception','Performance','Persuasion','Religion','Sleight Of Hand','Stealth','Survival'
+  ('Acrobatics','Animal Handling','Arcana','Athletics',
+  'Deception','History','Insight','Intimidation','Investigation','Medicine',
+  'Nature','Perception','Performance','Persuasion','Religion','Sleight Of Hand','Stealth','Survival')

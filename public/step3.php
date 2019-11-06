@@ -1,52 +1,89 @@
 <?php require "templates/header.php"; ?>
-        <h3>Step 3: Skills</h3> <p>
-            Select your skills. Skills from background are already selected.
 
+<?php
+session_start();
+$con = mysqli_connect("localhost","root","root","dnd");
+// Check connection
+if (mysqli_connect_errno()){
+	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
 
+if (isset($_POST['skill_submit'])) {
+  try  {
+		// Query...
+		$sql = "INSERT INTO class_skill(cID,class_skill1,class_skill2,class_skill3 )
+		VALUES ('$_SESSION[id]','$_POST[class_skill1]', '$_POST[class_skill2]', '$_POST[class_skill3]')";
 
-        <form action="step4.php" method="post">
+		// Execution...
+		mysqli_query($con, $sql);
 
-        <div class="grid-wrapper">
-        <div class="grid  one-third">
-          <div class="grid-wrapper">
-            <div class="grid">
-            <div class="checkbox has-success"><label for="checkbox1"><input type="checkbox" name="checkbox" id="acrobatics" checked="checked" disabled> Acrobatics</label></div>
-            <div class="checkbox"><label for="checkbox2"><input type="checkbox" name="checkbox" id="arcana">Arcana</label></div>
-            <div class="checkbox"><label for="checkbox3"><input type="checkbox" name="checkbox" id="athletics">Athletics</label></div>
-            <div class="checkbox"><label for="checkbox4"><input type="checkbox" name="checkbox" id="bluff">Bluff</label></div>
-            <div class="checkbox"><label for="checkbox5"><input type="checkbox" name="checkbox" id="diplomacy">Diplomacy</label></div>
-            <div class="checkbox"><label for="checkbox6"><input type="checkbox" name="checkbox" id="dungeoneering"> Dungeoneering</label></div>
-            </div>
-          </div>
-        </div>
-        <div class="grid  one-third">
-          <div class="grid-wrapper">
-            <div class="grid  one-third">
-            <div class="checkbox"><label for="checkbox1"><input type="checkbox" name="checkbox" id="endurance"> Endurance</label></div>
-            <div class="checkbox"><label for="checkbox2"><input type="checkbox" name="checkbox" id="heal">Heal</label></div>
-            <div class="checkbox"><label for="checkbox3"><input type="checkbox" name="checkbox" id="history">History</label></div>
-            <div class="checkbox"><label for="checkbox4"><input type="checkbox" name="checkbox" id="insight">Insight</label></div>
-            <div class="checkbox"><label for="checkbox5"><input type="checkbox" name="checkbox" id="intimidate">Intimidate</label></div>
-            <div class="checkbox"><label for="checkbox6"><input type="checkbox" name="checkbox" id="nature"> Nature</label></div>
-            </div>
-          </div>
-        </div>
-            <div class="grid  one-third">
-          <div class="grid-wrapper">
-          <div class="grid  one-third">
-            <div class="checkbox"><label for="checkbox1"><input type="checkbox" name="checkbox" id="perception"> Perception</label></div>
-            <div class="checkbox"><label for="checkbox2"><input type="checkbox" name="checkbox" id="religion">Religion</label></div>
-            <div class="checkbox"><label for="checkbox3"><input type="checkbox" name="checkbox" id="stealth">Stealth</label></div>
-            <div class="checkbox"><label for="checkbox4"><input type="checkbox" name="checkbox" id="streetwise">Streetwise</label></div>
-            <div class="checkbox"><label for="checkbox5"><input type="checkbox" name="checkbox" id="thievery">Thievery</label></div>
-            </div>
-          </div>
-        </div>
+  } catch(PDOException $error) {
+      echo $sql . "<br>" . $error->getMessage();
+  }
 
-            <div class="grid">
-            <p><button class="btn" type="submit">Submit</button></p>
-            </div>
-            </div>
-        </form>
+	// After execution, go to step3...
+	header('Location: step4.php');
+}
+ ?>
+
+<div class="grid-wrapper one-whole">
+  <div class="grid one-whole text-center" style="font-family: 'Bookmania'">
+    <h3>Step 3: Class Skills</h3>
+    <p>
+      Select your character's class skills.
+     
+      <?php
+    $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
+ 
+    ?>
+
+  </div>
+</div>
+
+<div class="grid-wrapper one-whole">
+<div class = "grid one-whole text-center" style="font-family: 'Bookmania'">
+  <form action="" method="post">
+
+    <?php
+    $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
+    $resultSet = $mysqli->query("SELECT skill_name FROM skills");
+    $character_background=$mysqli->query("SELECT background FROM characters");
+    $bskill1 = $mysqli->query("SELECT skill_proficiency_1 FROM background WHERE background_name=$character_background");
+    $bskill2 = $mysqli->query("SELECT skill_proficiency_2 FROM background WHERE background_name=$character_background");
+
+    echo "<p> Your background skills are:".$bskill1.$bskill2."</p>";
+    ?>
+    Skill 1: <select name="class_skill1">
+      <?php
+      while ($rows = $resultSet->fetch_assoc()) {
+        $skill1 = $rows['skill_name'];
+        echo "<option value='$skill_name'>$skill_name</option>";
+      }
+      ?>
+    </select>
+    </br>
+    Skill 2: <select name="class_skill2">
+      <?php
+      while ($rows = $resultSet->fetch_assoc()) {
+        $skill3= $rows['skill_name'];
+        echo "<option value='$skill_name'>$skill_name</option>";
+      }
+      ?>
+    </select>
+    </br>
+    Skill 3: <select name="class_skill3">
+      <?php
+      while ($rows = $resultSet->fetch_assoc()) {
+        $skill3 = $rows['skill_name'];
+        echo "<option value='$skill_name'>$skill_name</option>";
+      }
+      ?>
+    </select>
+    </br>
+
+    <input type="submit" value="Submit" name="skill_submit" id="skill_submit">
+
+  </form>
+</div>
 
 <?php require "templates/footer.php"; ?>
