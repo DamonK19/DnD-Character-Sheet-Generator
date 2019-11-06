@@ -19,7 +19,7 @@
    mysqli_query($con, $sql);
 
    
-  header('Location: step8.php');
+  header('Location: step6.php');
  }
 
 ?>

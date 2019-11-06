@@ -72,7 +72,7 @@ CREATE TABLE spells
 (
 	spell_name varchar(30) NOT NULL,
 	spell_level TINYINT NOT NULL,
-	spell_description VARCHAR(500),
+	spell_description VARCHAR(2000),
 	equipped BIT NOT NULL,  
 	cID INT NOT NULL,
 	PRIMARY KEY(spell_name),
