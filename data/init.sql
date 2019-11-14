@@ -71,7 +71,7 @@ CREATE TABLE spells
 	spell_name varchar(30) NOT NULL,
 	spell_level TINYINT NOT NULL,
 	spell_description VARCHAR(2000),
-	equipped BIT NOT NULL,  
+	equipped BIT NOT NULL,
 	PRIMARY KEY(spell_name)
 );
 
@@ -108,25 +108,20 @@ CREATE TABLE class_name(
 	class_name VARCHAR(30),
 	proficiency_bonus TINYINT,
 	hit_dice TINYINT,
+	skill_quantity TINYINT,
 	PRIMARY KEY(class_name)
 );
 
-/*  CREATE TABLE class_skills(
+CREATE TABLE class_skills(
 	class_name VARCHAR(30),
 	class_skill_name VARCHAR(30),
-	quanity TINYINT,
 	FOREIGN KEY(class_name) REFERENCES class_name(class_name)
 );
-*/
-CREATE TABLE class_skill(
-	cID INT NOT NULL,
-	class_skill1 VARCHAR(30),
-	class_skill2 VARCHAR(30),
-	class_skill3 VARCHAR(30),
-	FOREIGN KEY(cID) REFERENCES characters(cID)
-);
+
 CREATE TABLE skills(
-	skill_name varchar(30)
+	skill_name varchar(30),
+	cID int,
+	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
 CREATE TABLE class_equipment(
@@ -151,37 +146,37 @@ CREATE TABLE background_equipment(
 
 CREATE TABLE background_personality(
 	background_name VARCHAR(30),
-	background_personality VARCHAR(255),
+	background_personality VARCHAR(500),
 	personality_roll TINYINT,
 	FOREIGN KEY(background_name) REFERENCES background(background_name)
 );
 
 CREATE TABLE background_bonds(
 	background_name VARCHAR(30),
-	background_bond VARCHAR(255),
+	background_bond VARCHAR(500),
 	bonds_roll TINYINT,
 	FOREIGN KEY(background_name) REFERENCES background(background_name)
 );
 
 CREATE TABLE background_ideals(
 	background_name VARCHAR(30),
-	background_ideal VARCHAR(255),
+	background_ideal VARCHAR(500),
 	personality_roll TINYINT,
 	FOREIGN KEY(background_name) REFERENCES background(background_name)
 );
 
 CREATE TABLE background_flaws(
 	background_name VARCHAR(30),
-	background_flaw VARCHAR(255),
+	background_flaw VARCHAR(500),
 	personality_roll TINYINT,
 	FOREIGN KEY(background_name) REFERENCES background(background_name)
 );
 
 CREATE TABLE characteristics(
 	cID INT,
-	personality VARCHAR(255),
-	ideal VARCHAR(255),
-	bond VARCHAR(255),
-	flaw VARCHAR(255),
+	personality VARCHAR(500),
+	ideal VARCHAR(500),
+	bond VARCHAR(500),
+	flaw VARCHAR(500),
 	FOREIGN KEY(cID) REFERENCES characters(cID)
 );

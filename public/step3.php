@@ -1,89 +1,66 @@
-<?php require "templates/header.php"; ?>
+<?php include "templates/header.php"; ?>
 
 <?php
-session_start();
-$con = mysqli_connect("localhost","root","root","dnd");
-// Check connection
-if (mysqli_connect_errno()){
-	echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+	session_start();
+	$mysqli = NEW mysqli('localhost','root','root', 'dnd');
+	//get background name of character
+	$resultSet = $mysqli->query("SELECT background FROM characters WHERE cID = '$_SESSION[cid]'");
+	$row = $resultSet->fetch_assoc();
+	$background = $row['background'];
 
-if (isset($_POST['skill_submit'])) {
-  try  {
-		// Query...
-		$sql = "INSERT INTO class_skill(cID,class_skill1,class_skill2,class_skill3 )
-		VALUES ('$_SESSION[id]','$_POST[class_skill1]', '$_POST[class_skill2]', '$_POST[class_skill3]')";
+	//grab background skill1
+	$resultSet = $mysqli->query("SELECT skill_proficiency_1 FROM background WHERE background_name = '$background'");
+	while ($row = $resultSet->fetch_assoc()) {
+		$skill1 = $row['skill_proficiency_1'];
+	}
+	//grab background skill2
+	$resultSet = $mysqli->query("SELECT skill_proficiency_2 FROM background WHERE background_name = '$background'");
+	while ($row = $resultSet->fetch_assoc()) {
+		$skill2 = $row['skill_proficiency_2'];
+	}
 
-		// Execution...
-		mysqli_query($con, $sql);
+	echo"<form action='' method='post'>";
+	echo "Background skills:<br>";
+	echo "<input type='hidden', name='skill1', checked>$skill1</option><br>";
+	echo "<input type='hidden', name='skill2', checked>$skill2</option><br><br>";
+	echo "Class skills:(choose only ";
+	//get class name
+	$result = $mysqli->query("SELECT class_name FROM characters WHERE cID = '$_SESSION[cid]'");
+	while($row = $result->fetch_assoc()) {
+		$class = $row['class_name'];
+	}
 
-  } catch(PDOException $error) {
-      echo $sql . "<br>" . $error->getMessage();
-  }
+	//grab class skill quantity
+	$resultSet = $mysqli->query("SELECT skill_quantity FROM class_name WHERE class_name = '$class'");
+	while($row = $resultSet->fetch_assoc())
+	{
+		$quantity = $row['skill_quantity'];
+	}
+	echo $quantity, " skills or KABOOM!)<br>";
 
-	// After execution, go to step3...
-	header('Location: step4.php');
-}
+	//TODO: add conditional to exclude background skills
+	$resultSet = $mysqli->query("SELECT * from class_skills WHERE class_name = '$class'");
+
+	while($rows = $resultSet->fetch_assoc())
+	{
+		$class_skill = $rows['class_skill_name'];
+		echo "<input type='checkbox' name='skill[]' id='skill' value='$class_skill'>$class_skill</option><br>";
+	}
+	echo "<input type='submit' value='Submit' name='skill_submit' id='skill_submit'><br>";
+	echo "</form>";
+?>
+
+<?php
+	if(isset($_POST['skill_submit'])) {
+		$skill_name = $_GET['skill'];
+		foreach ($skill_name as $name) {
+			$mysqli->query("INSERT INTO skills(skill_name, cID) VALUES('$name', $_SESSION[cid])");
+		}
+
+		header('Location: step4.php');
+
+	}
  ?>
 
-<div class="grid-wrapper one-whole">
-  <div class="grid one-whole text-center" style="font-family: 'Bookmania'">
-    <h3>Step 3: Class Skills</h3>
-    <p>
-      Select your character's class skills.
-     
-      <?php
-    $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
- 
-    ?>
 
-  </div>
-</div>
-
-<div class="grid-wrapper one-whole">
-<div class = "grid one-whole text-center" style="font-family: 'Bookmania'">
-  <form action="" method="post">
-
-    <?php
-    $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
-    $resultSet = $mysqli->query("SELECT skill_name FROM skills");
-    $character_background=$mysqli->query("SELECT background FROM characters");
-    $bskill1 = $mysqli->query("SELECT skill_proficiency_1 FROM background WHERE background_name=$character_background");
-    $bskill2 = $mysqli->query("SELECT skill_proficiency_2 FROM background WHERE background_name=$character_background");
-
-    echo "<p> Your background skills are:".$bskill1.$bskill2."</p>";
-    ?>
-    Skill 1: <select name="class_skill1">
-      <?php
-      while ($rows = $resultSet->fetch_assoc()) {
-        $skill1 = $rows['skill_name'];
-        echo "<option value='$skill_name'>$skill_name</option>";
-      }
-      ?>
-    </select>
-    </br>
-    Skill 2: <select name="class_skill2">
-      <?php
-      while ($rows = $resultSet->fetch_assoc()) {
-        $skill3= $rows['skill_name'];
-        echo "<option value='$skill_name'>$skill_name</option>";
-      }
-      ?>
-    </select>
-    </br>
-    Skill 3: <select name="class_skill3">
-      <?php
-      while ($rows = $resultSet->fetch_assoc()) {
-        $skill3 = $rows['skill_name'];
-        echo "<option value='$skill_name'>$skill_name</option>";
-      }
-      ?>
-    </select>
-    </br>
-
-    <input type="submit" value="Submit" name="skill_submit" id="skill_submit">
-
-  </form>
-</div>
-
-<?php require "templates/footer.php"; ?>
+<?php include "templates/footer.php"; ?>
