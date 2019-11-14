@@ -91,15 +91,15 @@
 
     <?php
       $mysqli = NEW MySQLi('localhost','root','root','dnd');
-      $resultSet = $mysqli->query("SELECT background_flaw FROM background_flaws WHERE background_name = '$background'")
+      $resultSet = $mysqli->query("SELECT background_bond FROM background_bonds WHERE background_name = '$background'")
      ?>
 
     Bond:<select name="bonds">
         <?php
           while($rows = $resultSet->fetch_assoc())
           {
-            $background_flaw = $rows['background_flaw'];
-            echo "<option value='$background_flaw'>$background_flaw</option>";
+            $background_bond = $rows['background_bond'];
+            echo "<option value='$background_bond'>$background_bond</option>";
           }
          ?>
       </select>
