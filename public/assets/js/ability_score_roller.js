@@ -30,3 +30,4 @@ $( "#charisma" ).val(ability_score_roll());
 $( "#dexterity" ).val(ability_score_roll());
 $( "#intelligence" ).val(ability_score_roll());
 $( "#wisdom" ).val(ability_score_roll());
+$( "#constitution" ).val(ability_score_roll());

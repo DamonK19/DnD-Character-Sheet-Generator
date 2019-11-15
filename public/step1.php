@@ -14,7 +14,7 @@ if (isset($_POST['stat_submit'])) {
   try  {
 		// Query...
 		$sql = "INSERT INTO stats(cID, strength, dexterity, constitution, intelligence, wisdom, charisma)
-		VALUES ('1', '$_POST[strength]', '$_POST[dexterity]', '0', '$_POST[intelligence]', '$_POST[wisdom]', '$_POST[charisma]')";
+		VALUES ('1', '$_POST[strength]', '$_POST[dexterity]', '$_POST[constitution]', '$_POST[intelligence]', '$_POST[wisdom]', '$_POST[charisma]')";
 
 		// Execution...
 		mysqli_query($con, $sql);
@@ -89,6 +89,17 @@ if (isset($_POST['stat_submit'])) {
 					<div id="roller_5" class="ability-score">Roll</div>
 					<!-- BUTTON -->
 					<div class="ability-score-button generate"></div>
+				</div>
+			<!-- // ABILITY SCORE BLOCK -->
+			</div>
+			<div class="grid one-third centered text-center">
+				<input type="text" name="constitution" id="constitution">
+				<!-- ABILITY SCORE BLOCK -->
+				<div class="ability-score-block constitution">
+					<!-- BUTTON -->
+					<div class="ability-score-button generate"></div>
+					<!-- RESULT -->
+					<div id="roller_6" class="ability-score">Roll</div>
 				</div>
 			<!-- // ABILITY SCORE BLOCK -->
 			</div>
