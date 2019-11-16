@@ -27,24 +27,32 @@
 <?php
 
     $mysqli = NEW MySQLi('localhost','root','root','dnd');
-    $resultSet = $mysqli->query("SELECT spell_name FROM spells")
-    
+    $resultSet = $mysqli->query("SELECT spell_name FROM spells");
+    $resultSet1 = $mysqli->query("SELECT spell_description FROM spells");
      ?>
 
 <form action="" method="post">
-    <label for="spell_select"> Select a Spell</label>
+    <label for="spell_select"> Select Spells</label>
 
-    <select name="spell_select" class="form-control">
+    
       <?php
+      while($rows1 = $resultSet1->fetch_assoc())
+      {
+        $spell_description = $rows1['spell_description'];
+        
+      }
       while($rows = $resultSet->fetch_assoc())
       {
         $spell_name = $rows['spell_name'];
-        echo "<option value='$spell_name'>$spell_name</option>";
+        echo "<br>$spell_name - <br>$spell_description ";
+        
+        echo  "</br><input type= 'checkbox' name='spell_select' value='$spell_name'  />";
       }
+      
        ?>
-    </select>
     
-              
+    
+    <br></br>          
     <input type="submit" value="Submit" name="spell_submit" id="spell_submit">
   
 </form>
