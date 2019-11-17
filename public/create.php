@@ -6,7 +6,7 @@
  * users table.
  *
  */
- 
+
 if (isset($_POST['submit'])) {
   try  {
     $connection = new PDO($dsn, $username, $password, $options);
@@ -16,6 +16,17 @@ if (isset($_POST['submit'])) {
       "email"     => $_POST['email']
     );
 
+    //query to get rows of users
+    $query = "SELECT * FROM users WHERE email = '$_POST[email]'";
+    $result= $connection->query($query);
+    $result->execute();
+
+    //if users contains 1 email
+    if($result->rowCount() != 0) {
+      echo "Email already exists";
+    }
+    //else add user
+    else{
     $sql = sprintf(
       "INSERT INTO %s (%s) values (%s)",
       "users",
@@ -25,15 +36,17 @@ if (isset($_POST['submit'])) {
 
     $statement = $connection->prepare($sql);
     $statement->execute($new_user);
+    echo $_POST['email'],  " successfully added";
+  }
   } catch(PDOException $error) {
       echo $sql . "<br>" . $error->getMessage();
   }
 }
 ?>
 
-  <?php if (isset($_POST['submit']) && $statement) : ?>
+  <!-- <?php if (isset($_POST['submit']) && $statement) : ?>
     <blockquote><?php echo $_POST['email']; ?> successfully added.</blockquote>
-  <?php endif; ?>
+  <?php endif; ?> -->
 
   <h2>Add a user</h2>
 
