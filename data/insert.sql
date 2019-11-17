@@ -40,9 +40,19 @@ VALUES
   ('Human', '30'),
   ('Dragonborn', '30'),
   ('Gnome', '25'),
-  ('Half-Elf', '30'),
   ('Half-Orc', '30'),
   ('Tiefling', '30');
+
+INSERT INTO race_mod
+values
+('Dwarf', 0, 0, 2, 0, 0, 0),
+('Elf', 0, 2, 0, 0, 0, 0),
+('Halfling', 0, 2, 0, 0, 0, 0),
+('Human', 1, 1, 1, 1, 1, 1),
+('Dragonborn', 2, 0, 0, 0, 0, 1),
+('Gnome', 0, 0, 0, 2, 0, 0),
+('Half-Orc', 2, 0, 1, 0 ,0 ,0),
+('Tiefling', 0, 0, 0, 1, 0, 3);
 
  INSERT INTO spells
  VALUES

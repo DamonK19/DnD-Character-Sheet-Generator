@@ -93,7 +93,7 @@ CREATE TABLE race(
 
 );
 
-CREATE TABLE raceMod(
+CREATE TABLE race_mod(
 	race_name VARCHAR(30),
 	race_str_mod TINYINT,
 	race_dex_mod TINYINT,
