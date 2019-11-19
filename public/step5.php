@@ -4,18 +4,18 @@
 
 
  session_start();
- $spellvar = $_POST['spell_select'];
 
  $con=mysqli_connect("localhost","root","root","dnd");
  // Check connection
  if (mysqli_connect_errno()){
    echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
- if(isset($_POST['spell_submit'])){
+
+foreach($_POST['spell_select'] as $selected){
  // Perform query 
 
-   $sql = "UPDATE spells SET equipped = 1 WHERE spell_name = '$spellvar'";
-  $sql1 = "INSERT INTO spells ( spell_name, spell_level, spell_description, cID, equipped) VALUES ( test1 , 0 , test1 , 1 , 0 )";
+   $sql = "UPDATE spells SET equipped = 1 WHERE spell_name = '$selected'";
+ // $sql1 = "INSERT INTO spells ( spell_name, spell_level, spell_description, cID, equipped) VALUES ( test1 , 0 , test1 , 1 , 0 )";
    mysqli_query($con, $sql);
 
    
@@ -27,24 +27,37 @@
 <?php
 
     $mysqli = NEW MySQLi('localhost','root','root','dnd');
-    $resultSet = $mysqli->query("SELECT spell_name FROM spells")
-    
+    $resultSet = $mysqli->query("SELECT spell_name FROM spells");
+    $resultSet1 = $mysqli->query("SELECT spell_description FROM spells");
      ?>
 
 <form action="" method="post">
-    <label for="spell_select"> Select a Spell</label>
+    <label for="spell_select"> Select Spells</label>
 
-    <select name="spell_select" class="form-control">
+    
       <?php
+      $spell_description = array();
+      $spell_name = array();
+      
+      while($rows1 = $resultSet1->fetch_assoc())
+      {
+       array_push($spell_description,$rows1['spell_description']);
+      }
       while($rows = $resultSet->fetch_assoc())
       {
-        $spell_name = $rows['spell_name'];
-        echo "<option value='$spell_name'>$spell_name</option>";
+        array_push($spell_name, $rows['spell_name']);
+      }
+      
+      $array_length = count($spell_name);
+      for($i = 0; $i<$array_length; $i++){
+        echo  "<br><input type= 'checkbox' name='spell_select[]' value='$spell_name[$i]'  />", "<br>",$spell_name[$i], "</br>";
+        echo  $spell_description[$i], "<br></br>";
+        
       }
        ?>
-    </select>
     
-              
+    
+    <br></br>          
     <input type="submit" value="Submit" name="spell_submit" id="spell_submit">
   
 </form>

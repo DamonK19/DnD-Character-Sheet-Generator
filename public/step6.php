@@ -4,17 +4,17 @@
 
 
  session_start();
- $equipmentvar = $_POST['equipment_select'];
+ 
 
  $con=mysqli_connect("localhost","root","root","dnd");
  // Check connection
  if (mysqli_connect_errno()){
    echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
- if(isset($_POST['equipment_submit'])){
+ foreach($_POST['equipment_select'] as $selected){
  // Perform query 
 
-   $sql = "UPDATE equipment SET equipped = 1 WHERE equipment_name = '$equipmentvar'";
+   $sql = "UPDATE equipment SET equipped = 1 WHERE equipment_name = '$selected'";
    mysqli_query($con, $sql);
 
    
@@ -33,18 +33,24 @@
 <form action="" method="post">
     <label for="equipment_select"> Select an equipment</label>
 
-    <select name="equipment_select" class="form-control">
+    
       <?php
+      $equipment_name = array();
       while($rows = $resultSet->fetch_assoc())
       {
-        $equipment_name = $rows['equipment_name'];
-        echo "<option value='$equipment_name'>$equipment_name</option>";
+        array_push($equipment_name, $rows['equipment_name']);
+      }
+      
+      $array_length = count($equipment_name);
+      for($i = 0; $i<$array_length; $i++){
+        echo  "<br><input type= 'checkbox' name='equipment_select[]' value='$equipment_name[$i]'  />", $equipment_name[$i],"\n\n";
+        
       }
        ?>
-    </select>
+   
     
               
-    <input type="submit" value="Submit" name="equipment_submit" id="equipment_submit">
+    <br><input type="submit" value="Submit" name="equipment_submit" id="equipment_submit">
   
 </form>
 </div>
