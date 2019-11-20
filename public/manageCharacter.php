@@ -23,6 +23,11 @@
 			<li><a href="delete.php"><strong>Delete</strong></a> - Delete a Character</li>
 		</ul>
 	</div>
+  <div class="grid desk-one-third text-center">
+		<ul>
+			<li><a href="viewchars.php"><strong>View Characters</strong></a> - View all created Characters</li>
+		</ul>
+	</div>
 </div>
 
 

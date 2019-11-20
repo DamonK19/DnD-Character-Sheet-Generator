@@ -10,7 +10,7 @@
 
     $email = mysqli_real_escape_string($con,$_POST['email']);
     $password = mysqli_real_escape_string($con,$_POST['password']);
-
+    $_SESSION['email'] = $_POST['email'];
     if ($email != "" && $password != ""){
 
         $sql_query = "select id from users where email='".$email."' and password='".$password."'";

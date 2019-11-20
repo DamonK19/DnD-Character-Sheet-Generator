@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
-
+<?php
+session_start();
+ echo "Current User: ", $_SESSION['email'];
+?>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
