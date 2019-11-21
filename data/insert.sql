@@ -973,3 +973,33 @@ VALUES
 ('Wizard', 'Ray of Frost', ''),
 ('Wizard', 'Shocking Grasp', ''),
 ('Wizard', 'True Strike', '');
+
+INSERT INTO tool_library
+VALUES
+('Artisan''s Tools', 'Alchemist''s Supplies'),
+('Artisan''s Tools', 'Brewer''s Supplies'),
+('Artisan''s Tools', 'Calligraphers''s Supplies'),
+('Artisan''s Tools', 'Carpenter''s Tools'),
+('Artisan''s Tools', 'Cartographer''s Tools'),
+('Artisan''s Tools', 'Cobbler''s Tools'),
+('Artisan''s Tools', 'Cook''s Utensils'),
+('Artisan''s Tools', 'Glassblower''s Tools'),
+('Artisan''s Tools', 'Jeweler''s Tools'),
+('Artisan''s Tools', 'Leatherworker''s Tools'),
+('Artisan''s Tools', 'Mason''s Tools'),
+('Artisan''s Tools', 'Painter''s Supplies'),
+('Artisan''s Tools', 'Potter''s Tools'),
+('Artisan''s Tools', 'Smith''s Tools'),
+('Artisan''s Tools', 'Tinker''s Tools'),
+('Artisan''s Tools', 'Weaver''s Tools'),
+('Artisan''s Tools', 'Woodcarver''s Tools'),
+('Musical Instrument', 'Bagpipes'),
+('Musical Instrument', 'Drum'),
+('Musical Instrument', 'Dulcimer'),
+('Musical Instrument', 'Flute'),
+('Musical Instrument', 'Lute'),
+('Musical Instrument', 'Lyre'),
+('Musical Instrument', 'Horn'),
+('Musical Instrument', 'Pan Flute'),
+('Musical Instrument', 'Shawm'),
+('Musical Instrument', 'Viol');

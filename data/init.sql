@@ -195,3 +195,8 @@ CREATE TABLE characteristics(
 	flaw VARCHAR(500),
 	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
+
+CREATE TABLE tool_library(
+	type VARCHAR(30),
+	name VARCHAR(30)
+)
