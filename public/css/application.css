@@ -1631,7 +1631,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Bookmainia";
   font-weight: normal;
 }
 
@@ -1803,7 +1803,7 @@ input[type=checkbox]:disabled {
   box-shadow: 0 0 0 0.2rem rgba(61, 119, 62, 0.25);
 }
 
-.btn {
+.btn, input {
   display: inline-block;
   margin: 0;
   padding: 0.4em 1em;
@@ -1818,10 +1818,10 @@ input[type=checkbox]:disabled {
   background: transparent;
   cursor: pointer;
 }
-.btn, .btn:hover, .btn:focus {
+.btn, .btn:hover, .btn:focus, input, input:hover, input:focus {
   text-decoration: none;
 }
-.btn.disabled, .btn[disabled] {
+.btn.disabled, .btn[disabled], input.disabled, input[disabled] {
   cursor: not-allowed;
   opacity: 0.65;
 }
@@ -1929,6 +1929,12 @@ button {
   bottom: 0;
   width: 100%;
   background-color: white;
+}
+
+#step1 {
+  background-image: url("../assets/images/wood.jpg");
+  display: block;
+  z-index: 0;
 }
 
 .ability-score-block {
@@ -2100,6 +2106,37 @@ button {
 
 .btn-home-mix-nb::before, .btn-home-mix-nb::after {
   content: none;
+}
+
+.login-bg {
+  background-image: url("../assets/images/login.jpg");
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.login-menu {
+  background-image: url("../assets/images/loginbg.png");
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  height: 600px;
+  position: relative;
+  text-align: center;
+}
+
+.login-menu-content {
+  position: absolute;
+  top: 30%;
 }
 
 .visible-print {
