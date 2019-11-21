@@ -1,9 +1,8 @@
 <?php require "templates/header.php"; ?>
+<?php include "templates/session.php"; ?>
 <div class="grid-lap one-half ">
 <?php
 
-
- session_start();
  $equipmentvar = $_POST['equipment_select'];
 
  $con=mysqli_connect("localhost","root","root","dnd");
@@ -12,12 +11,12 @@
    echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
  if(isset($_POST['equipment_submit'])){
- // Perform query 
+ // Perform query
 
    $sql = "UPDATE equipment SET equipped = 1 WHERE equipment_name = '$equipmentvar'";
    mysqli_query($con, $sql);
 
-   
+
   header('Location: display.php');
  }
 
@@ -27,7 +26,7 @@
 
     $mysqli = NEW MySQLi('localhost','root','root','dnd');
     $resultSet = $mysqli->query("SELECT equipment_name FROM equipment")
-    
+
      ?>
 
 <form action="" method="post">
@@ -42,10 +41,10 @@
       }
        ?>
     </select>
-    
-              
+
+
     <input type="submit" value="Submit" name="equipment_submit" id="equipment_submit">
-  
+
 </form>
 </div>
 <div class="grid-lap one-third">

@@ -1,7 +1,8 @@
 <?php include "templates/header.php"; ?>
+<?php include "templates/session.php"; ?>
 
 <?php
-	session_start();
+
 	$mysqli = NEW mysqli('localhost','root','root', 'dnd');
 	//get background name of character
 	$resultSet = $mysqli->query("SELECT background FROM characters WHERE cID = '$_SESSION[cid]'");
