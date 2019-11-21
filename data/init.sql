@@ -34,6 +34,7 @@ CREATE TABLE equipment
 
 CREATE TABLE armor(
 	armor_name varchar(30),
+	type varchar(30),
 	armorClass TINYINT,
 	PRIMARY KEY(armor_name)
 );

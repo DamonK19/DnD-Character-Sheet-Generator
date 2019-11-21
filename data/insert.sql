@@ -844,3 +844,20 @@ VALUES
 ('Urchin', 'Token to Remember Your Parents By', NULL, NULL, NULL),
 ('Urchin', 'Set of Common Clothes', NULL, NULL, NULL),
 ('Urchin', 'Belt Pouch Containing 10 gp', NULL, NULL, NULL);
+
+/*armor data entry*/
+INSERT INTO armor
+VALUES
+('Padded', 'Light', 11),
+('Leather', 'Light', 11),
+('Studded', 'Light', 12),
+('Hide', 'Medium', 12),
+('Chain Shirt', 'Medium', 13),
+('Scale Mail', 'Medium', 14),
+('Breastplate', 'Medium', 14),
+('Half Plate', 'Medium', 15),
+('Ring Mail', 'Heavy', 14),
+('Chain Mail', 'Heavy', 16),
+('Splint', 'Heavey', 17),
+('Plate', 'Heavy', 18),
+('Shield', 'Shield', 2);
