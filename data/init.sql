@@ -52,6 +52,8 @@ CREATE TABLE armor_mod(
 
 CREATE TABLE weapons(
 	weapon_name VARCHAR(30),
+	type1 VARCHAR(30),
+	type2 VARCHAR(30),
 	PRIMARY KEY(weapon_name)
 );
 
