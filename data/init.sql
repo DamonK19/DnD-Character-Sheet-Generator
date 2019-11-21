@@ -199,4 +199,4 @@ CREATE TABLE characteristics(
 CREATE TABLE tool_library(
 	type VARCHAR(30),
 	name VARCHAR(30)
-)
+);
