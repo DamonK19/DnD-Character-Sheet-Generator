@@ -140,8 +140,11 @@ CREATE TABLE background(
 );
 
 CREATE TABLE background_equipment(
-	background_equipment_name VARCHAR(30),
 	background_name VARCHAR(30),
+	background_equipment_1 VARCHAR(255),
+	background_equipment_2 VARCHAR(255),
+	background_equipment_3 VARCHAR(255),
+	background_equipment_4 VARCHAR(255),
 	FOREIGN KEY(background_name) REFERENCES background(background_name)
 );
 
