@@ -19,18 +19,18 @@ VALUES
 
   INSERT INTO class_name
   VALUES
-  ('Barbarian','2','12', 2),
-  ('Bard','2','8', 3),
-  ('Cleric','2','8', 2),
-  ('Druid','2','8', 2),
-  ('Fighter','2','10', 2),
-  ('Monk','2','8', 2),
-  ('Paladin','2','10', 2),
-  ('Ranger','2','10', 3),
-  ('Rogue','2','8', 4),
-  ('Sorcerer','2','6', 2),
-  ('Warlock','2','8', 2),
-  ('Wizard','2','6', 2);
+  ('Barbarian','2','12', 2, 0),
+  ('Bard','2','8', 3, 2),
+  ('Cleric','2','8', 2, 3),
+  ('Druid','2','8', 2, 2),
+  ('Fighter','2','10', 2, 0),
+  ('Monk','2','8', 2, 0),
+  ('Paladin','2','10', 2, 0),
+  ('Ranger','2','10', 3, 0),
+  ('Rogue','2','8', 4, 0),
+  ('Sorcerer','2','6', 2, 4),
+  ('Warlock','2','8', 2, 2),
+  ('Wizard','2','6', 2, 3);
 
   INSERT INTO race
   VALUES

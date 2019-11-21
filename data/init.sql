@@ -112,6 +112,7 @@ CREATE TABLE class_name(
 	proficiency_bonus TINYINT,
 	hit_dice TINYINT,
 	skill_quantity TINYINT,
+	cantrips INT,
 	PRIMARY KEY(class_name)
 );
 
