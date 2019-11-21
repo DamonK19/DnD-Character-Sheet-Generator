@@ -1,7 +1,8 @@
 <?php include "templates/header.php"; ?>
+<?php include "templates/session.php"; ?>
 
 <?php
-  session_start();
+
   $con=mysqli_connect("localhost","root","root","dnd");
   // Check connection
   if (mysqli_connect_errno()){

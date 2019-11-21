@@ -1,6 +1,6 @@
 <!-- EXAMPLE OF USING TEMPLATED PHP FILES -->
 <?php include "templates/header.php"; ?>
-
+<?php include "templates/session.php"; ?>
 <?php
   session_start();
   // echo $_SESSION['id'];
