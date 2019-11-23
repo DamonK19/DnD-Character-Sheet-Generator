@@ -49,6 +49,9 @@ if (isset($_POST['but_submit'])) {
           <div>
           <input type="submit" value="Submit" name="but_submit" id="but_submit">
           </div>
+          <div class="">
+            <a href="index.php">Back to Home</a>
+          </div>
         </form>
       </div>
     </div>
