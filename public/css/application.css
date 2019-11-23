@@ -1931,12 +1931,6 @@ button {
   background-color: white;
 }
 
-#step1 {
-  background-image: url("../assets/images/wood.jpg");
-  display: block;
-  z-index: 0;
-}
-
 .ability-score-block {
   height: 200px;
   background-position: center;
