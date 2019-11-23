@@ -79,4 +79,9 @@
   $row = $resultSet->fetch_assoc();
 
   echo "Equipment Name: ", $row['equipment_name'];
+
+
+
  ?>
+<br>
+ <a href="manageCharacter.php">Click here to go back to home</a>
