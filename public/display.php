@@ -1,7 +1,5 @@
 <?php
   session_start();
-
-
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM characters WHERE cID = $_SESSION[cid]");
   $row = $resultSet->fetch_assoc();
@@ -80,3 +78,29 @@
 
   echo "Equipment Name: ", $row['equipment_name'];
  ?>
+
+ <div class="error"></div>
+ <form class="url_form">
+   <div>Upload a PDF form file: <label><input type="file" name="file" /></label></div>
+   <label>or download one: <input type="text" size="40" value="Spielberichtsbogen_2BL.pdf" name="url" /><button role="submit">Download</button></label>
+ </form>
+ <form class="cur_file"></form>
+ <form class="lib_form">
+   PDF library:
+   <label><input type="radio" name="pdflib" value="minipdf" checked="checked" />minipdf</label>
+   <label><input type="radio" name="pdflib" value="pdf.js" />PDF.js</label>
+ </form>
+ <form class="fill_form"><button class="fill" disabled="disabled">Fill and download PDF</button></form>
+ <form class="list_form"></form>
+ <div class="loading">Loading (this may take a while since PDF.js is gigantic)</div>
+ <script src="assets/js/minipdf.js"></script>
+ <script src="assets/js/customlibs/pdf.worker.js"></script>
+ <script src="assets/js/minipdf_js.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.3/pako.min.js" integrity="sha256-X7u/eQo6oIgWqc5jOmTjQn3loM8Lse0ock76Gkkn/Ro=" crossorigin="anonymous"></script>
+ <script src="assets/js/pdfform.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+ <script src="assets/js/demo.js"></script>
+
+
+<!-- <script type="text/javascript" src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+<script type="text/javascript" src="assets/js/pdffiller.js"></script> -->
