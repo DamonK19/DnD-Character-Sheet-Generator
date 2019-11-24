@@ -93,14 +93,14 @@
       <div class="grid one-half message-scroll">
         <div class="grid-wrapper align--center message-scroll-content">
           <div class="grid three-fifths push--one-fifth message">
-            Start by Choosing in your <br>
+            <h4>Start by choosing your:<br></h4>
             <ul>
-              <li>Character Name<input type="text" name="cname"></li>
-              <li>Player name<input type="text" name="pname"></li>
+              <li><h4>Character Name<br><input type="text" name="cname"></h4></li>
+              <li><h4>Player name<br><input type="text" name="pname"></h4></li>
             </ul>
-            Then use the image slector on the right for your:<br>
+            <h4>Then use the image slector on the right for your:</h4>
             <ul>
-              <li>Race</li>
+              <li><h4>Race</h4></li>
             </ul>
           </div>
         </div>
@@ -111,19 +111,49 @@
           <span id="item-1"></span>
           <span id="item-2"></span>
           <span id="item-3"></span>
+          <span id="item-4"></span>
+          <span id="item-5"></span>
+          <span id="item-6"></span>
+          <span id="item-7"></span>
+          <span id="item-8"></span>
           <div class="carousel-item item-1 text-center">
-            <h2>Title of Character 1</h2>
-            <a class="arrow arrow-prev" href="#item-3"></a>
+            <h2 class="item-title">Dragonborn</h2>
+            <a class="arrow arrow-prev" href="#item-8"></a>
             <a class="arrow arrow-next" href="#item-2"></a>
           </div>
           <div class="carousel-item item-2 text-center">
-            <h2>Title of Character 2</h2>
+            <h2 class="item-title">Dwarf</h2>
             <a class="arrow arrow-prev" href="#item-1"></a>
             <a class="arrow arrow-next" href="#item-3"></a>
           </div>
           <div class="carousel-item item-3 text-center">
-            <h2>Title of Character 3</h2>
+            <h2 class="item-title">Elf</h2>
             <a class="arrow arrow-prev" href="#item-2"></a>
+            <a class="arrow arrow-next" href="#item-4"></a>
+          </div>
+          <div class="carousel-item item-4 text-center">
+            <h2 class="item-title">Gnome</h2>
+            <a class="arrow arrow-prev" href="#item-3"></a>
+            <a class="arrow arrow-next" href="#item-5"></a>
+          </div>
+          <div class="carousel-item item-5 text-center">
+            <h2 class="item-title">Half-Orc</h2>
+            <a class="arrow arrow-prev" href="#item-4"></a>
+            <a class="arrow arrow-next" href="#item-6"></a>
+          </div>
+          <div class="carousel-item item-6 text-center">
+            <h2 class="item-title">Halfling</h2>
+            <a class="arrow arrow-prev" href="#item-5"></a>
+            <a class="arrow arrow-next" href="#item-7"></a>
+          </div>
+          <div class="carousel-item item-7 text-center">
+            <h2 class="item-title">Human</h2>
+            <a class="arrow arrow-prev" href="#item-6"></a>
+            <a class="arrow arrow-next" href="#item-8"></a>
+          </div>
+          <div class="carousel-item item-8 text-center">
+            <h2 class="item-title">Tiefling</h2>
+            <a class="arrow arrow-prev" href="#item-7"></a>
             <a class="arrow arrow-next" href="#item-1"></a>
           </div>
         </div>

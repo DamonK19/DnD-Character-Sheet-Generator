@@ -2141,7 +2141,7 @@ button {
 
 .carousel-item {
   position: absolute;
-  top: 0;
+  top: 10%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -2150,6 +2150,13 @@ button {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom center;
+  text-align: center;
+}
+.carousel-item .item-title {
+  top: -10%;
+  right: 0;
+  left: 0;
+  position: absolute;
 }
 
 .arrow {
@@ -2204,7 +2211,7 @@ button {
 .item-1 {
   z-index: 2;
   opacity: 1;
-  background-image: url("../assets/images/bard.png");
+  background-image: url("../assets/images/dragonborn.png");
 }
 
 .item-2 {
@@ -2212,7 +2219,27 @@ button {
 }
 
 .item-3 {
-  background-image: url("../assets/images/cleric.png");
+  background-image: url("../assets/images/elf.png");
+}
+
+.item-4 {
+  background-image: url("../assets/images/gnome.png");
+}
+
+.item-5 {
+  background-image: url("../assets/images/half-orc.png");
+}
+
+.item-6 {
+  background-image: url("../assets/images/halfling.png");
+}
+
+.item-7 {
+  background-image: url("../assets/images/human.png");
+}
+
+.item-8 {
+  background-image: url("../assets/images/tiefling.png");
 }
 
 *:target ~ .item-1 {
@@ -2224,7 +2251,12 @@ button {
 }
 
 #item-2:target ~ .item-2,
-#item-3:target ~ .item-3 {
+#item-3:target ~ .item-3,
+#item-4:target ~ .item-4,
+#item-5:target ~ .item-5,
+#item-6:target ~ .item-6,
+#item-7:target ~ .item-7,
+#item-8:target ~ .item-8 {
   z-index: 3;
   opacity: 1;
 }

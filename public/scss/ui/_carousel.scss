@@ -6,7 +6,7 @@
 
 .carousel-item {
 	position: absolute;
-	top: 0;
+	top: 10%;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -15,6 +15,14 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom center;
+	text-align: center;
+
+	.item-title {
+			top: -10%;
+			right: 0;
+			left: 0;
+			position: absolute;
+	}
 }
 
 .arrow {
