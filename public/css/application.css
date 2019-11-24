@@ -2147,7 +2147,7 @@ button {
 
 .carousel-item {
   position: absolute;
-  top: 0;
+  top: 10%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -2156,6 +2156,13 @@ button {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom center;
+  text-align: center;
+}
+.carousel-item .item-title {
+  top: -10%;
+  right: 0;
+  left: 0;
+  position: absolute;
 }
 
 .arrow {
@@ -2195,6 +2202,18 @@ button {
   display: none;
 }
 
+.message-scroll {
+  background-image: url("../assets/images/message_scroll.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 600px;
+}
+
+.message-scroll-content {
+  height: 100%;
+}
+
 .item-1 {
   z-index: 2;
   opacity: 1;
@@ -2218,15 +2237,15 @@ button {
 }
 
 .item-6 {
-  background-image: url("../assets/images/halfelf.png");
-}
-
-.item-7 {
   background-image: url("../assets/images/halfling.png");
 }
 
-.item-8 {
+.item-7 {
   background-image: url("../assets/images/human.png");
+}
+
+.item-8 {
+  background-image: url("../assets/images/tiefling.png");
 }
 
 *:target ~ .item-1 {
@@ -2238,7 +2257,12 @@ button {
 }
 
 #item-2:target ~ .item-2,
-#item-3:target ~ .item-3 {
+#item-3:target ~ .item-3,
+#item-4:target ~ .item-4,
+#item-5:target ~ .item-5,
+#item-6:target ~ .item-6,
+#item-7:target ~ .item-7,
+#item-8:target ~ .item-8 {
   z-index: 3;
   opacity: 1;
 }
@@ -2272,6 +2296,43 @@ button {
 .manage-menu-content {
   position: absolute;
   top: 30%;
+.header-bg {
+  background-size: 33%;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url("../assets/images/wood-header.jpg");
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url("../assets/images/wood-header.jpg");
+}
+
+.header-title h1 {
+  margin-top: 1rem;
+}
+
+.site-logo {
+  padding: 0 6rem;
+  text-align: center;
+}
+.site-logo img {
+  height: auto;
+  width: 150px;
+}
+
+.user-info {
+  height: 100%;
+}
+
+.user-image img {
+  width: 40px;
+}
+
+.user-name h4 {
+  margin-bottom: 0;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .visible-print {

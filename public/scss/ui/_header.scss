@@ -1,7 +1,70 @@
-.header-bg{
-    display: block;
-    background-image: url('../assets/images/header.jpg');
-    z-index: 1;
-    background-size: cover;
-    background-repeat: repeat;
+.header-bg {
+  background-size: 33%;
+  background-image: -webkit-linear-gradient(top,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,0.9) 100%
+  ),
+  url('../assets/images/wood-header.jpg');
+background-image: -moz-linear-gradient(top,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,0.9) 100%
+  ),
+  url('../assets/images/wood-header.jpg');
+}
+
+.header-title {
+  h1 {
+    margin-top: 1.0rem;
   }
+}
+
+.site-logo {
+  padding: 0 6rem;
+  text-align: center;
+
+  img {
+    height: auto;
+    width: 150px;
+  }
+}
+
+.user-info {
+  height: 100%;
+}
+
+.user-image {
+  img {
+    width: 40px
+  }
+}
+
+.user-name {
+  h4 {
+    margin-bottom: 0;
+    // position: relative;
+
+    // &::before {
+    //   content:"";
+    //   position: absolute;
+    //   left: -50px;
+    //   bottom: -5px;
+    //   height: 40px;
+    //   width: 40px;
+    //   background-image: url('../assets/images/user.png');
+    //   background-position: center;
+    //   background-size: contain;
+    // }
+  }
+}
+
+.white {
+  color: $white;
+}
+
+.bold {
+  font-weight: bold;
+}

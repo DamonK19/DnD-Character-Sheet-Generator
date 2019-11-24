@@ -5,16 +5,24 @@
 }
 
 .carousel-item {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+	position: absolute;
+	top: 10%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom center;
+	text-align: center;
+
+	.item-title {
+			top: -10%;
+			right: 0;
+			left: 0;
+			position: absolute;
+	}
 }
 
 .arrow {
@@ -53,49 +61,4 @@
 /*Select every element*/
 [id^="item"] {
   display: none;
-}
-
-.item-1 {
-  z-index: 2;
-  opacity: 1;
-  background-image: url("../assets/images/dragonborn.png");
-}
-
-.item-2 {
-  background-image: url("../assets/images/dwarf.png");
-}
-
-.item-3 {
-  background-image: url("../assets/images/elf.png");
-}
-.item-4 {
-  background-image: url("../assets/images/gnome.png");
-}
-
-.item-5 {
-  background-image: url("../assets/images/half-orc.png");
-}
-
-.item-6 {
-  background-image: url("../assets/images/halfelf.png");
-}
-
-.item-7 {
-  background-image: url("../assets/images/halfling.png");
-}
-.item-8 {
-  background-image: url("../assets/images/human.png");
-}
-*:target ~ .item-1 {
-  opacity: 0;
-}
-
-#item-1:target ~ .item-1 {
-  opacity: 1;
-}
-
-#item-2:target ~ .item-2,
-#item-3:target ~ .item-3 {
-  z-index: 3;
-  opacity: 1;
 }
