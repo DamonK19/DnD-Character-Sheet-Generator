@@ -2208,6 +2208,37 @@ button {
   display: none;
 }
 
+.manage-bg {
+  background-image: url("../assets/images/managechar.jpg");
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.manage-menu {
+  background-image: url("../assets/images/scroll.png");
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  height: 400px;
+  position: relative;
+  text-align: center;
+}
+
+.manage-menu-content {
+  position: absolute;
+  top: 30%;
+}
+
 .message-scroll {
   background-image: url("../assets/images/message_scroll.png");
   background-repeat: no-repeat;
