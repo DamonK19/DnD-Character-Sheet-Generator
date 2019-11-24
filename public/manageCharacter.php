@@ -3,25 +3,17 @@
 <?php include "templates/session.php"; ?>
 
 
-<div class="grid-wrapper one-whole">
-  <div class="grid desk-one-third text-center">
-		<ul>
-			<li><a href="step0.php"><strong>Create</strong></a> - Create a Character</li>
-		</ul>
-	</div>
-
-	<div class="grid desk-one-third text-center">
-		<ul>
-			<li><a href="update.php"><strong>Update</strong></a> - Update a Character</li>
-		</ul>
-	</div>
-  <div class="grid desk-one-third text-center">
-		<ul>
-			<li><a href="delete.php"><strong>Delete</strong></a> - Delete a Character</li>
-		</ul>
+<div class="manage-bg">
+	<div class="site-wrapper">
+		<div class="grid-wrapper manage-menu ">
+			<div class="grid manage-menu-content">
+				<div><a href="step0.php"><strong>Create</strong></a> - Create a Character</div>
+				<div><a href="update.php"><strong>Update</strong></a> - Update a Character</div>
+				<div><a href="delete.php"><strong>Delete</strong></a> - Delete a Character</div>
+			</div>
+		</div>
 	</div>
 </div>
-
 
 
 <!-- EXAMPLE OF USING TEMPLATED PHP FILES -->

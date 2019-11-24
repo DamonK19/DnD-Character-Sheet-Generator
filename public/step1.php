@@ -27,8 +27,8 @@ if (isset($_POST['stat_submit'])) {
 	header('Location: step3.php');
 }
 ?>
-
-
+	<div class="s1-bg">
+	<div class="site-wrapper">
 	<div class="grid-wrapper one-whole">
 		<div class="grid one-whole text-center" style="font-family: 'Bookmainia'">
 			Step 1 is about Ability Scores. By rolling 4 d6 die, removing the lowest or tied for the lowest number, and then adding up the total; you can generate your ability scores!

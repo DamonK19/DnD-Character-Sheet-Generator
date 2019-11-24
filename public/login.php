@@ -26,10 +26,7 @@ if (isset($_POST['but_submit'])) {
   }
 }
 ?>
-<!--
-
-  this should be the login page
- -->
+<!--this should be the login page-->
 
 <div class="login-bg">
   <div class="site-wrapper">

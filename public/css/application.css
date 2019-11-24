@@ -1979,6 +1979,12 @@ button {
   background-image: url("../assets/images/constitution.png");
 }
 
+.s1-bg {
+  background-image: url("../assets/images/wood.jpg");
+  background-size: contain;
+  background-repeat: repeat;
+}
+
 .slideshows {
   background: #000000;
   z-index: 0;
@@ -2192,7 +2198,7 @@ button {
 .item-1 {
   z-index: 2;
   opacity: 1;
-  background-image: url("../assets/images/bard.png");
+  background-image: url("../assets/images/dragonborn.png");
 }
 
 .item-2 {
@@ -2200,7 +2206,27 @@ button {
 }
 
 .item-3 {
-  background-image: url("../assets/images/cleric.png");
+  background-image: url("../assets/images/elf.png");
+}
+
+.item-4 {
+  background-image: url("../assets/images/gnome.png");
+}
+
+.item-5 {
+  background-image: url("../assets/images/half-orc.png");
+}
+
+.item-6 {
+  background-image: url("../assets/images/halfelf.png");
+}
+
+.item-7 {
+  background-image: url("../assets/images/halfling.png");
+}
+
+.item-8 {
+  background-image: url("../assets/images/human.png");
 }
 
 *:target ~ .item-1 {
@@ -2215,6 +2241,37 @@ button {
 #item-3:target ~ .item-3 {
   z-index: 3;
   opacity: 1;
+}
+
+.manage-bg {
+  background-image: url("../assets/images/managechar.jpg");
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.manage-menu {
+  background-image: url("../assets/images/scroll.png");
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  height: 400px;
+  position: relative;
+  text-align: center;
+}
+
+.manage-menu-content {
+  position: absolute;
+  top: 30%;
 }
 
 .visible-print {

@@ -12,11 +12,13 @@
 </head>
 
 <body>
-		<!-- background -->
-		<div class="header-bg">
-			<div class="grid-wrapper one-whole">
-				<div class="grid text-center">
-					<h1>DnD Character Creation Tool</h1>
-				</div>
+	<!-- background -->
+	<div class="header-bg">
+	<div class="site-wrapper">
+		<div class="grid-wrapper">
+					<div class="grid text-center">
+						<h1>DnD Character Creation Tool</h1>
+					</div>
 			</div>
+		</div>
 		</div>
