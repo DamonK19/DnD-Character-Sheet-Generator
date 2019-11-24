@@ -47,6 +47,16 @@ h4, .h4 {
   font-size: .875rem;
 }
 
+.cursive {
+	font-family: 'Mr Bedfort', cursive;
+}
+.white {
+  color: $white;
+}
+.bold {
+  font-weight: bold;
+}
+
 @include media($from: lap) {
   h1, .h1 { font-size: 3.6rem; }
 

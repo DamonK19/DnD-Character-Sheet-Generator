@@ -15,56 +15,28 @@ background-image: -moz-linear-gradient(top,
   ),
   url('../assets/images/wood-header.jpg');
 }
-
 .header-title {
   h1 {
     margin-top: 1.0rem;
   }
 }
-
 .site-logo {
-  padding: 0 6rem;
   text-align: center;
-
   img {
     height: auto;
     width: 150px;
   }
 }
-
 .user-info {
   height: 100%;
 }
-
 .user-image {
   img {
     width: 40px
   }
 }
-
 .user-name {
   h4 {
     margin-bottom: 0;
-    // position: relative;
-
-    // &::before {
-    //   content:"";
-    //   position: absolute;
-    //   left: -50px;
-    //   bottom: -5px;
-    //   height: 40px;
-    //   width: 40px;
-    //   background-image: url('../assets/images/user.png');
-    //   background-position: center;
-    //   background-size: contain;
-    // }
   }
-}
-
-.white {
-  color: $white;
-}
-
-.bold {
-  font-weight: bold;
 }

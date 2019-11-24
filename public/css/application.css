@@ -1654,6 +1654,18 @@ h4, .h4 {
   font-size: 0.875rem;
 }
 
+.cursive {
+  font-family: "Mr Bedfort", cursive;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 @media screen and (min-width: 48em) {
   h1, .h1 {
     font-size: 3.6rem;
@@ -2272,7 +2284,6 @@ button {
 }
 
 .site-logo {
-  padding: 0 6rem;
   text-align: center;
 }
 .site-logo img {
@@ -2290,14 +2301,6 @@ button {
 
 .user-name h4 {
   margin-bottom: 0;
-}
-
-.white {
-  color: #ffffff;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 .visible-print {
