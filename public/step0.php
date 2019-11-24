@@ -20,14 +20,6 @@
   }
 ?>
 
-
-<div class="grid-wrapper one-whole">
-  <div class ="grid one-whole text-center" style="font-family: 'Bookmania'">
-    Start by Entering in your Character Name, Player name and choose your Class,
-     Background, Allignment and how you would like to choose your stats.
-  </div>
-</div>
-
 <div class="grid-wrapper one-whole centered">
   <form action="" method="post">
     Character Name: <input type="text" name="cname"><br>
@@ -98,7 +90,23 @@
 <div class="our-first-carousel">
   <div class="site-wrapper">
     <div class="grid-wrapper centered">
-      <div class="grid">
+      <div class="grid one-half message-scroll">
+        <div class="grid-wrapper align--center message-scroll-content">
+          <div class="grid three-fifths push--one-fifth message">
+            Start by Choosing in your <br>
+            <ul>
+              <li>Character Name<input type="text" name="cname"></li>
+              <li>Player name<input type="text" name="pname"></li>
+            </ul>
+            Then use the image slector on the right for your:<br>
+            <ul>
+              <li>Race</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- CAROUSEL -->
+      <div class="grid one-half">
         <div class="carousel-wrapper">
           <span id="item-1"></span>
           <span id="item-2"></span>

@@ -2189,6 +2189,18 @@ button {
   display: none;
 }
 
+.message-scroll {
+  background-image: url("../assets/images/message_scroll.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 600px;
+}
+
+.message-scroll-content {
+  height: 100%;
+}
+
 .item-1 {
   z-index: 2;
   opacity: 1;
