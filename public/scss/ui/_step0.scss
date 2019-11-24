@@ -1,0 +1,25 @@
+
+
+// carousel things
+.item-1 {
+	z-index: 2;
+	opacity: 1;
+	background-image: url('../assets/images/bard.png');
+}
+.item-2 {
+  background-image: url('../assets/images/dwarf.png');
+}
+.item-3 {
+  background-image: url('../assets/images/cleric.png');
+}
+*:target~.item-1 {
+	opacity: 0;
+}
+#item-1:target~.item-1 {
+  opacity: 1;
+}
+#item-2:target~.item-2,
+#item-3:target~.item-3 {
+	z-index: 3;
+	opacity: 1;
+}
