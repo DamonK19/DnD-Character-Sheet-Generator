@@ -1,4 +1,4 @@
-<?php require "templates/header.php"; ?>
+<?php require "templates/headernav.php"; ?>
 <?php include "templates/session.php"; ?>
 <div class="grid-lap one-half ">
 <?php
