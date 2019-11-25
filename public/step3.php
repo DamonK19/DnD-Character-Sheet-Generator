@@ -1,4 +1,4 @@
-<?php include "templates/headernav.php"; ?>
+<?php include "templates/header.php"; ?>
 <?php include "templates/session.php"; ?>
 
 <?php

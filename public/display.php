@@ -1,5 +1,6 @@
 <?php include "templates/header.php"; ?>
 
+
 <?php
   session_start();
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
