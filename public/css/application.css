@@ -2305,12 +2305,13 @@ button {
 }
 
 .header-bg {
+  position: relative;
+  z-index: 5;
   background-size: 33%;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url("../assets/images/wood-header.jpg");
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url("../assets/images/wood-header.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url("../assets/images/wall.jpg");
 }
 
-.header-title h1 {
+.header-title h2 {
   margin-top: 1rem;
 }
 

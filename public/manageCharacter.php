@@ -1,7 +1,6 @@
 <!-- EXAMPLE OF USING TEMPLATED PHP FILES -->
-<?php include "templates/header.php"; ?>
+<?php include "templates/headernav.php"; ?>
 <?php include "templates/session.php"; ?>
-
 
 <div class="manage-bg">
 	<div class="site-wrapper">
@@ -15,6 +14,4 @@
 	</div>
 </div>
 
-
-<!-- EXAMPLE OF USING TEMPLATED PHP FILES -->
 <?php include "templates/footer.php"; ?>
