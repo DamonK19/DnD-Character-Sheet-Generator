@@ -93,12 +93,12 @@
       <div class="grid one-half message-scroll">
         <div class="grid-wrapper align--center message-scroll-content">
           <div class="grid three-fifths push--one-fifth message">
-            <h2 class="cursive">Start by choosing your:<br></h2>
+            <h3 class="cursive">Start by choosing your:<br></h3>
             <ul>
               <li><h4 class="cursive">Character Name:<input type="text" name="cname"></h4></li>
               <li><h4 class="cursive">Player name:<input type="text" name="pname"></h4></li>
             </ul>
-            <h2 class="cursive">Then use the image slector on the right for your:</h2>
+            <h3 class="cursive">Then use the image slector on the right for your:</h3>
             <ul>
               <li><h4 class="cursive">Race</h4></li>
             </ul>

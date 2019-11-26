@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Function to query information based on 
+ * Function to query information based on
  * a parameter: in this case, location.
  *
  */
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
   try  {
     $connection = new PDO($dsn, $username, $password, $options);
 
-    $sql = "SELECT * 
+    $sql = "SELECT *
             FROM users
             WHERE location = :location";
 
@@ -31,8 +31,8 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <?php require "templates/header.php"; ?>
-        
-<?php  
+
+<?php
 if (isset($_POST['submit'])) {
   if ($result && $statement->rowCount() > 0) { ?>
     <h2>Results</h2>
@@ -65,8 +65,8 @@ if (isset($_POST['submit'])) {
     </table>
     <?php } else { ?>
       <blockquote>No results found for <?php echo escape($_POST['location']); ?>.</blockquote>
-    <?php } 
-} ?> 
+    <?php }
+} ?>
 
 <h2>Find user based on location</h2>
 
