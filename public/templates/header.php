@@ -19,12 +19,12 @@
 					<a href="manageCharacter.php"><img src="assets/images/dd.png" alt=""></a>
 				</div>
 				<div class="grid three-fifths text-center header-title">
-					<h2 class="white bold">DnD Character Creation Tool</h2>
+					<h2 class="bold">DnD Character Creation Tool</h2>
 				</div>
 				<div class="grid one-fifth user-content">
 					<div class="grid-wrapper user-info align--center">
 						<div class="grid one-half user-name">
-							<a href="manageCharacter.php"><h4 class="white"><?php session_start(); echo "Current User: ", $_SESSION['email'];?></h4></a>
+							<a href="manageCharacter.php"><h4 class="black"><?php session_start(); echo "Current User: ", $_SESSION['email'];?></h4></a>
 						</div>
 						<div class="grid one-half user-image">
 							<img src="assets/images/user.png" alt="">
