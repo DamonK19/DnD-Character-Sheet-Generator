@@ -13,7 +13,7 @@ foreach($_POST['spell_select'] as $selected){
  // Perform query
 
 
-   $sql = "UPDATE spell_library SET equipped = 1 WHERE spell_name = '$selected'";
+   $sql = "INSERT INTO spells (spell_name, cID) Values ('$selected','$_SESSION[cid]')";
  // $sql1 = "INSERT INTO spells ( spell_name, spell_level, spell_description, cID, equipped) VALUES ( test1 , 0 , test1 , 1 , 0 )";
    mysqli_query($con, $sql);
 

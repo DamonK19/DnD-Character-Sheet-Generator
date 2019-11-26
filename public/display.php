@@ -66,7 +66,7 @@
 
 
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
-  $resultSet = $mysqli->query("SELECT * FROM spell_library WHERE equipped = 1");
+  $resultSet = $mysqli->query("SELECT * FROM spells WHERE cID = $_SESSION[cid]");
   $row = $resultSet->fetch_assoc();
 
   echo "Spell Name: ", $row['spell_name'];
