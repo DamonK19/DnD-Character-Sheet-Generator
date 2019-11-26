@@ -120,6 +120,7 @@ CREATE TABLE spell_library(
 	class_name VARCHAR(30),
 	spell_name VARCHAR(30),
 	description VARCHAR(30),
+	equipped BIT,
 	FOREIGN KEY(class_name) REFERENCES class_name(class_name)
 );
 

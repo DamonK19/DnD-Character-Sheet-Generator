@@ -66,12 +66,12 @@
 
 
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
-  $resultSet = $mysqli->query("SELECT * FROM spells WHERE equipped = 1");
+  $resultSet = $mysqli->query("SELECT * FROM spell_library WHERE equipped = 1");
   $row = $resultSet->fetch_assoc();
 
   echo "Spell Name: ", $row['spell_name'];
   echo "<br>";
-  echo "Spell Description: ", $row['spell_description'];
+  echo "Spell Description: ", $row['description'];
   echo "<br>";
 
   $mysqli = NEW MySQLi('localhost','root','root','dnd');

@@ -11,7 +11,7 @@
   if(isset($_POST['char_submit'])){
   // Perform query
     $sql = "INSERT INTO characters(pID, character_name, player_name, race_name, background, hit_points, class_name, allignment)
-    VALUES('$_SESSION[id]', '$_POST[cname]', '$_POST[pname]', '$_POST[races]', '$_POST[backgrounds]', 1, '$_POST[classes]', '$_POST[goodVsEvil] $_POST[lawVsChaos]')";
+    VALUES('$_SESSION[id]', '$_POST[cname]', '$_POST[pname]', '$_POST[race]', '$_POST[backgrounds]', 1, '$_POST[class]', '$_POST[goodVsEvil] $_POST[lawVsChaos]')";
 
     mysqli_query($con, $sql);
 
@@ -41,12 +41,12 @@
       $resultSet = $mysqli->query("SELECT race_name FROM race")
      ?>
 
-    Race: <select name="races">
+    Race(Choose one): <br>
       <?php
         while($rows = $resultSet->fetch_assoc())
         {
           $race_name = $rows['race_name'];
-          echo "<option value='$race_name'>$race_name</option>";
+          echo "<input type='radio' name='race' id='race' value='$race_name'>$race_name</option><br>";
         }
        ?>
     </select>
@@ -56,11 +56,11 @@
     $mysqli = NEW MySQLi('localhost','root','root','dnd');
     $resultSet = $mysqli->query("SELECT class_name FROM class_name")
    ?>
-    Class: <select name="classes">
+    Class(Choose one):<br>
       <?php
         while($rows = $resultSet->fetch_assoc()){
           $class_name = $rows['class_name'];
-          echo "<option value='$class_name'>$class_name</option>";
+          echo "<input type='radio' name='class' id='race' value='$class_name'>$class_name</option><br>";
         }
        ?>
     </select>

@@ -2,7 +2,7 @@
 <?php include "templates/session.php"; ?>
 <div class="grid-lap one-half ">
 <?php
-
+session_start();
  $con=mysqli_connect("localhost","root","root","dnd");
  // Check connection
  if (mysqli_connect_errno()){
@@ -13,22 +13,30 @@ foreach($_POST['spell_select'] as $selected){
  // Perform query
 
 
-   $sql = "UPDATE spells SET equipped = 1 WHERE spell_name = '$selected'";
+   $sql = "UPDATE spell_library SET equipped = 1 WHERE spell_name = '$selected'";
  // $sql1 = "INSERT INTO spells ( spell_name, spell_level, spell_description, cID, equipped) VALUES ( test1 , 0 , test1 , 1 , 0 )";
    mysqli_query($con, $sql);
 
 
   header('Location: step6.php');
  }
-
+ 
 ?>
 
 <?php
 
     $mysqli = NEW MySQLi('localhost','root','root','dnd');
-    $resultSet = $mysqli->query("SELECT spell_name FROM spells");
-    $resultSet1 = $mysqli->query("SELECT spell_description FROM spells");
-
+    $classSet = $mysqli->query("SELECT class_name FROM characters WHERE cID = '$_SESSION[cid]'");
+    $row3 = $classSet->fetch_assoc();
+    $class = $row3['class_name'];
+    $classSet2 = $mysqli->query("SELECT cantrips FROM class_name WHERE class_name = '$class'");
+    $row4 = $classSet2->fetch_assoc();
+    $classCantrip = $row4['cantrips'];
+    $resultSet = $mysqli->query("SELECT spell_name FROM spell_library WHERE class_name = '$class'");
+    $resultSet1 = $mysqli->query("SELECT description FROM spell_library WHERE class_name = '$class'"); 
+    if($classCantrip == 0 ){
+      header('Location: step6.php');
+      } 
      ?>
 
 <form action="" method="post">
@@ -36,6 +44,7 @@ foreach($_POST['spell_select'] as $selected){
 
 
       <?php
+      echo "<br>A $class can select $classCantrip cantrips";
       $spell_description = array();
       $spell_name = array();
 
@@ -61,9 +70,6 @@ foreach($_POST['spell_select'] as $selected){
     <input type="submit" value="Submit" name="spell_submit" id="spell_submit">
 
 </form>
-<?php
-$_SESSION['test'] = $_POST['test_select'];
-?>
 </div>
 <div class="grid-lap one-third">
 <div class="grid-lap one-third">
