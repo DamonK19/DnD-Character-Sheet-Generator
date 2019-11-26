@@ -2139,7 +2139,7 @@ button {
   background-repeat: no-repeat;
   background-position: top center;
   z-index: 1;
-  height: 900px;
+  height: 700px;
   position: relative;
   text-align: center;
   margin: 0 auto;
@@ -2147,7 +2147,7 @@ button {
 
 .login-menu-content {
   position: absolute;
-  top: 35%;
+  top: 30%;
 }
 
 .carousel-wrapper {
@@ -2234,7 +2234,7 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 1;
-  height: 900px;
+  height: 700px;
   position: relative;
   text-align: center;
   margin: 0 auto;
@@ -2245,11 +2245,12 @@ button {
 }
 
 .manage-menu-content {
+  max-width: 700px;
   top: 25%;
 }
 
 .page-options {
-  bottom: 25%;
+  bottom: 30%;
 }
 
 .message-scroll {

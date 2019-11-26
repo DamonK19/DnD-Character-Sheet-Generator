@@ -5,7 +5,7 @@
 <div class="manage-bg">
 	<div class="site-wrapper">
 		<div class="grid-wrapper manage-menu">
-			<div class="grid manage-menu-content">
+			<div class="grid one-half push--one-quarter manage-menu-content">
 				<div class="grid-wrapper character-display">
 					<!-- START CHARACTER -->
 					<div class="grid character">
