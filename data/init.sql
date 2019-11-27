@@ -71,11 +71,9 @@ CREATE TABLE weapons_mod(
 
 CREATE TABLE spells
 (
-	spell_name varchar(30) NOT NULL,
-	spell_level TINYINT NOT NULL,
-	spell_description VARCHAR(2000),
-	equipped BIT NOT NULL,
-	PRIMARY KEY(spell_name)
+	spell_name VARCHAR(30) NOT NULL,
+	cID INT NOT NULL,
+	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
 CREATE TABLE stats(
