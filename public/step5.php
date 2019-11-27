@@ -2,25 +2,21 @@
 <?php include "templates/session.php"; ?>
 <div class="grid-lap one-half ">
 <?php
-session_start();
+
  $con=mysqli_connect("localhost","root","root","dnd");
  // Check connection
  if (mysqli_connect_errno()){
    echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
-
-foreach($_POST['spell_select'] as $selected){
- // Perform query
-
-
-   $sql = "INSERT INTO spells (spell_name, cID) Values ('$selected','$_SESSION[cid]')";
- // $sql1 = "INSERT INTO spells ( spell_name, spell_level, spell_description, cID, equipped) VALUES ( test1 , 0 , test1 , 1 , 0 )";
-   mysqli_query($con, $sql);
-
-
-  header('Location: step6.php');
- }
- 
+ if(isset($_POST['spell_submit'])){
+    foreach($_POST['spell_select'] as $selected){
+      // Perform query
+      $sql = "INSERT INTO spells (spell_name, cID) Values ('$selected','$_SESSION[cid]')";
+      // $sql1 = "INSERT INTO spells ( spell_name, spell_level, spell_description, cID, equipped) VALUES ( test1 , 0 , test1 , 1 , 0 )";
+      mysqli_query($con, $sql);
+      header('Location: step6.php');
+    }
+  }
 ?>
 
 <?php
@@ -33,10 +29,10 @@ foreach($_POST['spell_select'] as $selected){
     $row4 = $classSet2->fetch_assoc();
     $classCantrip = $row4['cantrips'];
     $resultSet = $mysqli->query("SELECT spell_name FROM spell_library WHERE class_name = '$class'");
-    $resultSet1 = $mysqli->query("SELECT description FROM spell_library WHERE class_name = '$class'"); 
+    $resultSet1 = $mysqli->query("SELECT description FROM spell_library WHERE class_name = '$class'");
     if($classCantrip == 0 ){
       header('Location: step6.php');
-      } 
+      }
      ?>
 
 <form action="" method="post">
@@ -50,7 +46,7 @@ foreach($_POST['spell_select'] as $selected){
 
       while($rows1 = $resultSet1->fetch_assoc())
       {
-       array_push($spell_description,$rows1['spell_description']);
+       array_push($spell_description, $rows1['description']);
       }
       while($rows = $resultSet->fetch_assoc())
       {
