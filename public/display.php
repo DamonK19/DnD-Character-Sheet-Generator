@@ -75,11 +75,12 @@
   echo "<br>";
 
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
-  $resultSet = $mysqli->query("SELECT * FROM equipment WHERE equipped = 1");
-  $row = $resultSet->fetch_assoc();
+  $resultSet = $mysqli->query("SELECT * FROM character_equipment WHERE cID = '$_SESSION[cid]'");
 
-  echo "Equipment Name: ", $row['equipment_name'];
-
+  echo "Equipment Name: <br>";
+  while($row = $resultSet->fetch_assoc()){
+    echo $row['equipment_name'], "<br>";
+  }
 
 
  ?>
