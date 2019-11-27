@@ -14,7 +14,7 @@ if (isset($_POST['stat_submit'])) {
   try  {
 		// Query...
 		$sql = "INSERT INTO stats(cID, strength, dexterity, constitution, intelligence, wisdom, charisma)
-		VALUES ('1', '$_POST[strength]', '$_POST[dexterity]', '$_POST[constitution]', '$_POST[intelligence]', '$_POST[wisdom]', '$_POST[charisma]')";
+		VALUES ('$_SESSION[cid]', '$_POST[strength]', '$_POST[dexterity]', '$_POST[constitution]', '$_POST[intelligence]', '$_POST[wisdom]', '$_POST[charisma]')";
 
 		// Execution...
 		mysqli_query($con, $sql);
