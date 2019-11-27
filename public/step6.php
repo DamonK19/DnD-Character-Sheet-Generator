@@ -122,7 +122,7 @@ while($rows = $resultSet->fetch_assoc()) {
 			else {
 				$mysqli->query("INSERT INTO character_equipment(cID, equipment_name)
 				VALUES('$_SESSION[cid]', $value)");
-
+				header('Location: display.php');
 			}
 		}
 
