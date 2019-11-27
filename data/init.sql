@@ -25,11 +25,11 @@ CREATE TABLE characters
 	FOREIGN KEY(pID) REFERENCES users(id)
 );
 
-CREATE TABLE equipment
+CREATE TABLE character_equipment
 (
+	cID INT NOT NULL,
 	equipment_name varchar(30) NOT NULL,
-	equipped BIT,
-	PRIMARY KEY(equipment_name)
+	FOREIGN KEY(cID) REFERENCES characters(cID)
 );
 
 CREATE TABLE armor(
