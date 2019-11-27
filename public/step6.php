@@ -102,29 +102,35 @@ while($rows = $resultSet->fetch_assoc()) {
 		$_SESSION['c_e'] = $c_array;
 		$_SESSION['b_e'] = $b_array;
 
+		//go to step 6.5 or insert equipment into database(background equipment)
+		foreach ($b_array as $key => $value) {
+
+			if(strstr($value, "Artisan") || strstr($value, "Musical")){
+				header('Location: step6_5.php');
+				exit;
+			}
+			else {
+				$mysqli->query("INSERT INTO character_equipment(cID, equipment_name)
+				VALUES('$_SESSION[cid]', '$value')");
+
+			}
+		}
+
 		//go to step 6.5 or insert equipment into database(class equipment)
 		foreach ($c_array as $key => $value) {
 
-			if(strstr(strval($value), 'Simple') !== false or strstr(strval($value), 'Martial') !== false or strstr(strval($value), 'Musical') !== false){
+			if(strstr($value, "Simple") || strstr($value, "Martial") || strstr($value, "Musical")){
 				header('Location: step6_5.php');
+				exit;
 			}
 			else {
 				$mysqli->query("INSERT INTO character_equipment(cID, equipment_name)
-				VALUES('$_SESSION[cid]', $value)");
-			}
-		}
-
-		//go to step 6.5 or insert equipment into database(background equipment)
-		foreach ($b_array as $key => $value) {
-			if(strstr(strval($value), "Artisan") !== false || strstr(strval($value), "Musical") !== false){
-				header('Location: step6_5.php');
-			}
-			else {
-				$mysqli->query("INSERT INTO character_equipment(cID, equipment_name)
-				VALUES('$_SESSION[cid]', $value)");
+				VALUES('$_SESSION[cid]', '$value')");
 				header('Location: display.php');
 			}
 		}
+
+
 
 
 	}
