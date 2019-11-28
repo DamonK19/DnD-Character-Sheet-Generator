@@ -12,6 +12,7 @@
 						<div class="grid-wrapper characer-options-container">
 							<div class="grid one-fifth push--one-fifth character-name">
 								<h4>Character1</h4>
+								
 							</div>
 							<div class="grid one-fifth character-update">
 								<div class="btn">
