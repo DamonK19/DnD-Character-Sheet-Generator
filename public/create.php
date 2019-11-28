@@ -48,16 +48,48 @@ if (isset($_POST['submit'])) {
     <blockquote><?php echo $_POST['email']; ?> successfully added.</blockquote>
   <?php endif; ?> -->
 
-  <h2>Add a user</h2>
+  <!-- <h2>Add a user</h2> -->
 
+
+<!--
   <form method="post">
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email">
-    <label for="password">Password</label>
-    <input type="text" name="password" id="password">
-    <input type="submit" name="submit" value="Submit">
-  </form>
+  <label for="email">Email</label>
+  <input type="text" name="email" id="email">
+  <label for="password">Password</label>
+  <input type="text" name="password" id="password">
+  <input type="submit" name="submit" value="Submit">
+  </form> -->
 
-  <a href="index.php">Back to home</a>
+  <div class="login-bg">
+    <div class="site-wrapper">
+      <div class="grid-wrapper login-menu ">
+        <div class="grid login-menu-content">
+          <h2>Sign Up</h2>
+          <form method="post">
+            <!-- Email -->
+            <div>
+              <!-- <label for="email">Email</label> -->
+              <input type="text" name="email" id="email" placeholder="Enter your Email" required>
+            </div>
+            <!-- password -->
+            <div>
+              <!-- <label for="password">Password</label> -->
+              <input type="text" name="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <!-- submit -->
+            <div>
+            <input type="submit" name="submit" value="Submit">
+            </div>
+            <div class="">
+              <a href="index.php">Back to Home</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <a href="index.php">Back to home</a> -->
 
 <?php require "templates/footer.php"; ?>

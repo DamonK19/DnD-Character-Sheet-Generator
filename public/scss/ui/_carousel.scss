@@ -1,0 +1,64 @@
+.carousel-wrapper {
+	height: 600px;
+	position: relative;
+	width: 100%;
+}
+
+.carousel-item {
+	position: absolute;
+	top: 10%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+	text-align: center;
+
+	.item-title {
+			top: -10%;
+			right: 0;
+			left: 0;
+			position: absolute;
+	}
+}
+
+.arrow {
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 12px;
+}
+
+.arrow-prev {
+  left: 10%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) rotate(135deg);
+}
+
+.arrow-next {
+	right: 10%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) rotate(-45deg);
+}
+
+.light {
+	color: white;
+}
+
+@media (max-width: 480px) {
+	.arrow,
+	.light .arrow {
+		background-size: 10px;
+		background-position: 10px 50%;
+	}
+}
+
+/*Select every element*/
+[id^="item"] {
+	display: none;
+}

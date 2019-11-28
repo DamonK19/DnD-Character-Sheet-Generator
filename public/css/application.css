@@ -1631,7 +1631,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Bookmainia";
   font-weight: normal;
 }
 
@@ -1652,6 +1652,22 @@ h3, .h3 {
 
 h4, .h4 {
   font-size: 0.875rem;
+}
+
+.cursive {
+  font-family: "Mr Bedfort", cursive;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.black {
+  color: #000000;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 @media screen and (min-width: 48em) {
@@ -1803,7 +1819,7 @@ input[type=checkbox]:disabled {
   box-shadow: 0 0 0 0.2rem rgba(61, 119, 62, 0.25);
 }
 
-.btn {
+.btn, input {
   display: inline-block;
   margin: 0;
   padding: 0.4em 1em;
@@ -1818,10 +1834,10 @@ input[type=checkbox]:disabled {
   background: transparent;
   cursor: pointer;
 }
-.btn, .btn:hover, .btn:focus {
+.btn, .btn:hover, .btn:focus, input, input:hover, input:focus {
   text-decoration: none;
 }
-.btn.disabled, .btn[disabled] {
+.btn.disabled, .btn[disabled], input.disabled, input[disabled] {
   cursor: not-allowed;
   opacity: 0.65;
 }
@@ -2026,7 +2042,7 @@ button {
 
 .button-home-container {
   text-align: center;
-  margin: 40% auto 0;
+  margin: 30% auto 0;
   width: auto;
 }
 
@@ -2100,6 +2116,240 @@ button {
 
 .btn-home-mix-nb::before, .btn-home-mix-nb::after {
   content: none;
+}
+
+.login-bg {
+  background-image: url("../assets/images/login.jpg");
+  display: block;
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.login-menu {
+  background-image: url("../assets/images/loginbg.png");
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: 1;
+  height: 700px;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.login-menu-content {
+  position: absolute;
+  top: 30%;
+}
+
+.carousel-wrapper {
+  height: 600px;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  text-align: center;
+}
+.carousel-item .item-title {
+  top: -10%;
+  right: 0;
+  left: 0;
+  position: absolute;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+}
+
+.arrow-prev {
+  left: 10%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.arrow-next {
+  right: 10%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.light {
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .arrow,
+.light .arrow {
+    background-size: 10px;
+    background-position: 10px 50%;
+  }
+}
+/*Select every element*/
+[id^=item] {
+  display: none;
+}
+
+.manage-bg {
+  background-image: url("../assets/images/managechar.jpg");
+  display: block;
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.manage-menu {
+  background-image: url("../assets/images/loginbg.png");
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  height: 700px;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.manage-menu-content, .page-options {
+  position: absolute;
+}
+
+.manage-menu-content {
+  max-width: 700px;
+  top: 25%;
+}
+
+.page-options {
+  bottom: 30%;
+}
+
+.message-scroll {
+  background-image: url("../assets/images/message_scroll.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 600px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.message-scroll-content {
+  height: 100%;
+}
+
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background-image: url("../assets/images/dragonborn.png");
+}
+
+.item-2 {
+  background-image: url("../assets/images/dwarf.png");
+}
+
+.item-3 {
+  background-image: url("../assets/images/elf.png");
+}
+
+.item-4 {
+  background-image: url("../assets/images/gnome.png");
+}
+
+.item-5 {
+  background-image: url("../assets/images/half-orc.png");
+}
+
+.item-6 {
+  background-image: url("../assets/images/halfling.png");
+}
+
+.item-7 {
+  background-image: url("../assets/images/human.png");
+}
+
+.item-8 {
+  background-image: url("../assets/images/tiefling.png");
+}
+
+*:target ~ .item-1 {
+  opacity: 0;
+}
+
+#item-1:target ~ .item-1 {
+  opacity: 1;
+}
+
+#item-2:target ~ .item-2,
+#item-3:target ~ .item-3,
+#item-4:target ~ .item-4,
+#item-5:target ~ .item-5,
+#item-6:target ~ .item-6,
+#item-7:target ~ .item-7,
+#item-8:target ~ .item-8 {
+  z-index: 3;
+  opacity: 1;
+}
+
+.header-bg {
+  position: relative;
+  z-index: 5;
+  background-size: 33%;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url("../assets/images/wall.jpg");
+}
+
+.header-title h2 {
+  margin-top: 1rem;
+}
+
+.site-logo {
+  text-align: center;
+}
+.site-logo img {
+  height: auto;
+  width: 120px;
+}
+
+.user-info {
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+.user-image img {
+  width: 40px;
+}
+
+.user-name h4 {
+  margin-bottom: 0;
 }
 
 .visible-print {

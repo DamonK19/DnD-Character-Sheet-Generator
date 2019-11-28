@@ -1,0 +1,37 @@
+.manage-bg {
+  background-image: url('../assets/images/managechar.jpg');
+  display: block;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.manage-menu{
+  background-image: url('../assets/images/loginbg.png');
+  display: block;
+  background-size: contain ;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  height: 700px;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+}
+.manage-menu-content, .page-options {
+  position: absolute;
+}
+
+.manage-menu-content {
+  max-width: 700px;
+  top: 25%;
+}
+
+.page-options {
+  bottom: 30%;
+}

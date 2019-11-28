@@ -1,0 +1,30 @@
+.login-bg{
+    background-image: url('../assets/images/login.jpg');
+    display: block;
+    position: absolute;
+    top: 90px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .login-menu{
+    background-image: url('../assets/images/loginbg.png');
+    display: block;
+    background-size: contain ;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+    height: 700px;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .login-menu-content {
+    position: absolute;
+    top: 30%;
+}
