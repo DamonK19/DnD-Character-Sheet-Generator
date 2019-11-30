@@ -1630,7 +1630,8 @@ h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
-h6, .h6 {
+h6, .h6,
+p, .p {
   font-family: "Bookmainia";
   font-weight: normal;
 }
@@ -2122,7 +2123,7 @@ button {
   background-image: url("../assets/images/login.jpg");
   display: block;
   position: absolute;
-  top: 80px;
+  top: 90px;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -2137,9 +2138,8 @@ button {
   display: block;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center;
   z-index: 1;
-  height: 700px;
   position: relative;
   text-align: center;
   margin: 0 auto;
@@ -2147,7 +2147,8 @@ button {
 
 .login-menu-content {
   position: absolute;
-  top: 30%;
+  top: 35%;
+  margin: 0 auto;
 }
 
 .carousel-wrapper {
@@ -2217,7 +2218,7 @@ button {
   background-image: url("../assets/images/managechar.jpg");
   display: block;
   position: absolute;
-  top: 80px;
+  top: 90px;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -2245,12 +2246,15 @@ button {
 }
 
 .manage-menu-content {
-  max-width: 700px;
-  top: 25%;
+  top: 30%;
 }
 
 .page-options {
   bottom: 30%;
+}
+
+.message h1, .message h2, .message h3, .message h4, .message input {
+  margin-bottom: 0;
 }
 
 .message-scroll {
@@ -2344,12 +2348,47 @@ button {
   padding-bottom: 10px;
 }
 
-.user-image img {
-  width: 40px;
+.user-name {
+  position: relative;
+}
+.user-name p {
+  margin: 0;
 }
 
-.user-name h4 {
-  margin-bottom: 0;
+.user-name:before {
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: -25px;
+  top: -6px;
+  position: absolute;
+  background-image: url("../assets/images/user.png");
+  background-position: center;
+  background-size: contain;
+}
+
+.practice-bg {
+  background-color: #00FFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.container {
+  background-color: #0FFFF0;
+  position: relative;
+}
+
+.content {
+  background-color: #FFFF00;
+  width: 600px;
+  text-align: center;
+}
+
+.full-height {
+  height: 100%;
 }
 
 .visible-print {

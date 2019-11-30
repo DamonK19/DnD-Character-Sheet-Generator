@@ -28,10 +28,15 @@
 }
 
 .manage-menu-content {
-  max-width: 700px;
-  top: 25%;
+  top: 30%;
 }
 
 .page-options {
   bottom: 30%;
+}
+
+.message {
+  h1, h2, h3, h4, input {
+    margin-bottom: 0;
+  }
 }

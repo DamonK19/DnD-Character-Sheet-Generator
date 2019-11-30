@@ -3,9 +3,9 @@
 <?php include "templates/session.php"; ?>
 
 <div class="manage-bg">
-	<div class="site-wrapper">
-		<div class="grid-wrapper manage-menu">
-			<div class="grid one-half push--one-quarter manage-menu-content">
+	<div class="site-wrapper full-height">
+		<div class="grid-wrapper manage-menu full-height">
+			<div class="grid ten-twelfths push--one-twelfth manage-menu-content">
 				<div class="grid-wrapper character-display">
 					<!-- START CHARACTER -->
 					<div class="grid character">

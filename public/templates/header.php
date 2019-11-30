@@ -23,12 +23,12 @@
 				</div>
 				<div class="grid one-fifth user-content">
 					<div class="grid-wrapper user-info align--center">
-						<div class="grid one-half user-name">
-							<a href="manageCharacter.php"><h4 class="black"><?php session_start(); echo "Current User: ", $_SESSION['email'];?></h4></a>
+						<div class="grid user-name">
+							<a href="manageCharacter.php"><p class="black"><?php session_start(); echo $_SESSION['email'];?></p></a>
 						</div>
-						<div class="grid one-half user-image">
+						<!-- <div class="grid one-half user-image">
 							<img src="assets/images/user.png" alt="">
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
