@@ -16,9 +16,8 @@
     display: block;
     background-size: contain ;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center;
     z-index: 1;
-    height: 700px;
     position: relative;
     text-align: center;
     margin: 0 auto;
@@ -26,5 +25,6 @@
 
   .login-menu-content {
     position: absolute;
-    top: 30%;
+    top: 35%;
+    margin: 0 auto;
 }

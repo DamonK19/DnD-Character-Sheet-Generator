@@ -32,8 +32,8 @@ if (isset($_POST['but_submit'])) {
  -->
 
 <div class="login-bg">
-  <div class="site-wrapper">
-    <div class="grid-wrapper login-menu ">
+  <div class="site-wrapper full-height">
+    <div class="grid-wrapper login-menu full-height">
       <div class="grid login-menu-content">
         <h2>Login</h2>
         <form action="" method="post">

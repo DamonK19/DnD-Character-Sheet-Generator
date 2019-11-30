@@ -61,8 +61,8 @@ if (isset($_POST['submit'])) {
   </form> -->
 
   <div class="login-bg">
-    <div class="site-wrapper">
-      <div class="grid-wrapper login-menu ">
+    <div class="site-wrapper full-height">
+      <div class="grid-wrapper login-menu full-height">
         <div class="grid login-menu-content">
           <h2>Sign Up</h2>
           <form method="post">
@@ -78,7 +78,7 @@ if (isset($_POST['submit'])) {
             </div>
             <!-- submit -->
             <div>
-            <input type="submit" name="submit" value="Submit">
+              <input type="submit" name="submit" value="Submit">
             </div>
             <div class="">
               <a href="index.php">Back to Home</a>
