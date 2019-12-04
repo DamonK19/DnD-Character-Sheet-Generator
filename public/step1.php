@@ -20,15 +20,8 @@ if (isset($_POST['stat_submit'])) {
 	header('Location: step3.php');
 }
 ?>
-
-
-	<div class="grid-wrapper one-whole">
-		<div class="grid one-whole text-center" style="font-family: 'Bookmainia'">
-		</div>
-	</div>
-
-	<form action="" method="post">
 	<div class="step-1-background">
+	<form action="" method="post">
 		<div class="site-wrapper">
 			<!-- MESSAGE -->
 			<div class="grid-wrapper">
@@ -125,8 +118,8 @@ if (isset($_POST['stat_submit'])) {
 				</div>
 			</div>
 		</div>
-	</div>
 	</form>
+</div>
 
 
 

@@ -1,3 +1,13 @@
+.step-1-background{
+  background-image: url('../assets/images/wood.jpg');
+  display: block;
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+}
 .ability-score-block {
   height: 200px;
   background-position: center;
