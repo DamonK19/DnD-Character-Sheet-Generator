@@ -26,10 +26,7 @@ if (isset($_POST['but_submit'])) {
   }
 }
 ?>
-<!--
-
-  this should be the login page
- -->
+<!--this should be the login page-->
 
 <div class="login-bg">
   <div class="site-wrapper full-height">
@@ -57,7 +54,4 @@ if (isset($_POST['but_submit'])) {
     </div>
   </div>
 </div>
-
-
-
 <?php require "templates/footer.php"; ?>

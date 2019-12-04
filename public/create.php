@@ -88,8 +88,4 @@ if (isset($_POST['submit'])) {
       </div>
     </div>
   </div>
-
-
-  <!-- <a href="index.php">Back to home</a> -->
-
 <?php require "templates/footer.php"; ?>
