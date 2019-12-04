@@ -63,7 +63,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <?php require "templates/header.php"; ?>
-
+<?php include "templates/nav.php"; ?>
 <?php if (isset($_POST['submit']) && $statement) : ?>
 	<blockquote><?php echo escape($_POST['firstname']); ?> successfully updated.</blockquote>
 <?php endif; ?>

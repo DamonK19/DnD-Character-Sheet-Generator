@@ -43,7 +43,7 @@ try {
 }
 ?>
 <?php require "templates/header.php"; ?>
-
+<?php include "templates/nav.php"; ?>
 <h2>Delete users</h2>
 
 <?php if ($success) echo $success; ?>

@@ -21,7 +21,7 @@ try {
 }
 ?>
 <?php require "templates/header.php"; ?>
-        
+<?php include "templates/nav.php"; ?>
 <h2>Update users</h2>
 
 <table>
