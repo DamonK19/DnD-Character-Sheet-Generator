@@ -1,6 +1,5 @@
 <?php include "templates/header.php"; ?>
 <?php include "templates/nav.php"; ?>
-<?php include "templates/session.php"; ?>
 <div class="step-background">
 
 <?php

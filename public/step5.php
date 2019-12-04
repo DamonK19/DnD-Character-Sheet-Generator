@@ -1,6 +1,5 @@
 <?php require "templates/header.php"; ?>
 <?php include "templates/nav.php"; ?>
-<?php include "templates/session.php"; ?>
 <div class="step-background">
   <div class="grid-lap one-half ">
     <?php

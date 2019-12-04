@@ -1,7 +1,6 @@
 <!-- EXAMPLE OF USING TEMPLATED PHP FILES -->
 <?php include "templates/header.php"; ?>
 <?php include "templates/nav.php"; ?>
-<?php include "templates/session.php"; ?>
 <?php
 $con = mysqli_connect("localhost","root","root","dnd");
 if (mysqli_connect_errno()){

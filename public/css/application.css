@@ -1614,7 +1614,7 @@ html {
 }
 
 a {
-  color: #FFF;
+  color: #7abcb5;
   text-decoration: none;
 }
 a:hover, a:focus {
@@ -1864,6 +1864,15 @@ input[type=checkbox]:disabled {
   line-height: 1.15;
   text-transform: none;
   overflow: visible;
+}
+
+.btn:hover, .btn:visited, input[type=submit]:hover {
+  background-color: #D6A73B;
+  box-shadow: inset -6px -6px 4px 0px #5C3508;
+}
+
+.btn:active, input[type=submit]:active {
+  box-shadow: inset 4px 4px 4px 0px #5C3508;
 }
 
 .island,
