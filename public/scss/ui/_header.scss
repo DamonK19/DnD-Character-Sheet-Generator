@@ -45,3 +45,14 @@
   background-position: center;
   background-size: contain;
 }
+.user-name:after{
+
+  content: '';
+  height: 40px;
+  width: 40px;
+  left: -25px;
+  top: -6px;
+  position: absolute;
+  background-position: center;
+  background-size: contain;
+}

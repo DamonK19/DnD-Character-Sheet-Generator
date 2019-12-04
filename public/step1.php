@@ -20,7 +20,7 @@ if (isset($_POST['stat_submit'])) {
 	header('Location: step3.php');
 }
 ?>
-	<div class="step-1-background">
+	<div class="step-background">
 	<form action="" method="post">
 		<div class="site-wrapper">
 			<!-- MESSAGE -->

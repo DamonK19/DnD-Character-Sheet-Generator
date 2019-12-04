@@ -3,6 +3,8 @@
 
 <?php include "templates/session.php"; ?>
 
+<div class="step-background">
+
 <?php
 $con = NEW MySQLi("localhost","root","root","dnd");
 // Check connection
@@ -138,5 +140,5 @@ while($rows = $resultSet->fetch_assoc()) {
 	}
 
 ?>
-
+</div>
 <?php require "templates/footer.php"; ?>

@@ -14,11 +14,21 @@
                         <p class="black"><?php session_start();
                                             echo $_SESSION['email']; ?></p>
                     </a>
+
                 </div>
-                <!-- <div class="grid one-half user-image">
-							<img src="assets/images/user.png" alt="">
-						</div> -->
             </div>
+        </div>
+        <div>
+            <?php
+            if (isset($_POST['logout'])) {
+                session_unset();
+                session_destroy();
+                header('Location: index.php');
+            }
+            ?>
+            <form method="post">
+                <input type="submit" value="Logout" name="logout" id="logout">
+            </form>
         </div>
     </div>
 </div>
