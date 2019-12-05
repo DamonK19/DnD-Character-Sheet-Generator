@@ -1608,9 +1608,11 @@ button {
 }
 html {
   font: 1em/1.75 Arial, Helvetica, sans-serif;
-  color: #000000;
   background: #ffffff;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html body {
+  color: #ffffff;
 }
 
 a {
@@ -2405,17 +2407,6 @@ button {
   top: -6px;
   position: absolute;
   background-image: url("../assets/images/user.png");
-  background-position: center;
-  background-size: contain;
-}
-
-.logout {
-  content: "";
-  height: 40px;
-  width: 40px;
-  left: -25px;
-  top: -6px;
-  position: absolute;
   background-position: center;
   background-size: contain;
 }
