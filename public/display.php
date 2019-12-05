@@ -65,7 +65,6 @@
   echo "Flaw: ", $row['flaw'];
   echo "<br>";
 
-
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM spells WHERE cID = $_SESSION[cid]");
   $row = $resultSet->fetch_assoc();
@@ -82,9 +81,71 @@
   while($row = $resultSet->fetch_assoc()){
     echo $row['equipment_name'], "<br>";
   }
-
-
  ?>
+
+ <div class="character-creation-bg">
+   <div class="site-wrapper">
+     <div class="character-sheet">
+       <div class="stat display-cname">
+         Character name
+       </div>
+       <div class="stat display-pname">
+         Player name
+       </div>
+       <div class="stat display-race">
+         Race
+       </div>
+       <div class="stat display-class">
+         Class
+       </div>
+       <div class="stat display-background">
+         Background
+       </div>
+       <div class="stat display-allignment">
+         Allignment
+       </div>
+       <div class="stat display-strength">
+         Strength
+       </div>
+       <div class="stat display-dexterity">
+         Dexterity
+       </div>
+       <div class="stat display-constitution">
+         Constitution
+       </div>
+       <div class="stat display-intelligence">
+         Intelligence
+       </div>
+       <div class="stat display-wisdom">
+         Wisdom
+       </div>
+       <div class="stat display-charisma">
+         Charisma
+       </div>
+       <div class="stat display-personality">
+         Personality
+       </div>
+       <div class="stat display-ideal">
+         Ideal
+       </div>
+       <div class="stat display-bond">
+         Bond
+       </div>
+       <div class="stat display-flaw">
+         Flaw
+       </div>
+       <div class="stat display-spell-name">
+         Spell Name
+       </div>
+       <div class="stat display-spell-description">
+         Spell Description
+       </div>
+       <div class="stat display-equipment-name">
+         Equipment Name
+       </div>
+     </div>
+   </div>
+ </div>
 
  <div class="error"></div>
  <form class="url_form">

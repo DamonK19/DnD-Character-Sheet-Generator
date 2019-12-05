@@ -2230,7 +2230,6 @@ button {
 
 .manage-menu {
   background-image: url("../assets/images/loginbg.png");
-  display: block;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -2389,6 +2388,116 @@ button {
 
 .full-height {
   height: 100%;
+}
+
+.character-sheet {
+  position: relative;
+  background-image: url("../assets/images/dnd_char_sheet.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 800px;
+  width: 620px;
+  margin: 0 auto;
+}
+
+.sheet, .stat {
+  position: absolute;
+}
+
+.display-cname {
+  top: 7%;
+  left: 10%;
+}
+
+.display-pname {
+  top: 0%;
+  left: 0%;
+}
+
+.display-race {
+  top: 8%;
+  left: 54%;
+}
+
+.display-class {
+  top: 5%;
+  left: 44%;
+}
+
+.display-background {
+  top: 8%;
+  left: 67%;
+}
+
+.display-allignment {
+  top: 8%;
+  left: 44%;
+}
+
+.display-strength {
+  top: 20%;
+  left: 8%;
+}
+
+.display-dexterity {
+  top: 29%;
+  left: 8%;
+}
+
+.display-constitution {
+  top: 38%;
+  left: 8%;
+}
+
+.display-intelligence {
+  top: 47%;
+  left: 8%;
+}
+
+.display-wisdom {
+  top: 56%;
+  left: 8%;
+}
+
+.display-charisma {
+  top: 65%;
+  left: 8%;
+}
+
+.display-personality {
+  top: 0%;
+  left: 0%;
+}
+
+.display-ideal {
+  top: 0%;
+  left: 0%;
+}
+
+.display-bond {
+  top: 0%;
+  left: 0%;
+}
+
+.display-flaw {
+  top: 0%;
+  left: 0%;
+}
+
+.display-spell-name {
+  top: 0%;
+  left: 0%;
+}
+
+.display-spell-description {
+  top: 0%;
+  left: 0%;
+}
+
+.display-equipment-name {
+  top: 75%;
+  left: 38%;
 }
 
 .visible-print {
