@@ -3,7 +3,6 @@
 <div class="step-background">
 
 <?php
-
 	$mysqli = NEW mysqli('localhost','root','root', 'dnd');
 	//get background name of character
 	$resultSet = $mysqli->query("SELECT background FROM characters WHERE cID = '$_SESSION[cid]'");
@@ -64,5 +63,66 @@
 	}
  ?>
 
-</div>
+
+ <div class="">
+ 	<div class="site-wrapper full-height">
+ 		<div class="grid-wrapper manage-menu full-height">
+ 			<div class="grid ten-twelfths push--one-twelfth manage-menu-content">
+ 				<div class="grid-wrapper character-display">
+ 					<!-- START CHARACTER -->
+ 					<div class="grid character">
+ 						<div class="grid-wrapper characer-options-container">
+ 							<div class="grid one-quarter push--one-quarter character-name">
+ 								<h4>$class_skill</h4>
+ 							</div>
+ 							<div class="grid one-quarter character-delete">
+								<input type='checkbox' name='skill[]' id='skill' value='$class_skill'>$class_skill</option>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- END CHARACTER -->
+ 					<!-- START CHARACTER -->
+ 					<div class="grid character">
+ 						<div class="grid-wrapper characer-options-container">
+ 							<div class="grid one-quarter push--one-quarter character-name">
+ 								<h4>$class_skill</h4>
+ 							</div>
+ 							<div class="grid one-quarter character-delete">
+								<input type='checkbox' name='skill[]' id='skill' value='$class_skill'>$class_skill</option>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- END CHARACTER -->
+ 					<!-- START CHARACTER -->
+ 					<div class="grid character">
+ 						<div class="grid-wrapper characer-options-container">
+ 							<div class="grid one-quarter push--one-quarter character-name">
+ 								<h4>$class_skill</h4>
+ 							</div>
+ 							<div class="grid one-quarter character-delete">
+								<input type='checkbox' name='skill[]' id='skill' value='$class_skill'>$class_skill</option>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- END CHARACTER -->
+ 					<!-- START CHARACTER -->
+ 					<div class="grid character">
+ 						<div class="grid-wrapper characer-options-container">
+ 							<div class="grid one-quarter push--one-quarter character-name">
+ 								<h4>$class_skill</h4>
+ 							</div>
+ 							<div class="grid one-quarter character-delete">
+								<input type='checkbox' name='skill[]' id='skill' value='$class_skill'>$class_skill</option>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- END CHARACTER -->
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+
+
+
 <?php include "templates/footer.php"; ?>
