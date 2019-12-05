@@ -1843,38 +1843,35 @@ input[type=checkbox]:disabled {
   opacity: 0.65;
 }
 
-.btn, input[type=submit] {
+/* .btn, input[type=submit]{
   border-radius: 10px;
-  border: 4px solid black;
-  box-sizing: content-box;
-  z-index: 10000;
-  color: #FFF;
-  background-color: #DD0502;
-  box-shadow: inset -4px -4px 4px 0px #4D030B;
-  position: relative;
-  display: inline-block;
-  padding: 10px 12px;
-  margin: 4px;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  user-select: none;
-  font-family: "Press Start 2P", cursive;
-  font-size: 100%;
-  line-height: 1.15;
-  text-transform: none;
-  overflow: visible;
+    border: 4px solid black;
+    box-sizing: content-box;
+    z-index: 10000;
+    color: #FFF;
+    background-color: #DD0502;
+    box-shadow: inset -4px -4px 4px 0px #4D030B;
+    position: relative;
+    display: inline-block;
+    padding: 10px 12px;
+    margin: 4px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    font-family: "Press Start 2P", cursive;
+    font-size: 100%;
+    line-height: 1.15;
+    text-transform: none;
+    overflow: visible;
 }
-
-.btn:hover, .btn:visited, input[type=submit]:hover {
+.btn:hover, .btn:visited, input[type=submit]:hover{
   background-color: #D6A73B;
   box-shadow: inset -6px -6px 4px 0px #5C3508;
 }
-
-.btn:active, input[type=submit]:active {
-  box-shadow: inset 4px 4px 4px 0px #5C3508;
-}
-
+.btn:active, input[type=submit]:active{
+    box-shadow: inset 4px 4px 4px 0px #5C3508;
+} */
 .island,
 .islet,
 .landmark,
