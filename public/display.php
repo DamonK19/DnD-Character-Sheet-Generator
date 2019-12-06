@@ -135,7 +135,30 @@
        <div class="stat display-dexterity-saving">
 
        </div>
+       <div class="stat display-constitution-saving-select">
 
+       </div>
+       <div class="stat display-consitution-saving">
+
+       </div>
+       <div class="stat display-intelligence-saving-select">
+
+       </div>
+       <div class="stat display-intelligence-saving">
+
+       </div>
+       <div class="stat display-wisdom-saving-select">
+
+       </div>
+       <div class="stat display-wisdom-saving">
+
+       </div>
+       <div class="stat display-charisma-saving-select">
+
+       </div>
+       <div class="stat display-charisma-saving">
+
+       </div>
 
 
 
