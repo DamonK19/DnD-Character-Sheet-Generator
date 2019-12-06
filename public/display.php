@@ -34,6 +34,17 @@
   $chr_mod = ($charisma - 10)/2;
   $prof_bonus = 2;
 
+  //saving throws
+  $resultSet = $mysqli->query("SELECT * FROM race_mod WHERE race = $race");
+  $row = $resultSet->fetch_assoc();
+
+  $str_race_mod = $row['race_str_mod'];
+  $dex_race_mod = $row['race_dex_mod'];
+  $con_race_mod = $row['race_con_mod'];
+  $int_race_mod = $row['race_int_mod'];
+  $wis_race_mod = $row['race_wis_mod'];
+  $chr_race_mod = $row['race_chr_mod'];
+
   //characteristics
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM characteristics WHERE cID = $_SESSION[cid]");
@@ -44,7 +55,7 @@
   $bond = $row['bond'];
   $flaw = $row['flaw'];
 
-
+  //spells
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM spells WHERE cID = $_SESSION[cid]");
   $row = $resultSet->fetch_assoc();
@@ -132,40 +143,106 @@
 
        <!--character saving throws-->
        <div class="stat display-strength-saving-select">
-
+         <?php
+            if($str_race_mod !=0){
+              echo "&#8226;";
+            }
+          ?>
        </div>
        <div class="stat display-strength-saving">
-
+         <?php
+            if($str_race_mod !=0){
+              echo "+", $str_mod + $prof_bonus;
+            }
+            else {
+              echo "+", $str_mod;
+            }
+          ?>
        </div>
        <div class="stat display-dexterity-saving-select">
-
+         <?php
+            if($dex_race_mod !=0){
+              echo "&#8226;";
+            }
+          ?>
        </div>
        <div class="stat display-dexterity-saving">
-
+         <?php
+            if($dex_race_mod !=0){
+              echo "+", $dex_mod + $prof_bonus;
+            }
+            else {
+              echo "+", $dex_mod;
+            }
+          ?>
        </div>
        <div class="stat display-constitution-saving-select">
-
+         <?php
+            if($con_race_mod !=0){
+              echo "&#8226;";
+            }
+          ?>
        </div>
        <div class="stat display-consitution-saving">
-
+         <?php
+            if($con_race_mod !=0){
+              echo "+", $con_mod + $prof_bonus;
+            }
+            else {
+              echo "+", $con_mod;
+            }
+          ?>
        </div>
        <div class="stat display-intelligence-saving-select">
-
+         <?php
+            if($int_race_mod !=0){
+              echo "&#8226;";
+            }
+          ?>
        </div>
        <div class="stat display-intelligence-saving">
-
+         <?php
+            if($int_race_mod !=0){
+              echo "+", $int_mod + $prof_bonus;
+            }
+            else {
+              echo "+", $int_mod;
+            }
+          ?>
        </div>
        <div class="stat display-wisdom-saving-select">
-
+         <?php
+            if($wis_race_mod !=0){
+              echo "&#8226;";
+            }
+          ?>
        </div>
        <div class="stat display-wisdom-saving">
-
+         <?php
+            if($wis_race_mod !=0){
+              echo "+", $wis_mod + $prof_bonus;
+            }
+            else {
+              echo "+", $wis_mod;
+            }
+          ?>
        </div>
        <div class="stat display-charisma-saving-select">
-
+         <?php
+            if($chr_race_mod !=0){
+              echo "&#8226;";
+            }
+          ?>
        </div>
        <div class="stat display-charisma-saving">
-
+         <?php 
+            if($chr_race_mod !=0){
+              echo "+", $chr_mod + $prof_bonus;
+            }
+            else {
+              echo "+", $chr_mod;
+            }
+          ?>
        </div>
 
 
