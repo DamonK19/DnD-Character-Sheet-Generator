@@ -2,9 +2,9 @@
 <?php include "templates/nav.php"; ?>
 
 <?php
-  session_start();
+
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
-  $resultSet = $mysqli->query("SELECT * FROM characters WHERE cID = $_SESSION[cid]");
+  $resultSet = $mysqli->query("SELECT * FROM characters WHERE cID = '$_SESSION[cid]'");
   $row = $resultSet->fetch_assoc();
   //character attributes
   $character_name = $row['character_name'];
@@ -17,7 +17,7 @@
   //stats
 
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
-  $resultSet = $mysqli->query("SELECT * FROM stats WHERE cID = $_SESSION[cid]");
+  $resultSet = $mysqli->query("SELECT * FROM stats WHERE cID = '$_SESSION[cid]'");
   $row = $resultSet->fetch_assoc();
 
   $strength = $row['strength'];
@@ -35,7 +35,7 @@
   $prof_bonus = 2;
 
   //saving throws
-  $resultSet = $mysqli->query("SELECT * FROM race_mod WHERE race = $race");
+  $resultSet = $mysqli->query("SELECT * FROM race_mod WHERE race_name = '$race'");
   $row = $resultSet->fetch_assoc();
 
   $str_race_mod = $row['race_str_mod'];
@@ -45,9 +45,16 @@
   $wis_race_mod = $row['race_wis_mod'];
   $chr_race_mod = $row['race_chr_mod'];
 
+  //character skills
+  $resultSet = $mysqli->query("SELECT * FROM skills WHERE cID = '$_SESSION[cid]'");
+  $skills = array();
+  while($rows = $resultSet->fetch_assoc()){
+    array_push($skills, $rows['skill_name']);
+  }
+
   //characteristics
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
-  $resultSet = $mysqli->query("SELECT * FROM characteristics WHERE cID = $_SESSION[cid]");
+  $resultSet = $mysqli->query("SELECT * FROM characteristics WHERE cID = '$_SESSION[cid]'");
   $row = $resultSet->fetch_assoc();
 
   $personality = $row['personality'];
@@ -56,14 +63,7 @@
   $flaw = $row['flaw'];
 
   //spells
-  $mysqli = NEW MySQLi('localhost','root','root','dnd');
-  $resultSet = $mysqli->query("SELECT * FROM spells WHERE cID = $_SESSION[cid]");
-  $row = $resultSet->fetch_assoc();
 
-  echo "Spell Name: ", $row['spell_name'];
-  echo "<br>";
-  echo "Spell Description: ", $row['description'];
-  echo "<br>";
 
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM character_equipment WHERE cID = '$_SESSION[cid]'");
@@ -102,37 +102,37 @@
          <?php echo $strength ?>
        </div>
        <div class="stat display-strength-mod">
-         <?php echo $str_mod ?>
+         <?php echo "+", $str_mod ?>
        </div>
        <div class="stat display-dexterity">
          <?php echo $dexterity ?>
        </div>
        <div class="stat display-dexterity-mod">
-         <?php echo $dex_mod ?>
+         <?php echo "+", $dex_mod ?>
        </div>
        <div class="stat display-constitution">
          <?php echo $constitution ?>
        </div>
        <div class="stat display-constitution-mod">
-         <?php echo $con_mod ?>
+         <?php echo "+", $con_mod ?>
        </div>
        <div class="stat display-intelligence">
          <?php echo $intelligence ?>
        </div>
        <div class="stat display-intelligence-mod">
-        <?php echo $int_mod ?>
+        <?php echo "+", $int_mod ?>
        </div>
        <div class="stat display-wisdom">
          <?php echo $wisdom ?>
        </div>
        <div class="stat display-wisdom-mod">
-         <?php echo $wis_mod ?>
+         <?php echo "+", $wis_mod ?>
        </div>
        <div class="stat display-charisma">
          <?php echo $charisma ?>
        </div>
        <div class="stat display-charisma-mod">
-         <?php echo $chr_mod ?>
+         <?php echo "+", $chr_mod ?>
        </div>
        <div class="stat display-passive-wisdom">
          <?php echo 10 + $wis_mod ?>
@@ -235,7 +235,7 @@
           ?>
        </div>
        <div class="stat display-charisma-saving">
-         <?php 
+         <?php
             if($chr_race_mod !=0){
               echo "+", $chr_mod + $prof_bonus;
             }
@@ -245,116 +245,194 @@
           ?>
        </div>
 
-
-
        <!--character skills-->
        <div class="stat display-acrobatics-skill">
+         <?php
+          if(in_array("acrobatics", $skills)){
+            echo $dex_mod + $prof_bonus;
+          }
+          else {
+            echo $dex_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-acrobatics-skill-select">
-
+         <?php
+          if(in_array("Acrobatics", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-animal-handling-skill">
 
        </div>
        <div class="stat display-animal-handling-skill-select">
-
+         <?php
+          if(in_array("Animal Handling", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-arcana-skill">
 
        </div>
        <div class="stat display-arcana-skill-select">
-
+         <?php
+          if(in_array("Arcana", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-athletics-skill">
 
        </div>
        <div class="stat display-athletics-skill-select">
-
+         <?php
+          if(in_array("Athletics", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-deception-skill">
 
        </div>
        <div class="stat display-deception-skill-select">
-
+         <?php
+          if(in_array("Deception", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-history-skill">
 
        </div>
        <div class="stat display-history-skill-select">
-
+         <?php
+          if(in_array("History", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-insight-skill">
 
        </div>
        <div class="stat display-insight-skill-select">
-
+         <?php
+          if(in_array("Insight", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-intimidation-skill">
 
        </div>
        <div class="stat display-intimidation-skill-select">
-
+         <?php
+          if(in_array("Intimidation", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-investigation-skill">
 
        </div>
        <div class="stat display-investigation-skill-select">
-
+         <?php
+          if(in_array("Investigation", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-medicine-skill">
 
        </div>
        <div class="stat display-medicine-skill-select">
-
+         <?php
+          if(in_array("Medicine", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-nature-skill">
 
        </div>
        <div class="stat display-nature-skill-select">
-
+         <?php
+          if(in_array("Nature", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-perception-skill">
 
        </div>
        <div class="stat display-perception-skill-select">
-
+         <?php
+          if(in_array("Perception", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-persuassion-skill">
 
        </div>
        <div class="stat display-persuassion-skill-select">
-
+         <?php
+          if(in_array("Persuassion", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-performance-skill">
 
        </div>
        <div class="stat display-performance-skill-select">
-
+         <?php
+          if(in_array("Performance", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-religion-skill">
 
        </div>
        <div class="stat display-religion-skill-select">
-
+         <?php
+          if(in_array("Religion", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-sleight-of-hand-skill">
 
        </div>
        <div class="stat display-sleight-of-hand-skill-select">
-
+         <?php
+          if(in_array("Sleight of Hand", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-stealth-skill">
 
        </div>
        <div class="stat display-stealth-skill-select">
-
+         <?php
+          if(in_array("Stealth", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
        <div class="stat display-survival-skill">
 
        </div>
        <div class="stat display-survival-skill-select">
-
+         <?php
+          if(in_array("Survival", $skills)){
+            echo "&#8226;";
+          }
+          ?>
        </div>
 
        <!--character characteristics-->
