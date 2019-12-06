@@ -1822,29 +1822,78 @@ input[type=checkbox]:disabled {
   box-shadow: 0 0 0 0.2rem rgba(61, 119, 62, 0.25);
 }
 
-.btn, input {
+input[type=radio] {
+  -webkit-appearance: none;
+  /* remove default */
+  display: block;
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  vertical-align: middle;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px, inset rgba(0, 0, 0, 0.5) 0 0 0 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: -webkit-radial-gradient(#cceeff 0%, #66ccff 15%, rgba(51, 187, 255, 0.3) 28%, rgba(0, 102, 153, 0) 70%);
+  background-repeat: no-repeat;
+  -webkit-transition: background-position 0.15s cubic-bezier(0.8, 0, 1, 1), -webkit-transform 0.25s cubic-bezier(0.8, 0, 1, 1);
+  outline: none;
+}
+
+input[type=radio]:checked {
+  -webkit-transition: background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+}
+
+input:active {
+  -webkit-transform: scale(1.5);
+  -webkit-transition: -webkit-transform 0.1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* The up/down direction logic */
+input[type=radio],
+input[type=radio]:active {
+  background-position: 0 24px;
+}
+
+input[type=radio]:checked {
+  background-position: 0 0;
+}
+
+input[type=radio]:checked ~ input[type=radio],
+input[type=radio]:checked ~ input[type=radio]:active {
+  background-position: 0 -24px;
+}
+
+/* 
+.btn,
+input {
   display: inline-block;
   margin: 0;
   padding: 0.4em 1em;
-  color: #7abcb5;
+  color: $primary;
   font-size: 1rem;
   line-height: 1.6em;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
-  border: 1px solid #999999;
+  border: 1px solid $gray;
   border-radius: 0;
   background: transparent;
   cursor: pointer;
-}
-.btn, .btn:hover, .btn:focus, input, input:hover, input:focus {
-  text-decoration: none;
-}
-.btn.disabled, .btn[disabled], input.disabled, input[disabled] {
-  cursor: not-allowed;
-  opacity: 0.65;
-}
 
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+}
+ */
 /* .btn, input[type=submit]{
   border-radius: 10px;
     border: 4px solid black;
@@ -1874,6 +1923,65 @@ input[type=checkbox]:disabled {
 .btn:active, input[type=submit]:active{
     box-shadow: inset 4px 4px 4px 0px #5C3508;
 } */
+/* Base page styles */
+/* Base Button Style */
+.btn,
+input[type=submit] {
+  display: inline-block;
+  margin: 0;
+  padding: 0.4em 1em;
+  position: relative;
+  line-height: 1.6em;
+  background-color: #ffdd9f;
+  border: 1px solid #f7d391;
+  color: #000;
+  text-align: center;
+  transform-style: flat;
+  transition: all 250ms ease-out;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+  border-color: #ecc272;
+}
+.btn:before, .btn:after,
+input[type=submit]:before,
+input[type=submit]:after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  transition: all 250ms ease-out;
+  bottom: 12px;
+  width: 50%;
+  height: 55%;
+  max-width: 200px;
+  max-height: 100px;
+  box-shadow: 1px 8px 12px rgba(31, 31, 31, 0.6);
+}
+.btn:before,
+input[type=submit]:before {
+  left: 10px;
+}
+.btn:after,
+input[type=submit]:after {
+  right: 10px;
+}
+.btn:hover:before, .btn:hover:after,
+input[type=submit]:hover:before,
+input[type=submit]:hover:after {
+  box-shadow: 1px 8px 12px rgba(31, 31, 31, 0.8);
+}
+.btn:hover:before,
+input[type=submit]:hover:before {
+  transform: skew(-8deg) rotate(-3deg);
+  display: none;
+}
+.btn:hover:after,
+input[type=submit]:hover:after {
+  transform: skew(8deg) rotate(3deg);
+}
+.btn:hover,
+input[type=submit]:hover {
+  border-radius: 0 0 40% 0/0 0 30% 0;
+}
+
 .island,
 .islet,
 .landmark,
