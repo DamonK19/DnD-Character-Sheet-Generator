@@ -248,7 +248,7 @@
        <!--character skills-->
        <div class="stat display-acrobatics-skill">
          <?php
-          if(in_array("acrobatics", $skills)){
+          if(in_array("Acrobatics", $skills)){
             echo $dex_mod + $prof_bonus;
           }
           else {
@@ -265,7 +265,15 @@
           ?>
        </div>
        <div class="stat display-animal-handling-skill">
+         <?php
+          if(in_array("Animal Handling", $skills)){
+            echo $wis_mod + $prof_bonus;
+          }
+          else {
+            echo $wis_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-animal-handling-skill-select">
          <?php
@@ -275,7 +283,15 @@
           ?>
        </div>
        <div class="stat display-arcana-skill">
+         <?php
+          if(in_array("Arcana", $skills)){
+            echo $int_mod + $prof_bonus;
+          }
+          else {
+            echo $int_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-arcana-skill-select">
          <?php
@@ -285,7 +301,15 @@
           ?>
        </div>
        <div class="stat display-athletics-skill">
+         <?php
+          if(in_array("Athletics", $skills)){
+            echo $str_mod + $prof_bonus;
+          }
+          else {
+            echo $str_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-athletics-skill-select">
          <?php
@@ -295,7 +319,15 @@
           ?>
        </div>
        <div class="stat display-deception-skill">
+         <?php
+          if(in_array("Deception", $skills)){
+            echo $chr_mod + $prof_bonus;
+          }
+          else {
+            echo $chr_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-deception-skill-select">
          <?php
@@ -305,7 +337,15 @@
           ?>
        </div>
        <div class="stat display-history-skill">
+         <?php
+          if(in_array("History", $skills)){
+            echo $int_mod + $prof_bonus;
+          }
+          else {
+            echo $int_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-history-skill-select">
          <?php
@@ -315,7 +355,15 @@
           ?>
        </div>
        <div class="stat display-insight-skill">
+         <?php
+          if(in_array("Insight", $skills)){
+            echo $wis_mod + $prof_bonus;
+          }
+          else {
+            echo $wis_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-insight-skill-select">
          <?php
@@ -325,7 +373,15 @@
           ?>
        </div>
        <div class="stat display-intimidation-skill">
+         <?php
+          if(in_array("Intimidation", $skills)){
+            echo $chr_mod + $prof_bonus;
+          }
+          else {
+            echo $chr_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-intimidation-skill-select">
          <?php
@@ -335,7 +391,15 @@
           ?>
        </div>
        <div class="stat display-investigation-skill">
+         <?php
+          if(in_array("Investigation", $skills)){
+            echo $chr_mod + $prof_bonus;
+          }
+          else {
+            echo $chr_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-investigation-skill-select">
          <?php
@@ -345,7 +409,15 @@
           ?>
        </div>
        <div class="stat display-medicine-skill">
+         <?php
+          if(in_array("Medicine", $skills)){
+            echo $wis_mod + $prof_bonus;
+          }
+          else {
+            echo $wis_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-medicine-skill-select">
          <?php
@@ -355,7 +427,15 @@
           ?>
        </div>
        <div class="stat display-nature-skill">
+         <?php
+          if(in_array("Nature", $skills)){
+            echo $int_mod + $prof_bonus;
+          }
+          else {
+            echo $int_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-nature-skill-select">
          <?php
@@ -365,7 +445,15 @@
           ?>
        </div>
        <div class="stat display-perception-skill">
+         <?php
+          if(in_array("Perception", $skills)){
+            echo $wis_mod + $prof_bonus;
+          }
+          else {
+            echo $wis_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-perception-skill-select">
          <?php
@@ -375,7 +463,15 @@
           ?>
        </div>
        <div class="stat display-persuassion-skill">
+         <?php
+          if(in_array("Persuassion", $skills)){
+            echo $chr_mod + $prof_bonus;
+          }
+          else {
+            echo $chr_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-persuassion-skill-select">
          <?php
@@ -385,7 +481,15 @@
           ?>
        </div>
        <div class="stat display-performance-skill">
+         <?php
+          if(in_array("Performance", $skills)){
+            echo $chr_mod + $prof_bonus;
+          }
+          else {
+            echo $chr_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-performance-skill-select">
          <?php
@@ -395,7 +499,15 @@
           ?>
        </div>
        <div class="stat display-religion-skill">
+         <?php
+          if(in_array("Religion", $skills)){
+            echo $int_mod + $prof_bonus;
+          }
+          else {
+            echo $int_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-religion-skill-select">
          <?php
@@ -405,7 +517,15 @@
           ?>
        </div>
        <div class="stat display-sleight-of-hand-skill">
+         <?php
+          if(in_array("Sleight of Hand", $skills)){
+            echo $dex_mod + $prof_bonus;
+          }
+          else {
+            echo $dex_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-sleight-of-hand-skill-select">
          <?php
@@ -415,7 +535,15 @@
           ?>
        </div>
        <div class="stat display-stealth-skill">
+         <?php
+          if(in_array("Stealth", $skills)){
+            echo $dex_mod + $prof_bonus;
+          }
+          else {
+            echo $dex_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-stealth-skill-select">
          <?php
@@ -425,7 +553,15 @@
           ?>
        </div>
        <div class="stat display-survival-skill">
+         <?php
+          if(in_array("Survival", $skills)){
+            echo $wis_mod + $prof_bonus;
+          }
+          else {
+            echo $wis_mod;
+          }
 
+          ?>
        </div>
        <div class="stat display-survival-skill-select">
          <?php
