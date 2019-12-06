@@ -6,64 +6,38 @@
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM characters WHERE cID = $_SESSION[cid]");
   $row = $resultSet->fetch_assoc();
-  //display character name
-  echo "Character name: ", $row['character_name'];
-  echo "<br>";
-  //display player name
-  echo "Player name: ", $row['player_name'];
-  echo "<br>";
-  //display race
-  echo "Race: ", $row['race_name'];
-  echo "<br>";
-  //display class
-  echo "Class: ", $row['class_name'];
-  echo "<br>";
-  //display background
-  echo "Background: ", $row['background'];
-  echo "<br>";
-  //display Allignment
-  echo "Allignment: ", $row['allignment'];
-  echo "<br>";
-  //display stats
+  //character attributes
+  $character_name = $row['character_name'];
+  $player_name = $row['player_name'];
+  $race = $row['race_name'];
+  $class = $row['class_name'];
+  $background = $row['background'];
+  $allignment = $row['allignment'];
+
+  //stats
 
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM stats WHERE cID = $_SESSION[cid]");
   $row = $resultSet->fetch_assoc();
 
-  echo "Strength: ", $row['strength'];
-  echo "<br>";
+  $strength = $row['strength'];
+  $dexterity = $row['dexterity'];
+  $constitution = $row['constitution'];
+  $intelligence = $row['intelligence'];
+  $wisdom = $row['wisdom'];
+  $charisma = $row['charisma'];
 
-  echo "Dexterity: ", $row['dexterity'];
-  echo "<br>";
 
-  echo "Constitution: ", $row['constitution'];
-  echo "<br>";
-
-  echo "Intelligence: ", $row['intelligence'];
-  echo "<br>";
-
-  echo "Wisdom: ", $row['wisdom'];
-  echo "<br>";
-
-  echo "Charisma: ", $row['charisma'];
-  echo "<br>";
-
-  //display characteristics
+  //characteristics
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM characteristics WHERE cID = $_SESSION[cid]");
   $row = $resultSet->fetch_assoc();
 
-  echo "Personality: ", $row['personality'];
-  echo "<br>";
+  $personality = $row['personality'];
+  $ideal = $row['ideal'];
+  $bond = $row['bond'];
+  $flaw = $row['flaw'];
 
-  echo "Ideal: ", $row['ideal'];
-  echo "<br>";
-
-  echo "Bond: ", $row['bond'];
-  echo "<br>";
-
-  echo "Flaw: ", $row['flaw'];
-  echo "<br>";
 
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM spells WHERE cID = $_SESSION[cid]");
@@ -86,14 +60,15 @@
  <div class="character-creation-bg">
    <div class="site-wrapper">
      <div class="character-sheet">
+       <!--character attributes-->
        <div class="stat display-cname">
-         Character name
+         <?php echo $character_name; ?>
        </div>
        <div class="stat display-pname">
-         Player name
+         <?php echo $player_name; ?>
        </div>
        <div class="stat display-race">
-         Race
+         <?php echo $race; ?>
        </div>
        <div class="stat display-class">
          Class
@@ -104,27 +79,181 @@
        <div class="stat display-allignment">
          Allignment
        </div>
+       <!--character stats-->
        <div class="stat display-strength">
          Strength
+       </div>
+       <div class="stat display-strength-mod">
+
        </div>
        <div class="stat display-dexterity">
          Dexterity
        </div>
+       <div class="stat display-dexterity-mod">
+
+       </div>
        <div class="stat display-constitution">
          Constitution
+       </div>
+       <div class="stat display-constitution-mod">
+
        </div>
        <div class="stat display-intelligence">
          Intelligence
        </div>
+       <div class="stat display-intelligence-mod">
+
+       </div>
        <div class="stat display-wisdom">
          Wisdom
+       </div>
+       <div class="stat display-wisdom-mod">
+
        </div>
        <div class="stat display-charisma">
          Charisma
        </div>
+       <div class="stat display-charisma-mod">
+
+       </div>
+       <div class="stat display-passive-wisdom">
+
+       </div>
+       <div class="stat display-prof-bonus">
+
+       </div>
+       <!--character saving throws-->
+       <div class="stat display-strength-saving-select">
+
+       </div>
+       <div class="stat display-strength-saving">
+
+       </div>
+       <div class="stat display-dexterity-saving-select">
+
+       </div>
+       <div class="stat display-dexterity-saving">
+
+       </div>
+
+
+
+
+       <!--character skills-->
+       <div class="stat display-acrobatics-skill">
+
+       </div>
+       <div class="stat display-acrobatics-skill-select">
+
+       </div>
+       <div class="stat display-animal-handling-skill">
+
+       </div>
+       <div class="stat display-animal-handling-skill-select">
+
+       </div>
+       <div class="stat display-arcana-skill">
+
+       </div>
+       <div class="stat display-arcana-skill-select">
+
+       </div>
+       <div class="stat display-athletics-skill">
+
+       </div>
+       <div class="stat display-athletics-skill-select">
+
+       </div>
+       <div class="stat display-deception-skill">
+
+       </div>
+       <div class="stat display-deception-skill-select">
+
+       </div>
+       <div class="stat display-history-skill">
+
+       </div>
+       <div class="stat display-history-skill-select">
+
+       </div>
+       <div class="stat display-insight-skill">
+
+       </div>
+       <div class="stat display-insight-skill-select">
+
+       </div>
+       <div class="stat display-intimidation-skill">
+
+       </div>
+       <div class="stat display-intimidation-skill-select">
+
+       </div>
+       <div class="stat display-investigation-skill">
+
+       </div>
+       <div class="stat display-investigation-skill-select">
+
+       </div>
+       <div class="stat display-medicine-skill">
+
+       </div>
+       <div class="stat display-medicine-skill-select">
+
+       </div>
+       <div class="stat display-nature-skill">
+
+       </div>
+       <div class="stat display-nature-skill-select">
+
+       </div>
+       <div class="stat display-perception-skill">
+
+       </div>
+       <div class="stat display-perception-skill-select">
+
+       </div>
+       <div class="stat display-persuassion-skill">
+
+       </div>
+       <div class="stat display-persuassion-skill-select">
+
+       </div>
+       <div class="stat display-performance-skill">
+
+       </div>
+       <div class="stat display-performance-skill-select">
+
+       </div>
+       <div class="stat display-religion-skill">
+
+       </div>
+       <div class="stat display-religion-skill-select">
+
+       </div>
+       <div class="stat display-sleight-of-hand-skill">
+
+       </div>
+       <div class="stat display-sleight-of-hand-skill-select">
+
+       </div>
+       <div class="stat display-stealth-skill">
+
+       </div>
+       <div class="stat display-stealth-skill-select">
+
+       </div>
+       <div class="stat display-survival-skill">
+
+       </div>
+       <div class="stat display-survival-skill-select">
+
+       </div>
+
+       <!--character characteristics-->
        <div class="stat display-personality">
          Personality
        </div>
+
        <div class="stat display-ideal">
          Ideal
        </div>
@@ -134,15 +263,62 @@
        <div class="stat display-flaw">
          Flaw
        </div>
+
+       <!--character etc-->
+       <div class="stat display-armor-class">
+
+       </div>
+
+       <div class="stat display-hit-points">
+
+       </div>
+       <div class="stat display-hit-dice">
+
+       </div>
+       <div class="stat display-speed">
+
+       </div>
+       <div class="stat display-initiative">
+
+       </div>
+
+       <!--character attacks & spellcasting-->
+       <div class="stat display-weapon-1">
+
+       </div>
+       <div class="stat display-weapon-2">
+
+       </div>
+       <div class="stat display-weapon-3">
+
+       </div>
+
+       <!--character equipment-->
+       <div class="stat display-equipment-name">
+         Equipment Name
+       </div>
+       <div class="stat display-gold">
+
+       </div>
+
+       <!--character proficiencies and languages-->
+       <div class="stat display-proficiencies-and-languages">
+
+       </div>
+
+       <!--character features and traits-->
+       <div class="stat display-features-and-traits">
+
+       </div>
+
+       <!--character spells-->
        <div class="stat display-spell-name">
          Spell Name
        </div>
        <div class="stat display-spell-description">
          Spell Description
        </div>
-       <div class="stat display-equipment-name">
-         Equipment Name
-       </div>
+
      </div>
    </div>
  </div>
