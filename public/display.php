@@ -85,7 +85,7 @@
        <div class="stat display-allignment">
          <?php echo $allignment ?>
        </div>
-       
+
        <!--character stats-->
        <div class="stat display-strength">
          <?php echo $strength ?>
@@ -282,17 +282,17 @@
 
        <!--character characteristics-->
        <div class="stat display-personality">
-         Personality
+         <?php echo $personality ?>
        </div>
 
        <div class="stat display-ideal">
-         Ideal
+         <?php echo $ideal ?>
        </div>
        <div class="stat display-bond">
-         Bond
+         <?php echo $bond ?>
        </div>
        <div class="stat display-flaw">
-         Flaw
+         <?php echo $flaw ?>
        </div>
 
        <!--character etc-->
