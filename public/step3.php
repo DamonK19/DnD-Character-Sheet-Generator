@@ -1,9 +1,23 @@
 <?php include "templates/header.php"; ?>
 <?php include "templates/nav.php"; ?>
-<div class="step-background">
 
 <?php
 	$mysqli = NEW mysqli('localhost','root','root', 'dnd');
+	if(isset($_POST['skill_submit'])) {
+		$skill_name = $_POST['skill'];
+		foreach ($skill_name as $name) {
+			$mysqli->query("INSERT INTO skills(skill_name, cID) VALUES('$name', $_SESSION[cid])");
+		}
+
+		header('Location: step4.php');
+
+	}
+ ?>
+
+<div class="step-background">
+
+<?php
+
 	//get background name of character
 	$resultSet = $mysqli->query("SELECT background FROM characters WHERE cID = '$_SESSION[cid]'");
 	$row = $resultSet->fetch_assoc();
@@ -39,7 +53,6 @@
 	}
 	echo $quantity, " skills or KABOOM!)<br>";
 
-	//TODO: add conditional to exclude background skills
 	$resultSet = $mysqli->query("SELECT * from class_skills WHERE class_name = '$class'");
 
 	while($rows = $resultSet->fetch_assoc())
@@ -50,19 +63,6 @@
 	echo "<input type='submit' value='Submit' name='skill_submit' id='skill_submit'><br>";
 	echo "</form>";
 ?>
-
-<?php
-	if(isset($_POST['skill_submit'])) {
-		$skill_name = $_GET['skill'];
-		foreach ($skill_name as $name) {
-			$mysqli->query("INSERT INTO skills(skill_name, cID) VALUES('$name', $_SESSION[cid])");
-		}
-
-		header('Location: step4.php');
-
-	}
- ?>
-
 
  <div class="">
  	<div class="site-wrapper full-height">
