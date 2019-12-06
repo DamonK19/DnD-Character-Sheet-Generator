@@ -131,3 +131,46 @@ input[type="checkbox"] {
 .has-success {
   @include form-control-validation($state-success, darken($state-success, 5%));
 }
+
+
+input[type="radio"] {
+  -webkit-appearance: none; /* remove default */
+  display: block;
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  vertical-align: middle;
+  box-shadow: hsla(0,0%,100%,.15) 0 1px 1px, inset hsla(0,0%,0%,.5) 0 0 0 1px;
+  background-color: hsla(0,0%,0%,.2);
+  background-image: -webkit-radial-gradient( hsla(200,100%,90%,1) 0%, hsla(200,100%,70%,1) 15%, hsla(200,100%,60%,.3) 28%, hsla(200,100%,30%,0) 70% );
+  background-repeat: no-repeat;
+  -webkit-transition: background-position .15s cubic-bezier(.8, 0, 1, 1),
+    -webkit-transform .25s cubic-bezier(.8, 0, 1, 1);
+  outline: none;
+}
+input[type="radio"]:checked {
+  -webkit-transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1),
+    -webkit-transform .25s cubic-bezier(0, 0, .2, 1);
+}
+input:active {
+  -webkit-transform: scale(1.5);
+  -webkit-transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);
+}
+
+
+
+/* The up/down direction logic */
+
+input[type="radio"],
+input[type="radio"]:active {
+  background-position: 0 24px;
+}
+input[type="radio"]:checked {
+  background-position: 0 0;
+}
+input[type="radio"]:checked ~ input[type="radio"],
+input[type="radio"]:checked ~ input[type="radio"]:active {
+  background-position: 0 -24px;
+}
