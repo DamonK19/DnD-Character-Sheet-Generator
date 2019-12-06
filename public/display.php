@@ -21,12 +21,18 @@
   $row = $resultSet->fetch_assoc();
 
   $strength = $row['strength'];
+  $str_mod = ($strength - 10)/2;
   $dexterity = $row['dexterity'];
+  $dex_mod = ($dexterity - 10)/2;
   $constitution = $row['constitution'];
+  $con_mod = ($constitution - 10)/2;
   $intelligence = $row['intelligence'];
+  $int_mod = ($intelligence - 10)/2;
   $wisdom = $row['wisdom'];
+  $wis_mod = ($wisdom - 10)/2;
   $charisma = $row['charisma'];
-
+  $chr_mod = ($charisma - 10)/2;
+  $prof_bonus = 2;
 
   //characteristics
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
@@ -71,57 +77,59 @@
          <?php echo $race; ?>
        </div>
        <div class="stat display-class">
-         Class
+         <?php echo $class ?>
        </div>
        <div class="stat display-background">
-         Background
+         <?php echo $background ?>
        </div>
        <div class="stat display-allignment">
-         Allignment
+         <?php echo $allignment ?>
        </div>
+       
        <!--character stats-->
        <div class="stat display-strength">
-         Strength
+         <?php echo $strength ?>
        </div>
        <div class="stat display-strength-mod">
-
+         <?php echo $str_mod ?>
        </div>
        <div class="stat display-dexterity">
-         Dexterity
+         <?php echo $dexterity ?>
        </div>
        <div class="stat display-dexterity-mod">
-
+         <?php echo $dex_mod ?>
        </div>
        <div class="stat display-constitution">
-         Constitution
+         <?php echo $constitution ?>
        </div>
        <div class="stat display-constitution-mod">
-
+         <?php echo $con_mod ?>
        </div>
        <div class="stat display-intelligence">
-         Intelligence
+         <?php echo $intelligence ?>
        </div>
        <div class="stat display-intelligence-mod">
-
+        <?php echo $int_mod ?>
        </div>
        <div class="stat display-wisdom">
-         Wisdom
+         <?php echo $wisdom ?>
        </div>
        <div class="stat display-wisdom-mod">
-
+         <?php echo $wis_mod ?>
        </div>
        <div class="stat display-charisma">
-         Charisma
+         <?php echo $charisma ?>
        </div>
        <div class="stat display-charisma-mod">
-
+         <?php echo $chr_mod ?>
        </div>
        <div class="stat display-passive-wisdom">
-
+         <?php echo 10 + $wis_mod ?>
        </div>
        <div class="stat display-prof-bonus">
-
+         <?php echo $prof_bonus ?>
        </div>
+
        <!--character saving throws-->
        <div class="stat display-strength-saving-select">
 
