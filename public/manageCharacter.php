@@ -7,13 +7,19 @@
 	<div class="site-wrapper full-height">
 		<div class="grid-wrapper manage-menu full-height">
 			<div class="grid ten-twelfths push--one-twelfth manage-menu-content">
+				<!-- TITLE -->
+				<div class="grid-wrapper grid-wrapper--full centered text-center">
+					<div class="grid centered text-center">
+						<h2>Previous Characters:</h2>
+					</div>
+				</div>
+				<!-- START CHARACTER LISTING -->
 				<div class="grid-wrapper character-display">
-					<!-- START CHARACTER -->
+					<!-- CHARACTER -->
 					<div class="grid character">
 						<div class="grid-wrapper characer-options-container">
 							<div class="grid one-fifth push--one-fifth character-name">
 								<h4>Character1</h4>
-								
 							</div>
 							<div class="grid one-fifth character-update">
 								<div class="btn">
@@ -27,8 +33,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- END CHARACTER -->
-					<!-- START CHARACTER -->
+					<!-- CHARACTER -->
 					<div class="grid character">
 						<div class="grid-wrapper characer-options-container">
 							<div class="grid one-fifth push--one-fifth character-name">
@@ -46,8 +51,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- END CHARACTER -->
-					<!-- START CHARACTER -->
+					<!-- CHARACTER -->
 					<div class="grid character">
 						<div class="grid-wrapper characer-options-container">
 							<div class="grid one-fifth push--one-fifth character-name">
@@ -65,28 +69,9 @@
 							</div>
 						</div>
 					</div>
-					<!-- END CHARACTER -->
-					<!-- START CHARACTER -->
-					<div class="grid character">
-						<div class="grid-wrapper characer-options-container">
-							<div class="grid one-fifth push--one-fifth character-name">
-								<h4>Character4</h4>
-							</div>
-							<div class="grid one-fifth character-update">
-								<div class="btn">
-									<a href="update.php">View</a>
-								</div>
-							</div>
-							<div class="grid one-fifth character-delete">
-								<div class="btn">
-									<a href="delete.php">Delete</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END CHARACTER -->
 				</div>
 			</div>
+			<!-- BOTTOM BUTTONS -->
 			<div class="grid one-half push--one-quarter page-options text-center">
 				<div class="btn">
 					<a href="#">Log Out</a>

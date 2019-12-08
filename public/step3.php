@@ -1,7 +1,5 @@
 <?php include "templates/header.php"; ?>
 <?php include "templates/nav.php"; ?>
-<div class="step-background">
-
 <?php
 	$mysqli = NEW mysqli('localhost','root','root', 'dnd');
 	//get background name of character
@@ -63,66 +61,54 @@
 	}
  ?>
 
-
- <div class="">
- 	<div class="site-wrapper full-height">
- 		<div class="grid-wrapper manage-menu full-height">
- 			<div class="grid ten-twelfths push--one-twelfth manage-menu-content">
- 				<div class="grid-wrapper character-display">
- 					<!-- START CHARACTER -->
- 					<div class="grid character">
- 						<div class="grid-wrapper characer-options-container">
- 							<div class="grid one-quarter push--one-quarter character-name">
- 								<h4>$class_skill</h4>
- 							</div>
- 							<div class="grid one-quarter character-delete">
-								<input type='checkbox' name='skill[]' id='skill' value='$class_skill'>$class_skill</option>
- 							</div>
- 						</div>
- 					</div>
- 					<!-- END CHARACTER -->
- 					<!-- START CHARACTER -->
- 					<div class="grid character">
- 						<div class="grid-wrapper characer-options-container">
- 							<div class="grid one-quarter push--one-quarter character-name">
- 								<h4>$class_skill</h4>
- 							</div>
- 							<div class="grid one-quarter character-delete">
-								<input type='checkbox' name='skill[]' id='skill' value='$class_skill'>$class_skill</option>
- 							</div>
- 						</div>
- 					</div>
- 					<!-- END CHARACTER -->
- 					<!-- START CHARACTER -->
- 					<div class="grid character">
- 						<div class="grid-wrapper characer-options-container">
- 							<div class="grid one-quarter push--one-quarter character-name">
- 								<h4>$class_skill</h4>
- 							</div>
- 							<div class="grid one-quarter character-delete">
-								<input type='checkbox' name='skill[]' id='skill' value='$class_skill'>$class_skill</option>
- 							</div>
- 						</div>
- 					</div>
- 					<!-- END CHARACTER -->
- 					<!-- START CHARACTER -->
- 					<div class="grid character">
- 						<div class="grid-wrapper characer-options-container">
- 							<div class="grid one-quarter push--one-quarter character-name">
- 								<h4>$class_skill</h4>
- 							</div>
- 							<div class="grid one-quarter character-delete">
-								<input type='checkbox' name='skill[]' id='skill' value='$class_skill'>$class_skill</option>
- 							</div>
- 						</div>
- 					</div>
- 					<!-- END CHARACTER -->
- 				</div>
- 			</div>
- 		</div>
- 	</div>
+ 
+ <div class="step-background">
+	 <div class="site-wrapper full-height">
+		 <!-- MESSAGE -->
+		 <div class="grid-wrapper grid-wrapper--full centered full-height">
+			 <div class="grid one-half message-scroll">
+				 <div class="grid-wrapper align--center message-scroll-content">
+					 <div class="grid three-fifths push--one-fifth message">
+						 <h2 class="cursive">
+							 Background Skills:
+						 </h2>
+						 <ul>
+							 <li><h4 class="cursive">skill1</h4></li>
+							 <li><h4 class="cursive">skill2</h4></li>
+						 </ul>
+						 <h2 class="cursive">
+							 Class Skills:
+						 </h2>
+						 <ul>
+						 	<li>choose X options from the right</li>
+						 </ul>
+					 </div>
+				 </div>
+			 </div>
+			 <!-- MESSAGE -->
+			 <div class="grid-wrapper grid-wrapper--full centered full-height">
+				 <div class="grid one-half message-scroll">
+					 <div class="grid-wrapper align--center message-scroll-content">
+						 <div class="grid three-fifths push--one-fifth message">
+							 <h2 class="cursive">
+								 Class Skills
+							 </h2>
+							 <ul>
+								 <li><h4 class="cursive">$class_skill<input type='checkbox' name='skill[]' id='skill' value='$class_skill'></h4></li>
+								 <li><h4 class="cursive">$class_skill<input type='checkbox' name='skill[]' id='skill' value='$class_skill'></h4></li>
+								 <li><h4 class="cursive">$class_skill<input type='checkbox' name='skill[]' id='skill' value='$class_skill'></h4></li>
+								 <li><h4 class="cursive">$class_skill<input type='checkbox' name='skill[]' id='skill' value='$class_skill'></h4></li>
+							 </ul>
+							 <div class="message-submit">
+								 <input type='submit' value='Submit' name='skill_submit' id='skill_submit'>
+							 </div>
+						 </div>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
  </div>
-
 
 
 <?php include "templates/footer.php"; ?>
