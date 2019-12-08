@@ -17,16 +17,25 @@
   background-position: bottom center;
 	text-align: center;
 
+	.item-title, input {
+		top: -10%;
+		position: absolute;
+	}
+
 	.item-title {
-			top: -10%;
 			right: 0;
 			left: 0;
-			position: absolute;
+			color: $white;
+	}
+
+	input {
+		right: 25%;
+    margin-top: 15px;
 	}
 }
 
 .arrow {
-	border: solid black;
+	border: solid white;
 	border-width: 0 3px 3px 0;
 	display: inline-block;
 	padding: 12px;

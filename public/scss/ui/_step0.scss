@@ -2,15 +2,16 @@
 	background-image: url('../assets/images/fire.gif');
 	display: block;
 	position: absolute;
-	top: 0px;
+	top: 90px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
-	z-index: 0;
+	z-index: -100;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
   }
+
 .message-scroll {
 	background-image: url('../assets/images/message_scroll.png');
 	background-repeat: no-repeat;
@@ -22,6 +23,11 @@
 }
 .message-scroll-content {
 	height: 100%;
+}
+
+.message-submit {
+	width: 100%;
+	text-align: center;
 }
 // carousel things
 .item-1 {

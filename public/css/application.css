@@ -1612,7 +1612,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 html body {
-  color: #ffffff;
+  color: #000000;
 }
 
 a {
@@ -1833,7 +1833,7 @@ input[type=radio] {
   cursor: pointer;
   vertical-align: middle;
   box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px, inset rgba(0, 0, 0, 0.5) 0 0 0 1px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
   background-image: -webkit-radial-gradient(#cceeff 0%, #66ccff 15%, rgba(51, 187, 255, 0.3) 28%, rgba(0, 102, 153, 0) 70%);
   background-repeat: no-repeat;
   -webkit-transition: background-position 0.15s cubic-bezier(0.8, 0, 1, 1), -webkit-transform 0.25s cubic-bezier(0.8, 0, 1, 1);
@@ -2309,15 +2309,22 @@ button {
   background-position: bottom center;
   text-align: center;
 }
-.carousel-item .item-title {
+.carousel-item .item-title, .carousel-item input {
   top: -10%;
+  position: absolute;
+}
+.carousel-item .item-title {
   right: 0;
   left: 0;
-  position: absolute;
+  color: #ffffff;
+}
+.carousel-item input {
+  right: 25%;
+  margin-top: 15px;
 }
 
 .arrow {
-  border: solid black;
+  border: solid white;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 12px;
@@ -2399,11 +2406,11 @@ button {
   background-image: url("../assets/images/fire.gif");
   display: block;
   position: absolute;
-  top: 0px;
+  top: 90px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  z-index: 0;
+  z-index: -100;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -2421,6 +2428,11 @@ button {
 
 .message-scroll-content {
   height: 100%;
+}
+
+.message-submit {
+  width: 100%;
+  text-align: center;
 }
 
 .item-1 {
