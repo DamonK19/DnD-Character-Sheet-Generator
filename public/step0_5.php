@@ -23,36 +23,34 @@ if (isset($_POST['char_submit'])) {
       <div class="grid one-half message-scroll">
         <div class="grid-wrapper align--center message-scroll-content">
           <div class="grid three-fifths push--one-fifth message">
-            <h4 class="cursive">Start by choosing your:<br></h4>
+            <h2 class="cursive">Background:</h2>
             <ul>
               <li>
-                Background: <select name="backgrounds">
-                <option value="Acolyte">Acolyte</option>
-                <option value="Charlaton">Charlaton</option>
-                <option value="Criminal">Criminal</option>
-                <option value="Entertainer">Entertainer</option>
-                <option value="Folk Hero">Folk Hero</option>
-                <option value="Guild Artisan">Guild Artisan</option>
-                <option value="Hermit">Hermit</option>
-                <option value="Noble">Noble</option>
-                <option value="Outlander">Outlander</option>
-                <option value="Sage">Sage</option>
-                <option value="Sailor">Sailor</option>
-                <option value="Soldier">Soldier</option>
-                <option value="Urchin">Urchin</option>
+                <select name="backgrounds">
+                  <option value="Acolyte">Acolyte</option>
+                  <option value="Charlaton">Charlaton</option>
+                  <option value="Criminal">Criminal</option>
+                  <option value="Entertainer">Entertainer</option>
+                  <option value="Folk Hero">Folk Hero</option>
+                  <option value="Guild Artisan">Guild Artisan</option>
+                  <option value="Hermit">Hermit</option>
+                  <option value="Noble">Noble</option>
+                  <option value="Outlander">Outlander</option>
+                  <option value="Sage">Sage</option>
+                  <option value="Sailor">Sailor</option>
+                  <option value="Soldier">Soldier</option>
+                  <option value="Urchin">Urchin</option>
                 </select>
               </li>
+            </ul>
+            <h2 class="cursive">Allignment:</h2>
+            <ul>
               <li>
-                Allignment: <select name="goodVsEvil">
+                <select name="goodVsEvil">
                   <option value="good">Good</option>
                   <option value="neutral">Neutral</option>
                   <option value="evil">Evil</option>
                 </select>
-              </li>
-            </ul>
-            <h4 class="cursive">Then use the image slector on the right for your:</h4>
-            <ul>
-              <li>
                 <select name="lawVsChaos">
                   <option value="lawful">Lawful</option>
                   <option value="neutral">Neutral</option>
@@ -60,14 +58,15 @@ if (isset($_POST['char_submit'])) {
                 </select>
               </li>
             </ul>
-            <ul>
+            <!-- <h2 class="cursive">Then use the image slector on the right for your:</h2> -->
+            <!-- <ul>
               <li>
                 Attribute Selection Method: <select name="attributeSelect">
                   <option value="roll">Roll for attributes</option>
                   <option value="array">Use Standard Array</option>
                 </select>
               </li>
-            </ul>
+            </ul> -->
             <div class="message-submit">
               <input type="submit" value="Submit" name="char_submit" id="char_submit">
             </div>
