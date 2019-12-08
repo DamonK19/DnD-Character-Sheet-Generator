@@ -19,11 +19,11 @@ if (isset($_POST['stat_submit'])) {
 	header('Location: step3.php');
 }
 ?>
+<form action="" method="post">
 	<div class="step-background">
-	<form action="" method="post">
-		<div class="site-wrapper">
+		<div class="site-wrapper full-height">
 			<!-- MESSAGE -->
-			<div class="grid-wrapper">
+			<div class="grid-wrapper grid-wrapper--full centered full-height">
 				<div class="grid one-half message-scroll">
 					<div class="grid-wrapper align--center message-scroll-content">
 						<div class="grid three-fifths push--one-fifth message">
@@ -34,6 +34,9 @@ if (isset($_POST['stat_submit'])) {
 								<li><h4 class="cursive">Press the circle on each score tile to roll for the according score</h2></li>
 								<li><h4 class="cursive">then click submit to save your scores!</h2></li>
 							</ul>
+							<div class="message-submit">
+								<input type="submit" value="Submit" name="stat_submit" id="stat_submit">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -110,15 +113,14 @@ if (isset($_POST['stat_submit'])) {
 					<!-- SUBMIT BUTTON -->
 					<div class="grid-wrapper one-whole">
 						<div class="grid one-whole text-center" style="font-family: 'Bookmainia'">
-							<input type="submit" value="Submit" name="stat_submit" id="stat_submit">
 						</div>
 					</div>
 					<!-- // SUBMIT BUTTON -->
 				</div>
 			</div>
 		</div>
-	</form>
-</div>
+	</div>
+</form>
 
 
 
