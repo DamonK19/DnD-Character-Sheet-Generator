@@ -62,16 +62,46 @@
   $bond = $row['bond'];
   $flaw = $row['flaw'];
 
+  //character etc. values
+  //get all armor in array
+  $armor = array();
+  $resultSet = $mysqli->query("SELECT * FROM armor");
+  while($rows = $resultSet->fetch_assoc()) {
+    array_push($armor, $rows['armor_name']);
+  }
+  //get all character items
+  $items = array();
+  $resultSet = $mysqli->query("SELECT * FROM character_equipment WHERE cID = '$_SESSION[cid]'");
+  while($rows = $resultSet->fetch_assoc()) {
+    array_push($items, $rows['equipment_name']);
+  }
+
+  //find matching armor
+  foreach ($armor as $key_a => $value_a) {
+    foreach ($items as $key_i => $value_i) {
+      if($value_a == $value_i) {
+        $name = $value_a;
+      }
+    }
+  }
+  //get armor class
+  $resultSet = $mysqli->query("SELECT * FROM armor WHERE armor_name = '$name'");
+  $row = $resultSet->fetch_assoc();
+  $armor_class = $row['armorClass'];
+
+  //get hit points
+  $resultSet = $mysqli->query("SELECT * FROM class_name WHERE class_name = '$class'");
+  $row = $resultSet->fetch_assoc();
+  $hit_dice = $row['hit_dice'];
+
+  //get speed
+  $resultSet = $mysqli->query("SELECT * FROM race where race_name = '$race'");
+  $row = $resultSet->fetch_assoc();
+  $speed = $row['speed'];
+
   //spells
 
-
-  $mysqli = NEW MySQLi('localhost','root','root','dnd');
-  $resultSet = $mysqli->query("SELECT * FROM character_equipment WHERE cID = '$_SESSION[cid]'");
-
-  echo "Equipment Name: <br>";
-  while($row = $resultSet->fetch_assoc()){
-    echo $row['equipment_name'], "<br>";
-  }
+  //equipment
  ?>
 
  <div class="character-creation-bg">
@@ -588,20 +618,20 @@
 
        <!--character etc-->
        <div class="stat display-armor-class">
-
+         <?php echo $armor_class ?>
        </div>
 
        <div class="stat display-hit-points">
-
+         <?php echo $hit_dice + $con_mod ?>
        </div>
        <div class="stat display-hit-dice">
-
+         <?php  echo "1d", $hit_dice?>
        </div>
        <div class="stat display-speed">
-
+         <?php echo $speed ?>
        </div>
        <div class="stat display-initiative">
-
+         <?php echo "+", $dex_mod ?>
        </div>
 
        <!--character attacks & spellcasting-->
