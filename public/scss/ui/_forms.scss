@@ -63,7 +63,12 @@ label { display: inline-block; }
   }
 }
 
+select {
+  max-width: 100%;
+}
+
 select.form-control {
+
   &:not([size]):not([multiple]) {
     height: calc(#{$base-font-size} * #{$line-height-ratio} + .325em * 2 + 2px);
   }
@@ -92,7 +97,6 @@ select.form-control {
 .form-group {
   margin-bottom: $half-spacing-unit;
 }
-
 
 // Checkboxes and radios
 //
