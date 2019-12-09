@@ -28,26 +28,29 @@ session_start();
 					}
 					$array_length = count($character_name);
 					  for($i = 0; $i<$array_length; $i++){
-						echo '<div class="grid character">
-						<div class="grid-wrapper characer-options-container">
-							<div class="grid one-fifth push--one-fifth character-name">
-								<h4>', $character_name[$i] ,'</h4>
-							</div>
-							<div class="grid one-fifth character-update">
-								<div class="btn">
-									<a href="update.php">View</a>
+						echo '
+						<div class="grid character">
+							<div class="grid-wrapper characer-options-container">
+								<div class="grid one-fifth push--one-fifth character-name">
+									<h4>', $character_name[$i] ,'</h4>
 								</div>
-							</div>
-							<div class="grid one-fifth character-delete">
-								<div class="btn">
-									<a href="delete.php">Delete</a>
+								<div class="grid one-fifth character-update">
+									<div class="btn">
+										<a href="update.php">View</a>
+									</div>
+								</div>
+								<div class="grid one-fifth character-delete">
+									<div class="btn">
+										<a href="delete.php">Delete</a>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>';
+						';
 					  }
 					?>
-					
+				</div>
+			</div>
 			<!-- BOTTOM BUTTONS -->
 			<div class="grid one-half push--one-quarter page-options text-center">
 				<div class="btn">
@@ -58,11 +61,6 @@ session_start();
 				</div>
 			</div>
 		</div>
-	</div>
-  <div class="grid desk-one-third text-center">
-		<ul>
-			<li><a href="viewchars.php"><strong>View Characters</strong></a> - View all created Characters</li>
-		</ul>
 	</div>
 </div>
 
