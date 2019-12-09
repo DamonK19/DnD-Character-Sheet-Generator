@@ -840,7 +840,7 @@ VALUES
 INSERT INTO background_equipment
 VALUES
 ('Acolyte', 'Holy Symbol', NULL, NULL, NULL),
-('Acolyte', 'Prayer Book', 'Prayer Whee', NULL, NULL),
+('Acolyte', 'Prayer Book', 'Prayer Wheel', NULL, NULL),
 ('Acolyte', '5 Sticks of Incense', NULL, NULL, NULL),
 ('Acolyte', 'Vestments', NULL, NULL, NULL),
 ('Acolyte', 'Set of Common Clothes', NULL, NULL, NULL),
