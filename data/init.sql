@@ -136,9 +136,9 @@ CREATE TABLE skills(
 
 CREATE TABLE class_equipment(
 	class_name VARCHAR(30),
-	option_1 VARCHAR(30),
-	option_2 VARCHAR(30),
-	option_3 VARCHAR(30)
+	option_1 VARCHAR(60),
+	option_2 VARCHAR(60),
+	option_3 VARCHAR(60)
 );
 
 CREATE TABLE background(
