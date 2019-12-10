@@ -74,25 +74,23 @@
 				 </div>
 			 </div>
 			 <!-- MESSAGE -->
-			 <div class="grid-wrapper grid-wrapper--full centered full-height">
-				 <div class="grid one-half message-scroll">
-					 <div class="grid-wrapper align--center message-scroll-content">
-						 <div class="grid three-fifths push--one-fifth message">
-							 <h2 class="cursive">
-								 Class Skills
-							 </h2>
-							 <ul>
-								 <?php
-									 $mysqli = NEW mysqli('localhost','root','root', 'dnd');
-									 $resultSet = $mysqli->query("SELECT * from class_skills WHERE class_name = '$class'");
-									 while($rows = $resultSet->fetch_assoc())
-									 {
-										 $class_skill = $rows['class_skill_name'];
-										 echo "<li><h4 class='cursive'>$class_skill<input type='checkbox' name='skill[]' id='skill' value='$class_skill'></h4></li>";
-									 }
-								  ?>
-							 </ul>
-						 </div>
+			 <div class="grid one-half message-scroll">
+				 <div class="grid-wrapper align--center message-scroll-content">
+					 <div class="grid three-fifths push--one-fifth message">
+						 <h2 class="cursive">
+							 Class Skills
+						 </h2>
+						 <ul>
+							 <?php
+								 $mysqli = NEW mysqli('localhost','root','root', 'dnd');
+								 $resultSet = $mysqli->query("SELECT * from class_skills WHERE class_name = '$class'");
+								 while($rows = $resultSet->fetch_assoc())
+								 {
+									 $class_skill = $rows['class_skill_name'];
+									 echo "<li><h4 class='cursive'>$class_skill<input type='checkbox' name='skill[]' id='skill' value='$class_skill'></h4></li>";
+								 }
+								?>
+						 </ul>
 					 </div>
 				 </div>
 			 </div>
