@@ -3,28 +3,13 @@
 
 <?php
 
-$con = mysqli_connect("localhost", "root", "root", "dnd");
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
 if (isset($_POST['characteristic_submit'])) {
-  // Perform query
-  $p = mysqli_real_escape_string($mysqli, $background_personality[$_POST['personalities']]);
-  $i = mysqli_real_escape_string($mysqli, $background_ideal[$_POST['ideals']]);
-  $b = mysqli_real_escape_string($mysqli, $background_bond[$_POST['bonds']]);
-  $f = mysqli_real_escape_string($mysqli, $background_flaw[$_POST['flaws']]);
-
-  $sql = "INSERT INTO characteristics(cID, personality, ideal, bond, flaw)
-  VALUES('$_SESSION[cid]', '$p', '$i', '$b', '$f')";
-
-  mysqli_query($con, $sql);
 
   header('Location: step5.php');
 }
 
 ?>
+
 <form action="" method="post">
 
 <?php
@@ -134,4 +119,29 @@ $i = 1;
   </div>
 </div>
 </form>
+
+<?php
+
+$con = mysqli_connect("localhost", "root", "root", "dnd");
+// Check connection
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+if (isset($_POST['characteristic_submit'])) {
+  // Perform query
+  $p = mysqli_real_escape_string($mysqli, $background_personality[$_POST['personalities']]);
+  $i = mysqli_real_escape_string($mysqli, $background_ideal[$_POST['ideals']]);
+  $b = mysqli_real_escape_string($mysqli, $background_bond[$_POST['bonds']]);
+  $f = mysqli_real_escape_string($mysqli, $background_flaw[$_POST['flaws']]);
+
+  $sql = "INSERT INTO characteristics(cID, personality, ideal, bond, flaw)
+  VALUES('$_SESSION[cid]', '$p', '$i', '$b', '$f')";
+
+  mysqli_query($con, $sql);
+
+  header('Location: step5.php');
+}
+
+?>
   <?php include "templates/footer.php"; ?>
