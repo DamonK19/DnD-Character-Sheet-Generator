@@ -2,13 +2,9 @@
 <?php include "templates/nav.php"; ?>
 
 <?php
-	if(isset($_POST['skill_submit'])) {
-		$skill_name = $_GET['skill'];
-		foreach ($skill_name as $name) {
-			$mysqli->query("INSERT INTO skills(skill_name, cID) VALUES('$name', $_SESSION[cid])");
+		if(isset($_POST['skill_submit'])) {
+			header('Location: step4.php');
 		}
-		header('Location: step4.php');
-	}
  ?>
 
 <form action='' method='post'>
@@ -98,5 +94,14 @@
 	 </div>
  </div>
 </form>
+
+<?php
+	if(isset($_POST['skill_submit'])) {
+		$skill_name = $_POST['skill'];
+		foreach ($skill_name as $name) {
+			$mysqli->query("INSERT INTO skills(skill_name, cID) VALUES('$name', $_SESSION[cid])");
+		}
+	}
+ ?>
 
 <?php include "templates/footer.php"; ?>
