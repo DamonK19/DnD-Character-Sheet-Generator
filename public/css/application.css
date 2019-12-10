@@ -1756,6 +1756,10 @@ label {
   opacity: 1;
 }
 
+select {
+  max-width: 100%;
+}
+
 select.form-control:not([size]):not([multiple]) {
   height: calc(16px * 1.75 + .325em * 2 + 2px);
 }

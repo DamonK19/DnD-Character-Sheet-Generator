@@ -25,106 +25,115 @@ if (isset($_POST['characteristic_submit'])) {
 }
 
 ?>
+<form action="" method="post">
+
+<?php
+$mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
+$resultSet = $mysqli->query("SELECT * FROM characters WHERE cID = '$_SESSION[cid]' AND pID = '$_SESSION[id]'");
+$row = $resultSet->fetch_assoc();
+$background = $row["background"];
+$i = 1;
+?>
 
 <div class="step-background">
-
-  <div class="grid-wrapper one-whole">
-    <div class="grid one-whole text-center" style="font-family: 'Bookmania'">
-      Time for you to select character characteristics!
+  <div class="site-wrapper full-height">
+    <!-- MESSAGE -->
+    <div class="grid-wrapper grid-wrapper--full centered full-height">
+      <div class="grid one-half message-scroll">
+        <div class="grid-wrapper align--center message-scroll-content">
+          <div class="grid three-fifths push--one-fifth message">
+            <h2 class="cursive">
+              Personality:
+            </h2>
+            <ul>
+              <li>
+                <select class="" name="personalities">
+                  <?php
+                  $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
+                  $resultSet = $mysqli->query("SELECT background_personality FROM background_personality WHERE background_name = '$background'");
+                  while ($rows = $resultSet->fetch_assoc()) {
+                    $background_personality[$i] = $rows['background_personality'];
+                    echo "<option value='$i'>$background_personality[$i]</option>";
+                    $i++;
+                  }
+                  $i = 1;
+                  ?>
+                </select>
+              </li>
+            </ul>
+            <h2 class="cursive">
+              Ideal:
+            </h2>
+            <ul>
+              <li>
+                <select class="" name="ideals">
+                  <?php
+                  $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
+                  $resultSet = $mysqli->query("SELECT background_ideal FROM background_ideals WHERE background_name = '$background'");
+                  while ($rows = $resultSet->fetch_assoc()) {
+                    $background_ideal[$i] = $rows['background_ideal'];
+                    echo "<option value='$i'>$background_ideal[$i]</option>";
+                    $i++;
+                  }
+                  $i = 1;
+                  ?>
+                </select>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- MESSAGE -->
+      <div class="grid-wrapper grid-wrapper--full centered full-height">
+        <div class="grid one-half message-scroll">
+          <div class="grid-wrapper align--center message-scroll-content">
+            <div class="grid three-fifths push--one-fifth message">
+              <h2 class="cursive">
+                Flaw:
+              </h2>
+              <ul>
+                <li>
+                  <select class="" name="flaws">
+                    <?php
+                    $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
+                    $resultSet = $mysqli->query("SELECT background_flaw FROM background_flaws WHERE background_name = '$background'");
+                    while ($rows = $resultSet->fetch_assoc()) {
+                      $background_flaw[$i] = $rows['background_flaw'];
+                      echo "<option value='$i'>$background_flaw[$i]</option>";
+                      $i++;
+                    }
+                    $i = 1;
+                    ?>
+                  </select>
+                </li>
+              </ul>
+              <h2 class="cursive">
+                Bond:
+              </h2>
+              <ul>
+                <li>
+                  <select class="" name="bonds">
+                    <?php
+                    $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
+                    $resultSet = $mysqli->query("SELECT background_bond FROM background_bonds WHERE background_name = '$background'");
+                    while ($rows = $resultSet->fetch_assoc()) {
+                      $background_bond[$i] = $rows['background_bond'];
+                      echo "<option value='$i'>$background_bond[$i]</option>";
+                      $i++;
+                    }
+                    ?>
+                  </select>
+                </li>
+              </ul>
+              <div class="message-submit">
+                <input type="submit" value="Submit" name="characteristic_submit" id="characteristic_submit">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="gridwrapper one-whole">
-    <div class="grid one-whole text-center" style="font-family: 'Bookmania'">
-
-      <form action="" method="post">
-        <?php
-        $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
-        $resultSet = $mysqli->query("SELECT * FROM characters WHERE cID = '$_SESSION[cid]' AND pID = '$_SESSION[id]'");
-        $row = $resultSet->fetch_assoc();
-        $background = $row["background"];
-        $i = 1;
-
-        ?>
-
-        <?php
-        $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
-        $resultSet = $mysqli->query("SELECT background_personality FROM background_personality WHERE background_name = '$background'");
-
-        ?>
-
-        Personality Trait:<select name="personalities">
-          <?php
-
-          while ($rows = $resultSet->fetch_assoc()) {
-            $background_personality[$i] = $rows['background_personality'];
-            echo "<option value='$i'>$background_personality[$i]</option>";
-            $i++;
-          }
-          $i = 1;
-          ?>
-        </select>
-    </div>
-
-    <div class="grid one-whole text-center" style="font-family: 'Bookmania'">
-
-      <?php
-      $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
-      $resultSet = $mysqli->query("SELECT background_ideal FROM background_ideals WHERE background_name = '$background'")
-      ?>
-
-      Ideal:<select name="ideals">
-        <?php
-        while ($rows = $resultSet->fetch_assoc()) {
-
-          $background_ideal[$i] = $rows['background_ideal'];
-          echo "<option value='$i'>$background_ideal[$i]</option>";
-          $i++;
-        }
-        $i = 1;
-        ?>
-      </select>
-    </div>
-
-    <div class="grid one-whole text-center" style="font-family: 'Bookmania'">
-
-      <?php
-      $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
-      $resultSet = $mysqli->query("SELECT background_flaw FROM background_flaws WHERE background_name = '$background'")
-      ?>
-
-      Flaw:<select name="flaws">
-        <?php
-        while ($rows = $resultSet->fetch_assoc()) {
-          $background_flaw[$i] = $rows['background_flaw'];
-          echo "<option value='$i'>$background_flaw[$i]</option>";
-          $i++;
-        }
-        $i = 1;
-        ?>
-      </select>
-    </div>
-
-    <div class="grid one-whole text-center" style="font-family: 'Bookmania'">
-
-      <?php
-      $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
-      $resultSet = $mysqli->query("SELECT background_bond FROM background_bonds WHERE background_name = '$background'")
-      ?>
-
-      Bond:<select name="bonds">
-        <?php
-        while ($rows = $resultSet->fetch_assoc()) {
-          $background_bond[$i] = $rows['background_bond'];
-          echo "<option value='$i'>$background_bond[$i]</option>";
-          $i++;
-        }
-        ?>
-      </select>
-      <input type="submit" value="Submit" name="characteristic_submit" id="characteristic_submit">
-      </form>
-
-    </div>
-  </div>
-
+</div>
+</form>
   <?php include "templates/footer.php"; ?>
