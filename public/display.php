@@ -127,9 +127,10 @@
   //equipment
  ?>
 
- <div class="character-creation-bg">
+ <div class="step-background">
    <div class="site-wrapper">
      <div class="character-sheet">
+       <img class="sheet" src="assets/images/dnd_char_sheet.png" alt="">
        <!--character attributes-->
        <div class="stat display-cname">
          <?php echo $character_name; ?>
@@ -141,7 +142,7 @@
          <?php echo $race; ?>
        </div>
        <div class="stat display-class">
-         <?php echo $class; ?>
+         <?php echo $class; ?> lv 1
        </div>
        <div class="stat display-background">
          <?php echo $background; ?>
@@ -149,42 +150,41 @@
        <div class="stat display-allignment">
          <?php echo $allignment; ?>
        </div>
-
        <!--character stats-->
        <div class="stat display-strength">
          <?php echo $strength; ?>
        </div>
-       <div class="stat display-strength-mod">
+       <div class="stat display-strength-mod mod">
          <?php echo "+", $str_mod; ?>
        </div>
        <div class="stat display-dexterity">
          <?php echo $dexterity; ?>
        </div>
-       <div class="stat display-dexterity-mod">
+       <div class="stat display-dexterity-mod mod">
          <?php echo "+", $dex_mod; ?>
        </div>
        <div class="stat display-constitution">
          <?php echo $constitution; ?>
        </div>
-       <div class="stat display-constitution-mod">
+       <div class="stat display-constitution-mod mod">
          <?php echo "+", $con_mod; ?>
        </div>
        <div class="stat display-intelligence">
          <?php echo $intelligence; ?>
        </div>
-       <div class="stat display-intelligence-mod">
+       <div class="stat display-intelligence-mod mod">
         <?php echo "+", $int_mod; ?>
        </div>
        <div class="stat display-wisdom">
          <?php echo $wisdom; ?>
        </div>
-       <div class="stat display-wisdom-mod">
+       <div class="stat display-wisdom-mod mod">
          <?php echo "+", $wis_mod; ?>
        </div>
        <div class="stat display-charisma">
          <?php echo $charisma; ?>
        </div>
-       <div class="stat display-charisma-mod">
+       <div class="stat display-charisma-mod mod">
          <?php echo "+", $chr_mod; ?>
        </div>
        <div class="stat display-passive-wisdom">
@@ -193,16 +193,15 @@
        <div class="stat display-prof-bonus">
          <?php echo $prof_bonus; ?>
        </div>
-
        <!--character saving throws-->
-       <div class="stat display-strength-saving-select">
+       <div class="stat display-strength-saving-select throw">
          <?php
             if($str_race_mod !=0){
               echo "&#8226;";
             }
           ?>
        </div>
-       <div class="stat display-strength-saving">
+       <div class="stat display-strength-saving saving">
          <?php
             if($str_race_mod !=0){
               echo "+", $str_mod + $prof_bonus;
@@ -212,14 +211,14 @@
             }
           ?>
        </div>
-       <div class="stat display-dexterity-saving-select">
+       <div class="stat display-dexterity-saving-select throw">
          <?php
             if($dex_race_mod !=0){
               echo "&#8226;";
             }
           ?>
        </div>
-       <div class="stat display-dexterity-saving">
+       <div class="stat display-dexterity-saving saving">
          <?php
             if($dex_race_mod !=0){
               echo "+", $dex_mod + $prof_bonus;
@@ -229,14 +228,14 @@
             }
           ?>
        </div>
-       <div class="stat display-constitution-saving-select">
+       <div class="stat display-constitution-saving-select throw">
          <?php
             if($con_race_mod !=0){
               echo "&#8226;";
             }
           ?>
        </div>
-       <div class="stat display-consitution-saving">
+       <div class="stat display-consitution-saving saving">
          <?php
             if($con_race_mod !=0){
               echo "+", $con_mod + $prof_bonus;
@@ -246,14 +245,14 @@
             }
           ?>
        </div>
-       <div class="stat display-intelligence-saving-select">
+       <div class="stat display-intelligence-saving-select throw">
          <?php
             if($int_race_mod !=0){
               echo "&#8226;";
             }
           ?>
        </div>
-       <div class="stat display-intelligence-saving">
+       <div class="stat display-intelligence-saving saving">
          <?php
             if($int_race_mod !=0){
               echo "+", $int_mod + $prof_bonus;
@@ -263,14 +262,14 @@
             }
           ?>
        </div>
-       <div class="stat display-wisdom-saving-select">
+       <div class="stat display-wisdom-saving-select throw">
          <?php
             if($wis_race_mod !=0){
               echo "&#8226;";
             }
           ?>
        </div>
-       <div class="stat display-wisdom-saving">
+       <div class="stat display-wisdom-saving saving">
          <?php
             if($wis_race_mod !=0){
               echo "+", $wis_mod + $prof_bonus;
@@ -280,14 +279,14 @@
             }
           ?>
        </div>
-       <div class="stat display-charisma-saving-select">
+       <div class="stat display-charisma-saving-select throw">
          <?php
             if($chr_race_mod !=0){
               echo "&#8226;";
             }
           ?>
        </div>
-       <div class="stat display-charisma-saving">
+       <div class="stat display-charisma-saving saving">
          <?php
             if($chr_race_mod !=0){
               echo "+", $chr_mod + $prof_bonus;
@@ -299,7 +298,7 @@
        </div>
 
        <!--character skills-->
-       <div class="stat display-acrobatics-skill">
+       <div class="stat display-acrobatics-skill saving">
          <?php
           if(in_array("Acrobatics", $skills)){
             echo $dex_mod + $prof_bonus;
@@ -309,14 +308,14 @@
           }
           ?>
        </div>
-       <div class="stat display-acrobatics-skill-select">
+       <div class="stat display-acrobatics-skill-select throw">
          <?php
           if(in_array("Acrobatics", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-animal-handling-skill">
+       <div class="stat display-animal-handling-skill saving">
          <?php
           if(in_array("Animal Handling", $skills)){
             echo $wis_mod + $prof_bonus;
@@ -326,14 +325,14 @@
           }
           ?>
        </div>
-       <div class="stat display-animal-handling-skill-select">
+       <div class="stat display-animal-handling-skill-select throw">
          <?php
           if(in_array("Animal Handling", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-arcana-skill">
+       <div class="stat display-arcana-skill saving">
          <?php
           if(in_array("Arcana", $skills)){
             echo $int_mod + $prof_bonus;
@@ -343,14 +342,14 @@
           }
           ?>
        </div>
-       <div class="stat display-arcana-skill-select">
+       <div class="stat display-arcana-skill-select throw">
          <?php
           if(in_array("Arcana", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-athletics-skill">
+       <div class="stat display-athletics-skill saving">
          <?php
           if(in_array("Athletics", $skills)){
             echo $str_mod + $prof_bonus;
@@ -360,14 +359,14 @@
           }
           ?>
        </div>
-       <div class="stat display-athletics-skill-select">
+       <div class="stat display-athletics-skill-select throw">
          <?php
           if(in_array("Athletics", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-deception-skill">
+       <div class="stat display-deception-skill saving">
          <?php
           if(in_array("Deception", $skills)){
             echo $chr_mod + $prof_bonus;
@@ -377,14 +376,14 @@
           }
           ?>
        </div>
-       <div class="stat display-deception-skill-select">
+       <div class="stat display-deception-skill-select throw">
          <?php
           if(in_array("Deception", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-history-skill">
+       <div class="stat display-history-skill saving">
          <?php
           if(in_array("History", $skills)){
             echo $int_mod + $prof_bonus;
@@ -394,14 +393,14 @@
           }
           ?>
        </div>
-       <div class="stat display-history-skill-select">
+       <div class="stat display-history-skill-select throw">
          <?php
           if(in_array("History", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-insight-skill">
+       <div class="stat display-insight-skill saving">
          <?php
           if(in_array("Insight", $skills)){
             echo $wis_mod + $prof_bonus;
@@ -411,14 +410,14 @@
           }
           ?>
        </div>
-       <div class="stat display-insight-skill-select">
+       <div class="stat display-insight-skill-select throw">
          <?php
           if(in_array("Insight", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-intimidation-skill">
+       <div class="stat display-intimidation-skill saving">
          <?php
           if(in_array("Intimidation", $skills)){
             echo $chr_mod + $prof_bonus;
@@ -428,14 +427,14 @@
           }
           ?>
        </div>
-       <div class="stat display-intimidation-skill-select">
+       <div class="stat display-intimidation-skill-select throw">
          <?php
           if(in_array("Intimidation", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-investigation-skill">
+       <div class="stat display-investigation-skill saving">
          <?php
           if(in_array("Investigation", $skills)){
             echo $chr_mod + $prof_bonus;
@@ -445,14 +444,14 @@
           }
           ?>
        </div>
-       <div class="stat display-investigation-skill-select">
+       <div class="stat display-investigation-skill-select throw">
          <?php
           if(in_array("Investigation", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-medicine-skill">
+       <div class="stat display-medicine-skill saving">
          <?php
           if(in_array("Medicine", $skills)){
             echo $wis_mod + $prof_bonus;
@@ -462,14 +461,14 @@
           }
           ?>
        </div>
-       <div class="stat display-medicine-skill-select">
+       <div class="stat display-medicine-skill-select throw">
          <?php
           if(in_array("Medicine", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-nature-skill">
+       <div class="stat display-nature-skill saving">
          <?php
           if(in_array("Nature", $skills)){
             echo $int_mod + $prof_bonus;
@@ -479,14 +478,14 @@
           }
           ?>
        </div>
-       <div class="stat display-nature-skill-select">
+       <div class="stat display-nature-skill-select throw">
          <?php
           if(in_array("Nature", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-perception-skill">
+       <div class="stat display-perception-skill saving">
          <?php
           if(in_array("Perception", $skills)){
             echo $wis_mod + $prof_bonus;
@@ -496,14 +495,14 @@
           }
           ?>
        </div>
-       <div class="stat display-perception-skill-select">
+       <div class="stat display-perception-skill-select throw">
          <?php
           if(in_array("Perception", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-persuassion-skill">
+       <div class="stat display-persuassion-skill saving">
          <?php
           if(in_array("Persuassion", $skills)){
             echo $chr_mod + $prof_bonus;
@@ -513,14 +512,14 @@
           }
           ?>
        </div>
-       <div class="stat display-persuassion-skill-select">
+       <div class="stat display-persuassion-skill-select throw">
          <?php
           if(in_array("Persuassion", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-performance-skill">
+       <div class="stat display-performance-skill saving">
          <?php
           if(in_array("Performance", $skills)){
             echo $chr_mod + $prof_bonus;
@@ -530,14 +529,14 @@
           }
           ?>
        </div>
-       <div class="stat display-performance-skill-select">
+       <div class="stat display-performance-skill-select throw">
          <?php
           if(in_array("Performance", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-religion-skill">
+       <div class="stat display-religion-skill saving">
          <?php
           if(in_array("Religion", $skills)){
             echo $int_mod + $prof_bonus;
@@ -547,14 +546,14 @@
           }
           ?>
        </div>
-       <div class="stat display-religion-skill-select">
+       <div class="stat display-religion-skill-select throw">
          <?php
           if(in_array("Religion", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-sleight-of-hand-skill">
+       <div class="stat display-sleight-of-hand-skill saving">
          <?php
           if(in_array("Sleight of Hand", $skills)){
             echo $dex_mod + $prof_bonus;
@@ -564,14 +563,14 @@
           }
           ?>
        </div>
-       <div class="stat display-sleight-of-hand-skill-select">
+       <div class="stat display-sleight-of-hand-skill-select throw">
          <?php
           if(in_array("Sleight of Hand", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-stealth-skill">
+       <div class="stat display-stealth-skill saving">
          <?php
           if(in_array("Stealth", $skills)){
             echo $dex_mod + $prof_bonus;
@@ -581,14 +580,14 @@
           }
           ?>
        </div>
-       <div class="stat display-stealth-skill-select">
+       <div class="stat display-stealth-skill-select throw">
          <?php
           if(in_array("Stealth", $skills)){
             echo "&#8226;";
           }
           ?>
        </div>
-       <div class="stat display-survival-skill">
+       <div class="stat display-survival-skill saving">
          <?php
           if(in_array("Survival", $skills)){
             echo $wis_mod + $prof_bonus;
@@ -598,7 +597,7 @@
           }
           ?>
        </div>
-       <div class="stat display-survival-skill-select">
+       <div class="stat display-survival-skill-select throw">
          <?php
           if(in_array("Survival", $skills)){
             echo "&#8226;";
@@ -696,28 +695,4 @@
    </div>
  </div>
 
- <div class="error"></div>
- <form class="url_form">
-   <div>Upload a PDF form file: <label><input type="file" name="file" /></label></div>
-   <label>or download one: <input type="text" size="40" value="Spielberichtsbogen_2BL.pdf" name="url" /><button role="submit">Download</button></label>
- </form>
- <form class="cur_file"></form>
- <form class="lib_form">
-   PDF library:
-   <label><input type="radio" name="pdflib" value="minipdf" checked="checked" />minipdf</label>
-   <label><input type="radio" name="pdflib" value="pdf.js" />PDF.js</label>
- </form>
- <form class="fill_form"><button class="fill" disabled="disabled">Fill and download PDF</button></form>
- <form class="list_form"></form>
- <div class="loading">Loading (this may take a while since PDF.js is gigantic)</div>
- <script src="assets/js/minipdf.js"></script>
- <script src="assets/js/customlibs/pdf.worker.js"></script>
- <script src="assets/js/minipdf_js.js"></script>
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.3/pako.min.js" integrity="sha256-X7u/eQo6oIgWqc5jOmTjQn3loM8Lse0ock76Gkkn/Ro=" crossorigin="anonymous"></script>
- <script src="assets/js/pdfform.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
- <script src="assets/js/demo.js"></script>
-
-
-<!-- <script type="text/javascript" src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-<script type="text/javascript" src="assets/js/pdffiller.js"></script> -->
+ <?php include "templates/footer.php"; ?>

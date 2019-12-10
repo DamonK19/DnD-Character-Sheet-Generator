@@ -1,101 +1,312 @@
 .character-sheet {
   position: relative;
-  background-image: url('../assets/images/dnd_char_sheet.png');
+  // background-image: url('../assets/images/dnd_char_sheet.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   height: 800px;
   width: 620px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
+  font-size: 10px;
 }
 
 .sheet, .stat {
   position: absolute;
 }
 
+.sheet {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 800px;
+  width: 620px;
+  margin: auto;
+}
+
+.mod {
+  font-size: 200%;
+}
+
+.throw {
+  left: 16.84%;
+}
+
+.saving {
+  left: 18.7%;
+}
+
 .display-cname {
-  top: 7%;
-  left: 10%;
+  top: 7.5%;
+  left: 12%;
 }
 
 .display-pname {
-  top: 0%;
-  left: 0%;
+  top: 6%;
+  left: 78.5%;
 }
 
 .display-race {
-  top: 8%;
-  left: 54%;
+  top: 9.5%;
+  left: 44.5%;
 }
 
 .display-class {
-  top: 5%;
-  left: 44%;
+  top: 6%;
+  left: 44.5%;
 }
 
 .display-background {
-  top: 8%;
-  left: 67%;
+  top: 6%;
+  left: 62.5%;
 }
 
 .display-allignment {
-  top: 8%;
-  left: 44%;
+  top: 9.5%;
+  left: 62.5%;
+  text-transform: capitalize;
 }
 
 .display-strength {
-  top: 20%;
-  left: 8%;
+  top: 23.2%;
+  left: 8.6%;
+}
+
+.display-strength-mod {
+  top: 19%;
+  left: 7.5%;
 }
 
 .display-dexterity {
-  top: 29%;
-  left: 8%;
+  top: 32.4%;
+  left: 8.6%;
+}
+
+.display-dexterity-mod {
+  top: 28%;
+  left: 7.5%;
 }
 
 .display-constitution {
-  top: 38%;
-  left: 8%;
+  top: 41.4%;
+  left: 8.6%;
+}
+
+.display-constitution-mod {
+  top: 37%;
+  left: 7.5%;
 }
 
 .display-intelligence {
-  top: 47%;
-  left: 8%;
+  top: 50.5%;
+  left: 8.6%;
+}
+
+.display-intelligence-mod {
+  top: 46.2%;
+  left: 7.5%;
 }
 
 .display-wisdom {
-  top: 56%;
-  left: 8%;
+  top: 59.5%;
+  left: 8.6%;
+}
+
+.display-wisdom-mod {
+  top: 55.2%;
+  left: 7.5%;
+}
+
+.display-passive-wisdom {
+  top: 74.6%;
+  left: 6.2%;
 }
 
 .display-charisma {
-  top: 65%;
-  left: 8%;
+  top: 68.5%;
+  left: 8.6%;
+}
+
+.display-charisma-mod {
+  top: 64.4%;
+  left: 7.5%;
+}
+
+.display-prof-bonus {
+  top: 21.3%;
+  left: 17.4%;
+}
+
+.display-strength-saving-select, .display-strength-saving {
+  top: 25.6%;
+}
+.display-dexterity-saving-select, .display-dexterity-saving {
+  top: 27.4%;
+}
+
+.display-constitution-saving-select, .display-consitution-saving {
+  top: 29%;
+}
+
+.display-intelligence-saving-select, .display-intelligence-saving {
+  top: 30.7%
+}
+
+.display-wisdom-saving-select, .display-wisdom-saving {
+  top: 32.5%
+}
+
+.display-charisma-saving-select, .display-charisma-saving {
+  top: 34.16%
+}
+
+.display-acrobatics-skill, .display-acrobatics-skill-select {
+  top: 40.1%;
+}
+
+.display-animal-handling-skill, .display-animal-handling-skill-select {
+  top: 41.9%;
+}
+
+.display-arcana-skill, .display-arcana-skill-select {
+  top: 43.57%;
+}
+
+.display-athletics-skill, .display-athletics-skill-select {
+  top: 45.2%;
+}
+
+.display-deception-skill, .display-deception-skill-select {
+  top: 47%;
+}
+
+.display-history-skill, .display-history-skill-select {
+  top: 48.68%;
+}
+
+.display-insight-skill, .display-insight-skill-select {
+  top: 50.4%;
+}
+
+.display-intimidation-skill, .display-intimidation-skill-select {
+  top: 52.07%;
+}
+
+.display-investigation-skill, .display-investigation-skill-select {
+  top: 53.9%;
+}
+
+.display-medicine-skill, .display-medicine-skill-select {
+  top: 55.5%;
+}
+
+.display-nature-skill, .display-nature-skill-select {
+  top: 57.2%;
+}
+
+.display-perception-skill, .display-perception-skill-select {
+  top: 59%;
+}
+
+.display-performance-skill, .display-performance-skill-select {
+  top: 60.57%;
+}
+
+.display-persuassion-skill, .display-persuassion-skill-select {
+  top: 62.4%;
+}
+
+.display-religion-skill, .display-religion-skill-select {
+  top: 64%;
+}
+
+.display-sleight-of-hand-skill, .display-sleight-of-hand-skill-select {
+  top: 65.7%;
+}
+
+.display-stealth-skill, .display-stealth-skill-select {
+  top: 67.45%;
+}
+
+.display-survival-skill, .display-survival-skill-select {
+  top: 69.1%;
 }
 
 .display-personality {
-  top: 0%;
-  left: 0%;
+  top: 17.6%;
+  left: 70%;
+  line-height: 1.1;
+  width: 140px;
 }
 
 .display-ideal {
-  top: 0%;
-  left: 0%;
+  top: 26.1%;
+  left: 70%;
+  line-height: 1.1;
+  width: 140px;
 }
 
 .display-bond {
-  top: 0%;
-  left: 0%;
+  top: 33.4%;
+  left: 70%;
+  line-height: 1.1;
+  width: 140px;
 }
 
 .display-flaw {
-  top: 0%;
-  left: 0%;
+  top: 40.3%;
+  left: 70%;
+  line-height: 1.1;
+  width: 140px;
+}
+
+.display-armor-class {
+  top: 17.5%;
+  left: 39.6%;
+  font-size: 200%;
+}
+
+.display-hit-points {
+  top: 26.5%;
+  left: 48%;
+  font-size: 200%;
+}
+
+.display-hit-dice {
+  top: 42%;
+  left: 41%;
+}
+
+.display-speed {
+  top: 18%;
+  left: 57.5%;
+  font-size: 200%;
+}
+
+.display-initiative {
+  top: 18%;
+  left: 48%;
+  font-size: 200%;
+}
+
+.display-weapon-1 {
+  top: 49.5%;
+  left: 37%;
+}
+
+.display-weapon-2 {
+  top: 52%;
+  left: 37%;
+}
+
+.display-weapon-3 {
+  top: 54.5%;
+  left: 37%;
 }
 
 .display-spell-name {
-  top: 0%;
-  left: 0%;
+  top: 57.6%;
+  left: 37%;
 }
 
 .display-spell-description {
@@ -104,6 +315,19 @@
 }
 
 .display-equipment-name {
-  top: 75%;
-  left: 38%;
+  top: 74.8%;
+  left: 46%;
+  line-height: 1.1;
+}
+
+.display-proficiencies-and-languages {
+  top: 78.9%;
+  left: 6%;
+  line-height: 1.1;
+}
+
+.display-features-and-traits {
+  top: 48.3%;
+  line-height: 1.1;
+  left: 69%;
 }
