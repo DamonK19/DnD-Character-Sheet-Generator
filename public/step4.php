@@ -84,50 +84,48 @@ $i = 1;
         </div>
       </div>
       <!-- MESSAGE -->
-      <div class="grid-wrapper grid-wrapper--full centered full-height">
-        <div class="grid one-half message-scroll">
-          <div class="grid-wrapper align--center message-scroll-content">
-            <div class="grid three-fifths push--one-fifth message">
-              <h2 class="cursive">
-                Flaw:
-              </h2>
-              <ul>
-                <li>
-                  <select class="" name="flaws">
-                    <?php
-                    $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
-                    $resultSet = $mysqli->query("SELECT background_flaw FROM background_flaws WHERE background_name = '$background'");
-                    while ($rows = $resultSet->fetch_assoc()) {
-                      $background_flaw[$i] = $rows['background_flaw'];
-                      echo "<option value='$i'>$background_flaw[$i]</option>";
-                      $i++;
-                    }
-                    $i = 1;
-                    ?>
-                  </select>
-                </li>
-              </ul>
-              <h2 class="cursive">
-                Bond:
-              </h2>
-              <ul>
-                <li>
-                  <select class="" name="bonds">
-                    <?php
-                    $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
-                    $resultSet = $mysqli->query("SELECT background_bond FROM background_bonds WHERE background_name = '$background'");
-                    while ($rows = $resultSet->fetch_assoc()) {
-                      $background_bond[$i] = $rows['background_bond'];
-                      echo "<option value='$i'>$background_bond[$i]</option>";
-                      $i++;
-                    }
-                    ?>
-                  </select>
-                </li>
-              </ul>
-              <div class="message-submit">
-                <input type="submit" value="Submit" name="characteristic_submit" id="characteristic_submit">
-              </div>
+      <div class="grid one-half message-scroll">
+        <div class="grid-wrapper align--center message-scroll-content">
+          <div class="grid three-fifths push--one-fifth message">
+            <h2 class="cursive">
+              Flaw:
+            </h2>
+            <ul>
+              <li>
+                <select class="" name="flaws">
+                  <?php
+                  $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
+                  $resultSet = $mysqli->query("SELECT background_flaw FROM background_flaws WHERE background_name = '$background'");
+                  while ($rows = $resultSet->fetch_assoc()) {
+                    $background_flaw[$i] = $rows['background_flaw'];
+                    echo "<option value='$i'>$background_flaw[$i]</option>";
+                    $i++;
+                  }
+                  $i = 1;
+                  ?>
+                </select>
+              </li>
+            </ul>
+            <h2 class="cursive">
+              Bond:
+            </h2>
+            <ul>
+              <li>
+                <select class="" name="bonds">
+                  <?php
+                  $mysqli = new MySQLi('localhost', 'root', 'root', 'dnd');
+                  $resultSet = $mysqli->query("SELECT background_bond FROM background_bonds WHERE background_name = '$background'");
+                  while ($rows = $resultSet->fetch_assoc()) {
+                    $background_bond[$i] = $rows['background_bond'];
+                    echo "<option value='$i'>$background_bond[$i]</option>";
+                    $i++;
+                  }
+                  ?>
+                </select>
+              </li>
+            </ul>
+            <div class="message-submit">
+              <input type="submit" value="Submit" name="characteristic_submit" id="characteristic_submit">
             </div>
           </div>
         </div>
