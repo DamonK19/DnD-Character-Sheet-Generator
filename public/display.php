@@ -79,15 +79,57 @@
   //find matching armor
   foreach ($armor as $key_a => $value_a) {
     foreach ($items as $key_i => $value_i) {
-      if($value_a == $value_i) {
+      if(strstr($value_a, $value_i)) {
         $name = $value_a;
       }
     }
   }
   //get armor class
-  $resultSet = $mysqli->query("SELECT * FROM armor WHERE armor_name = '$name'");
-  $row = $resultSet->fetch_assoc();
-  $armor_class = $row['armorClass'];
+  if(isset($name)){
+    $resultSet = $mysqli->query("SELECT * FROM armor WHERE armor_name = '$name'");
+    $row = $resultSet->fetch_assoc();
+    $armor_class = $row['armorClass'];
+  }
+  elseif ($background == 'Barbarian') {
+    $armor_class = 10 + $dex_mod + $con_mod;
+  }
+  elseif ($background == 'Monk') {
+    $armor_class = 10 + $dex_mod + $wis_mod;
+  }
+  else {
+    $armor_class = 10 + $dex_mod;
+  }
+
+  //get all weapons in array
+  $weapon = array();
+  $resultSet = $mysqli->query("SELECT * from weapons");
+  while($rows = $resultSet->fetch_assoc()) {
+    array_push($weapon, $rows['weapon_name']);
+  }
+
+  //find matching weapons
+  $char_wepaons = array();
+  foreach ($weapon as $key_w => $value_w) {
+    foreach ($items as $key_i => $value_i) {
+      if(strstr($value_a, $value_i)) {
+        array_push($char_weapons, $value_w);
+      }
+    }
+  }
+
+  //get proficiencies
+  $prof = array();
+  $resultSet = $mysqli->query("SELECT * FROM proficiencies WHERE name = '$class' OR name = '$background' OR name = '$race'");
+  while($row = $resultSet->fetch_assoc()){
+    array_push($prof, $row['type']);
+  }
+
+  //get traits
+  $trait = array();
+  $resultSet = $mysqli->query("SELECT * FROM traits WHERE name = '$race'");
+  while($row = $resultSet->fetch_assoc()){
+    array_push($trait, $row['type']);
+  }
 
   //get hit points
   $resultSet = $mysqli->query("SELECT * FROM class_name WHERE class_name = '$class'");
@@ -118,57 +160,57 @@
          <?php echo $race; ?>
        </div>
        <div class="stat display-class">
-         <?php echo $class ?>
+         <?php echo $class; ?>
        </div>
        <div class="stat display-background">
-         <?php echo $background ?>
+         <?php echo $background; ?>
        </div>
        <div class="stat display-allignment">
-         <?php echo $allignment ?>
+         <?php echo $allignment; ?>
        </div>
 
        <!--character stats-->
        <div class="stat display-strength">
-         <?php echo $strength ?>
+         <?php echo $strength; ?>
        </div>
        <div class="stat display-strength-mod">
-         <?php echo "+", $str_mod ?>
+         <?php echo "+", $str_mod; ?>
        </div>
        <div class="stat display-dexterity">
-         <?php echo $dexterity ?>
+         <?php echo $dexterity; ?>
        </div>
        <div class="stat display-dexterity-mod">
-         <?php echo "+", $dex_mod ?>
+         <?php echo "+", $dex_mod; ?>
        </div>
        <div class="stat display-constitution">
-         <?php echo $constitution ?>
+         <?php echo $constitution; ?>
        </div>
        <div class="stat display-constitution-mod">
-         <?php echo "+", $con_mod ?>
+         <?php echo "+", $con_mod; ?>
        </div>
        <div class="stat display-intelligence">
-         <?php echo $intelligence ?>
+         <?php echo $intelligence; ?>
        </div>
        <div class="stat display-intelligence-mod">
-        <?php echo "+", $int_mod ?>
+        <?php echo "+", $int_mod; ?>
        </div>
        <div class="stat display-wisdom">
-         <?php echo $wisdom ?>
+         <?php echo $wisdom; ?>
        </div>
        <div class="stat display-wisdom-mod">
-         <?php echo "+", $wis_mod ?>
+         <?php echo "+", $wis_mod; ?>
        </div>
        <div class="stat display-charisma">
-         <?php echo $charisma ?>
+         <?php echo $charisma; ?>
        </div>
        <div class="stat display-charisma-mod">
-         <?php echo "+", $chr_mod ?>
+         <?php echo "+", $chr_mod; ?>
        </div>
        <div class="stat display-passive-wisdom">
-         <?php echo 10 + $wis_mod ?>
+         <?php echo 10 + $wis_mod; ?>
        </div>
        <div class="stat display-prof-bonus">
-         <?php echo $prof_bonus ?>
+         <?php echo $prof_bonus; ?>
        </div>
 
        <!--character saving throws-->
@@ -603,72 +645,88 @@
 
        <!--character characteristics-->
        <div class="stat display-personality">
-         <?php echo $personality ?>
+         <?php echo $personality; ?>
        </div>
 
        <div class="stat display-ideal">
-         <?php echo $ideal ?>
+         <?php echo $ideal; ?>
        </div>
        <div class="stat display-bond">
-         <?php echo $bond ?>
+         <?php echo $bond ;?>
        </div>
        <div class="stat display-flaw">
-         <?php echo $flaw ?>
+         <?php echo $flaw ;?>
        </div>
 
        <!--character etc-->
        <div class="stat display-armor-class">
-         <?php echo $armor_class ?>
+         <?php echo $armor_class; ?>
        </div>
 
        <div class="stat display-hit-points">
-         <?php echo $hit_dice + $con_mod ?>
+         <?php echo $hit_dice + $con_mod; ?>
        </div>
        <div class="stat display-hit-dice">
-         <?php  echo "1d", $hit_dice?>
+         <?php  echo "1d", $hit_dice;?>
        </div>
        <div class="stat display-speed">
-         <?php echo $speed ?>
+         <?php echo $speed; ?>
        </div>
        <div class="stat display-initiative">
-         <?php echo "+", $dex_mod ?>
+         <?php echo "+", $dex_mod; ?>
        </div>
 
        <!--character attacks & spellcasting-->
        <div class="stat display-weapon-1">
-
+         <?php
+         if(!empty($char_weapons)){
+           echo array_pop($char_weapons);
+         }
+         ?>
        </div>
        <div class="stat display-weapon-2">
-
+         <?php
+         if(!empty($char_weapons)){
+           echo array_pop($char_weapons);
+         }
+         ?>
        </div>
        <div class="stat display-weapon-3">
-
+         <?php
+         if(!empty($char_weapons)){
+           echo array_pop($char_weapons);
+         }
+         ?>
        </div>
 
        <!--character equipment-->
        <div class="stat display-equipment-name">
-         Equipment Name
+         <?php foreach ($items as $key => $value) {
+           echo $value;
+           echo "<br>";
+         } ?>
        </div>
-       <div class="stat display-gold">
 
-       </div>
 
        <!--character proficiencies and languages-->
        <div class="stat display-proficiencies-and-languages">
-
+         <?php foreach ($prof as $key => $value) {
+            echo $value;
+            echo "<br>";
+         } ?>
        </div>
 
        <!--character features and traits-->
        <div class="stat display-features-and-traits">
-
+         <?php foreach ($trait as $key => $value) {
+            echo $value;
+            echo "<br>";
+         } ?>
        </div>
 
        <!--character spells-->
        <div class="stat display-spell-name">
          Spell Name
-       </div>
-       <div class="stat display-spell-description">
-         Spell Description
        </div>
 
      </div>
