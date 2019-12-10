@@ -54,7 +54,6 @@ CREATE TABLE weapons(
 	weapon_name VARCHAR(30),
 	type1 VARCHAR(30),
 	type2 VARCHAR(30),
-	damage VARCHAR(30),
 	PRIMARY KEY(weapon_name)
 );
 
@@ -200,13 +199,3 @@ CREATE TABLE tool_library(
 	type VARCHAR(30),
 	name VARCHAR(30)
 );
-
-CREATE TABLE proficiencies(
-	name VARCHAR(30),
-	type VARCHAR(200)
-);
-
-CREATE TABLE traits(
-	name VARCHAR(30),
-	type VARCHAR(200)
-)
