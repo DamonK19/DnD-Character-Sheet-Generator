@@ -4,13 +4,8 @@
 
 html {
   font: #{($base-font-size--mobile/16px)*1em}/#{$line-height-ratio} $font-body;
-  // color: $white;
   background: $white;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-  body {
-    color: $black;
-  }
 }
 
 a {

@@ -1611,12 +1611,9 @@ html {
   background: #ffffff;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-html body {
-  color: #000000;
-}
 
 a {
-  color: #7abcb5;
+  color: #000000;
   text-decoration: none;
 }
 a:hover, a:focus {
@@ -1731,24 +1728,24 @@ label {
   border: 0;
 }
 .form-control:focus {
-  border-color: #7abcb5;
+  border-color: #000000;
   outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(122, 188, 181, 0.25);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
 }
 .form-control::-moz-placeholder {
-  color: #7abcb5;
+  color: #000000;
   opacity: 1;
 }
 .form-control:-ms-input-placeholder {
-  color: #7abcb5;
+  color: #000000;
   opacity: 1;
 }
 .form-control::-ms-input-placeholder {
-  color: #7abcb5;
+  color: #000000;
   opacity: 1;
 }
 .form-control::-webkit-input-placeholder {
-  color: #7abcb5;
+  color: #000000;
   opacity: 1;
 }
 .form-control:disabled, .form-control[readonly] {
@@ -2097,6 +2094,17 @@ button {
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
+  margin-bottom: 1rem;
+}
+.ability-score-block input {
+  position: absolute;
+  left: -3px;
+  top: 55px;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  font-size: 60px;
+  text-align: center;
 }
 
 .ability-score-button {
@@ -2108,11 +2116,7 @@ button {
 }
 
 .ability-score {
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  font-size: 60px;
-  top: 30px;
+  display: none;
 }
 
 .strength {

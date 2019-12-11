@@ -44,68 +44,68 @@ if (isset($_POST['stat_submit'])) {
 				<div class="grid one-half">
 					<div class="grid-wrapper centered">
 						<div class="grid one-third centered text-center">
-							<input type="text" name="strength" id="strength">
 							<!-- ABILITY SCORE BLOCK -->
 							<div class="ability-score-block strength">
+								<input type="text" name="strength" id="strength">
 								<!-- BUTTON -->
 								<div class="ability-score-button generate"></div>
 								<!-- RESULT -->
-								<div id="roller_1" class="ability-score">Roll</div>
+								<div id="roller_1" class="ability-score"></div>
 							</div>
 						<!-- // ABILITY SCORE BLOCK -->
 						</div>
 						<div class="grid one-third centered text-center">
-							<input type="text" name="charisma" id="charisma">
 							<!-- ABILITY SCORE BLOCK -->
 							<div class="ability-score-block charisma">
+								<input type="text" name="charisma" id="charisma">
 								<!-- RESULT -->
-								<div id="roller_2" class="ability-score">Roll</div>
+								<div id="roller_2" class="ability-score"></div>
 								<!-- BUTTON -->
 								<div class="ability-score-button generate"></div>
 							</div>
 						<!-- // ABILITY SCORE BLOCK -->
 						</div>
 						<div class="grid one-third centered text-center">
-							<input type="text" name="dexterity" id="dexterity">
 							<!-- ABILITY SCORE BLOCK -->
 							<div class="ability-score-block dexterity">
+								<input type="text" name="dexterity" id="dexterity">
 								<!-- RESULT -->
-								<div id="roller_3" class="ability-score">Roll</div>
+								<div id="roller_3" class="ability-score"></div>
 								<!-- BUTTON -->
 								<div class="ability-score-button generate"></div>
 							</div>
 						<!-- // ABILITY SCORE BLOCK -->
 						</div>
 						<div class="grid one-third centered text-center">
-							<input type="text" name="intelligence" id="intelligence">
 							<!-- ABILITY SCORE BLOCK -->
 							<div class="ability-score-block intelligence">
+								<input type="text" name="intelligence" id="intelligence">
 								<!-- RESULT -->
-								<div id="roller_4" class="ability-score">Roll</div>
+								<div id="roller_4" class="ability-score"></div>
 								<!-- BUTTON -->
 								<div class="ability-score-button generate"></div>
 							</div>
 						<!-- // ABILITY SCORE BLOCK -->
 						</div>
 						<div class="grid one-third centered text-center">
-							<input type="text" name="wisdom" id="wisdom">
 							<!-- ABILITY SCORE BLOCK -->
 							<div class="ability-score-block wisdom">
+								<input type="text" name="wisdom" id="wisdom">
 								<!-- RESULT -->
-								<div id="roller_5" class="ability-score">Roll</div>
+								<div id="roller_5" class="ability-score"></div>
 								<!-- BUTTON -->
 								<div class="ability-score-button generate"></div>
 							</div>
 						<!-- // ABILITY SCORE BLOCK -->
 						</div>
 						<div class="grid one-third centered text-center">
-							<input type="text" name="constitution" id="constitution">
 							<!-- ABILITY SCORE BLOCK -->
 							<div class="ability-score-block constitution">
+								<input type="text" name="constitution" id="constitution">
 								<!-- BUTTON -->
 								<div class="ability-score-button generate"></div>
 								<!-- RESULT -->
-								<div id="roller_6" class="ability-score">Roll</div>
+								<div id="roller_6" class="ability-score"></div>
 							</div>
 						<!-- // ABILITY SCORE BLOCK -->
 						</div>

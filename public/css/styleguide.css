@@ -74,17 +74,17 @@
 }
 
 .sg-colors li:nth-of-type(6) .sg-swatch {
-  background: #7abcb5;
+  background: #000000;
 }
 .sg-colors li:nth-of-type(6) .sg-swatch:after {
-  content: "#7abcb5";
+  content: "#000000";
 }
 
 .sg-colors li:nth-of-type(7) .sg-swatch {
-  background: #41a29c;
+  background: #ffffff;
 }
 .sg-colors li:nth-of-type(7) .sg-swatch:after {
-  content: "#41a29c";
+  content: "#ffffff";
 }
 
 .sg-colors li:nth-of-type(8) .sg-swatch {
