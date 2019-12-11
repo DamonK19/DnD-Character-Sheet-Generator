@@ -71,10 +71,10 @@ header("Location: display.php");
         <div class="grid-wrapper align--center message-scroll-content">
           <div class="grid three-fifths push--one-fifth message">
             <h2 class="cursive">
-              Choose from among the selected items to the right:
+              Choose from among the items to the right:
             </h2>
             <ul>
-              <li><h4 class="cursive">Then, once finished, press the submit button below.</h4></li>
+              <li><h4 class="full-width">Then, once finished, press the submit button below.</h4></li>
             </ul>
             <div class="message-submit">
               <input type="submit" value="Submit" name="special_sub" id="special_sub">

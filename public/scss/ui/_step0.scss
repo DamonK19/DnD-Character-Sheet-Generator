@@ -36,6 +36,9 @@
 
 .message {
 	ul {
+		overflow: scroll;
+		max-height: 200px;
+
 		select {
 			display: inline-block;
 			width: 49%;

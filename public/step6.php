@@ -42,7 +42,7 @@ $resultSet = $mysqli->query("SELECT * FROM background_equipment WHERE background
 								while($rows = $resultSet->fetch_assoc()){
 									if(is_null($rows['background_equipment_2']) && is_null($rows['background_equipment_3']) && is_null($rows['background_equipment_4'])){
 										array_push($b_array, $rows['background_equipment_1']);
-										echo "<li><h4 class='cursive'>,", $rows['background_equipment_1'], "</li></h4>";
+										echo "<li><h4 class=''>", $rows['background_equipment_1'], "</li></h4>";
 									}
 									else {
 										echo "<li><Select name='background_equipment[]'>";
@@ -86,7 +86,7 @@ $resultSet = $mysqli->query("SELECT * FROM background_equipment WHERE background
 								while($rows = $resultSet->fetch_assoc()) {
 									if(is_null($rows['option_2']) && is_null($rows['option_3'])) {
 										array_push($c_array, $rows['option_1']);
-										echo "<li><h4 class='cursive'>",$rows['option_1'],"</h4></li>";
+										echo "<li><h4 class=''>",$rows['option_1'],"</h4></li>";
 									}
 									else {
 										echo "<li><Select name='class_equipment[]'>";

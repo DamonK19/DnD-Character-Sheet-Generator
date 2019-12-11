@@ -45,13 +45,13 @@
               Select Spells:
             </h2>
             <ul>
-              <li><h4 class='cursive'>
+              <li><h4 class='full-width'>
                 <?php echo "A ", $class, " can select ", $classCantrip, " spells from the right.";
                 $spell_description = array();
                 $spell_name = array();
                 ?>
               </h4></li>
-              <li><h4 class="cursive">Then, once finished, click below to continue.</h4></li>
+              <li><h4 class="full-width">Then, once finished, click below to continue.</h4></li>
             </ul>
             <div class="message-submit">
               <input type="submit" value="Submit" name="spell_submit" id="spell_submit">
@@ -86,7 +86,7 @@
 
                 $array_length = count($spell_name);
                 for ($i = 0; $i < $array_length; $i++) {
-                  echo  "<li>", $spell_name[$i], "<input type= 'checkbox' name='spell_select[]' value='$spell_name[$i]'  /></li>";
+                  echo  "<li><h4>", $spell_name[$i], "<h4><input type= 'checkbox' name='spell_select[]' value='$spell_name[$i]'  /></li>";
                   echo  $spell_description[$i];
                 }
                ?>

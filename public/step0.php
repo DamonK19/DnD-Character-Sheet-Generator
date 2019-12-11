@@ -38,10 +38,10 @@ if (isset($_POST['char_submit'])) {
                 <h4 class="">Player name:</h4><input type="text" name="pname">
               </li>
             </ul>
-            <h2 class="cursive">Use image slector for:</h2>
+            <h2 class="cursive">Select image for:</h2>
             <ul>
               <li>
-                <h4 class="">Race</h4>
+                <h4 class="">Class:</h4>
               </li>
             </ul>
             <div class="message-submit">

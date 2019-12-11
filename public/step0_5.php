@@ -23,6 +23,12 @@ if (isset($_POST['char_submit'])) {
       <div class="grid one-half message-scroll">
         <div class="grid-wrapper align--center message-scroll-content">
           <div class="grid three-fifths push--one-fifth message">
+            <h2 class="cursive">Select image for:</h2>
+            <ul>
+              <li>
+                <h4 class="">Class:</h4>
+              </li>
+            </ul>
             <h2 class="cursive">Background:</h2>
             <ul>
                 <select class="full-width" name="backgrounds">

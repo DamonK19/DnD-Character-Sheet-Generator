@@ -2447,6 +2447,10 @@ button {
   width: 100% !important;
 }
 
+.message ul {
+  overflow: scroll;
+  max-height: 200px;
+}
 .message ul select {
   display: inline-block;
   width: 49%;
