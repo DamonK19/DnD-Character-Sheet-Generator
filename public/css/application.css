@@ -2443,6 +2443,35 @@ button {
   text-align: center;
 }
 
+.full-width {
+  width: 100% !important;
+}
+
+.message ul select {
+  display: inline-block;
+  width: 49%;
+}
+.message ul li h4 {
+  display: inline-block;
+  width: 50%;
+}
+.message ul li input[type=checkbox] {
+  display: inline-block;
+  width: 25%;
+  margin-left: 25%;
+}
+.message ul li input[type=text] {
+  border: 0;
+  border-bottom: 1px solid #000000;
+  background: transparent;
+  width: 40%;
+  margin-left: 10%;
+}
+.message ul li select {
+  display: inline-block;
+  width: 100%;
+}
+
 .item-1 {
   z-index: 2;
   opacity: 1;

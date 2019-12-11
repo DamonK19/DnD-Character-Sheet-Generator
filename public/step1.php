@@ -31,8 +31,8 @@ if (isset($_POST['stat_submit'])) {
 								Ability Scores.
 							</h2>
 							<ul>
-								<li><h4 class="cursive">Press the circle on each score tile to roll for the according score</h2></li>
-								<li><h4 class="cursive">then click submit to save your scores!</h2></li>
+								<li><h4 class="full-width">There are the ability scores assigned to your character!</h2></li>
+								<li><h4>Click submit on the bottom.</h4></li>
 							</ul>
 							<div class="message-submit">
 								<input type="submit" value="Submit" name="stat_submit" id="stat_submit">

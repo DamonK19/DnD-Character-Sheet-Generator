@@ -29,19 +29,19 @@ if (isset($_POST['char_submit'])) {
       <div class="grid one-half message-scroll">
         <div class="grid-wrapper align--center message-scroll-content">
           <div class="grid three-fifths push--one-fifth message">
-            <h4 class="cursive">Start by choosing your:<br></h4>
+            <h2 class="cursive">Start by choosing:<br></h2>
             <ul>
               <li>
-                <h4 class="cursive">Character Name:<input type="text" name="cname"></h4>
+                <h4 class="">Character Name:</h4><input type="text" name="cname">
               </li>
               <li>
-                <h4 class="cursive">Player name:<input type="text" name="pname"></h4>
+                <h4 class="">Player name:</h4><input type="text" name="pname">
               </li>
             </ul>
-            <h4 class="cursive">Then use the image slector on the right for your:</h4>
+            <h2 class="cursive">Use image slector for:</h2>
             <ul>
               <li>
-                <h4 class="cursive">Race</h4>
+                <h4 class="">Race</h4>
               </li>
             </ul>
             <div class="message-submit">

@@ -25,8 +25,7 @@ if (isset($_POST['char_submit'])) {
           <div class="grid three-fifths push--one-fifth message">
             <h2 class="cursive">Background:</h2>
             <ul>
-              <li>
-                <select name="backgrounds">
+                <select class="full-width" name="backgrounds">
                   <option value="Acolyte">Acolyte</option>
                   <option value="Charlaton">Charlaton</option>
                   <option value="Criminal">Criminal</option>
@@ -41,11 +40,9 @@ if (isset($_POST['char_submit'])) {
                   <option value="Soldier">Soldier</option>
                   <option value="Urchin">Urchin</option>
                 </select>
-              </li>
             </ul>
             <h2 class="cursive">Allignment:</h2>
             <ul>
-              <li>
                 <select name="goodVsEvil">
                   <option value="good">Good</option>
                   <option value="neutral">Neutral</option>
@@ -56,17 +53,7 @@ if (isset($_POST['char_submit'])) {
                   <option value="neutral">Neutral</option>
                   <option value="chaotic">Chaotic</option>
                 </select>
-              </li>
             </ul>
-            <!-- <h2 class="cursive">Then use the image slector on the right for your:</h2> -->
-            <!-- <ul>
-              <li>
-                Attribute Selection Method: <select name="attributeSelect">
-                  <option value="roll">Roll for attributes</option>
-                  <option value="array">Use Standard Array</option>
-                </select>
-              </li>
-            </ul> -->
             <div class="message-submit">
               <input type="submit" value="Submit" name="char_submit" id="char_submit">
             </div>

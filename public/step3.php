@@ -37,15 +37,15 @@
 								 $skill2 = $row['skill_proficiency_2'];
 							 }
 
-							 echo "<li><h4 class='cursive'>$skill1</h4></li>";
-							 echo "<li><h4 class='cursive'>$skill2</h4></li>";
+							 echo "<li><h4 class=''>$skill1</h4></li>";
+							 echo "<li><h4 class=''>$skill2</h4></li>";
 							  ?>
 						 </ul>
 						 <h2 class="cursive">
 							 Class Skills:
 						 </h2>
 						 <ul>
-						 	<li>choose
+						 	<li><h4 class="full-width">choose
 								<?php
 								$mysqli = NEW mysqli('localhost','root','root', 'dnd');
 								//get class name
@@ -61,7 +61,7 @@
 								}
 								echo $quantity
 								 ?>
-								 options from the right</li>
+								 options from the right</h4></li>
 						 </ul>
 						 <div class="message-submit">
 							 <input type='submit' value='Submit' name='skill_submit' id='skill_submit'>
@@ -83,7 +83,7 @@
 								 while($rows = $resultSet->fetch_assoc())
 								 {
 									 $class_skill = $rows['class_skill_name'];
-									 echo "<li><h4 class='cursive'>$class_skill<input type='checkbox' name='skill[]' id='skill' value='$class_skill'></h4></li>";
+									 echo "<li><h4 class=''>$class_skill</h4><input type='checkbox' name='skill[]' id='skill' value='$class_skill'></li>";
 								 }
 								?>
 						 </ul>

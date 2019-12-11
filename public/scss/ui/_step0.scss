@@ -29,6 +29,45 @@
 	width: 100%;
 	text-align: center;
 }
+
+.full-width {
+	width: 100% !important;
+}
+
+.message {
+	ul {
+		select {
+			display: inline-block;
+			width: 49%;
+		}
+
+		li {
+			h4 {
+				display: inline-block;
+				width: 50%;
+			}
+
+			input[type=checkbox] {
+				display: inline-block;
+				width: 25%;
+				margin-left: 25%;
+			}
+
+			input[type=text] {
+				border: 0;
+				border-bottom: 1px solid $black;
+				background: transparent;
+				width: 40%;
+				margin-left: 10%;
+			}
+
+			select {
+				display: inline-block;
+				width: 100%;
+			}
+		}
+	}
+}
 // CAROUSEL 1
 .item-1 {
 	z-index: 2;
