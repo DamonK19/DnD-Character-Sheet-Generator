@@ -17,17 +17,17 @@
   $resultSet = $mysqli->query("SELECT * FROM stats WHERE cID = '$_SESSION[cid]'");
   $row = $resultSet->fetch_assoc();
   $strength = $row['strength'];
-  $str_mod = ($strength - 10)/2;
+  $str_mod = round(($strength - 10)/2, 0, PHP_ROUND_HALF_DOWN);
   $dexterity = $row['dexterity'];
-  $dex_mod = ($dexterity - 10)/2;
+  $dex_mod = round(($dexterity - 10)/2, 0, PHP_ROUND_HALF_DOWN);
   $constitution = $row['constitution'];
-  $con_mod = ($constitution - 10)/2;
+  $con_mod = round(($constitution - 10)/2, 0, PHP_ROUND_HALF_DOWN);
   $intelligence = $row['intelligence'];
-  $int_mod = ($intelligence - 10)/2;
+  $int_mod = round(($intelligence - 10)/2, 0, PHP_ROUND_HALF_DOWN); 
   $wisdom = $row['wisdom'];
-  $wis_mod = ($wisdom - 10)/2;
+  $wis_mod = round(($wisdom - 10)/2, 0, PHP_ROUND_HALF_DOWN);
   $charisma = $row['charisma'];
-  $chr_mod = ($charisma - 10)/2;
+  $chr_mod = round(($charisma - 10)/2, 0, PHP_ROUND_HALF_DOWN);
   $prof_bonus = 2;
   //saving throws
   $resultSet = $mysqli->query("SELECT * FROM race_mod WHERE race_name = '$race'");
