@@ -31,7 +31,7 @@ if (isset($_POST['stat_submit'])) {
 								Ability Scores.
 							</h2>
 							<ul>
-								<li><h4 class="full-width">There are the ability scores assigned to your character!</h2></li>
+								<li><h4 class="full-width">These are the ability scores assigned to your character!</h2></li>
 								<li><h4 class="full-width">Click submit on the bottom.</h4></li>
 							</ul>
 							<div class="message-submit">

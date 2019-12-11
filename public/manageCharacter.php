@@ -10,7 +10,7 @@ if(isset($_POST['view_submit'])) {
 }
 
  ?>
-
+<form action="" method="post">
 <div class="manage-bg">
 	<div class="site-wrapper full-height">
 		<div class="grid-wrapper manage-menu full-height">
@@ -22,51 +22,43 @@ if(isset($_POST['view_submit'])) {
 					</div>
 				</div>
 				<!-- START CHARACTER LISTING -->
-				<div class="grid-wrapper character-display">
+				<div class="grid-wrapper character-display text-center">
 					<!-- CHARACTER -->
-					<form action="" method="post">
-					<?php
-					$mysqli = NEW MySQLi('localhost','root','root','dnd');
-					$resultSet = $mysqli->query("SELECT * FROM characters WHERE pid = '$_SESSION[id]'");
+						<div class='grid character'>
+							<div class='grid-wrapper characer-options-container'>
+								<?php
+								$mysqli = NEW MySQLi('localhost','root','root','dnd');
+								$resultSet = $mysqli->query("SELECT * FROM characters WHERE pid = '$_SESSION[id]'");
 
-					while($rows = $resultSet->fetch_assoc())
-					{
-						echo "
- 					 <div class='grid character'>
- 						 <div class='grid-wrapper characer-options-container'>
- 							 <div class='grid one-fifth push--one-fifth character-name'>
- 								 <h4>$rows[character_name]</h4>
- 							 </div>
- 								 <div>
- 									 <input type='radio' name='character' id='character' value='$rows[cID]'>
+								while($rows = $resultSet->fetch_assoc())
+								{
+									echo "
+			 							 <div class='grid one-quarter push--one-quarter character-name'>
+			 								 <h4>$rows[character_name]</h4>
+			 							 </div>
+										 <div class='grid one-eighth push--one-eighth'>
+											 <input type='radio' name='character' id='character' value='$rows[cID]'>
+										 </div>
 
- 								 </div>
- 						 </div>
- 					 </div>
- 					 ";
-					}
-
-					?>
-
+			 					 ";
+								}
+								?>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!-- BOTTOM BUTTONS -->
 			<div class="grid one-half push--one-quarter page-options text-center">
 				<div class="btn">
-					<a href="#">Log Out</a>
-				</div>
-				<div class="btn">
-					<a href="step0.php">Create New Character</a>
+					<a href="step0.php">Create</a>
 				</div>
 				<input type='submit' value='View' name='view_submit' id='view_submit'>
 				<input type='submit' value='Delete' name='delete_submit' id='delete_submit'>
-
 			</div>
-			</form>
 		</div>
 	</div>
 </div>
-
+</form>
 
 <?php
 
@@ -74,14 +66,12 @@ if(isset($_POST['delete_submit'])) {
 	$mysqli->query("SET FOREIGN_KEY_CHECKS = 0");
 	$mysqli->query("DELETE FROM characters WHERE cID = '$_POST[character]'");
 	$mysqli->query("SET FOREIGN_KEY_CHECKS = 1");
+	header("Refresh:0");
 }
 
 if(isset($_POST['view_submit'])) {
 	$_SESSION['cid'] = $_POST['character'];
 }
-
-
-
  ?>
 
 <?php include "templates/footer.php"; ?>
