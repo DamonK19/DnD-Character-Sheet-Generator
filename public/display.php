@@ -95,7 +95,7 @@
     array_push($weapon, $rows['weapon_name']);
   }
   //find matching weapons
-  $char_wepaons = array();
+  $char_weapons = array();
   foreach ($weapon as $key_w => $value_w) {
     foreach ($items as $key_i => $value_i) {
       if(strstr($value_a, $value_i)) {
@@ -123,7 +123,12 @@
   $resultSet = $mysqli->query("SELECT * FROM race where race_name = '$race'");
   $row = $resultSet->fetch_assoc();
   $speed = $row['speed'];
-  //spells
+  //get spells
+  $spells = array();
+  $resultSet = $mysqli->query("SELECT * FROM spells where cID = '$_SESSION[cid]'");
+  while($row = $resultSet->fetch_assoc()){
+    array_push($spells, $row['spell_name']);
+  }
   //equipment
  ?>
 
@@ -688,7 +693,13 @@
 
        <!--character spells-->
        <div class="stat display-spell-name">
-         Spell Name
+         <?php foreach ($spells as $value){
+           echo $value;
+           echo "<br>";
+           echo "Spell name";
+         }
+
+         ?>
        </div>
 
      </div>
