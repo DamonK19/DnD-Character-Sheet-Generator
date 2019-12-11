@@ -44,6 +44,11 @@
   while($rows = $resultSet->fetch_assoc()){
     array_push($skills, $rows['skill_name']);
   }
+  $resultSet = $mysqli->query("SELECT * FROM background WHERE background_name = '$background'");
+  while($rows = $resultSet->fetch_assoc()){
+    array_push($skills, $rows['skill_proficiency_1']);
+    array_push($skills, $rows['skill_proficiency_2']);
+  }
   //characteristics
   $mysqli = NEW MySQLi('localhost','root','root','dnd');
   $resultSet = $mysqli->query("SELECT * FROM characteristics WHERE cID = '$_SESSION[cid]'");
