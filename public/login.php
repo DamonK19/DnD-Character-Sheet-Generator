@@ -21,7 +21,8 @@ if (isset($_POST['but_submit'])) {
       $_SESSION['id'] = $row["id"];
       header('Location: manageCharacter.php');
     } else {
-      echo "Invalid email and password";
+      $message = "Invalid email or password";
+      echo "<script type='text/javascript'>alert('$message');</script>";
     }
   }
 }

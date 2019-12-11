@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
 }
 if (isset($_POST['char_submit'])) {
   // Perform query
-  $sql = "UPDATE Characters SET background = '$_POST[backgrounds]', class_name = '$_POST[class]', allignment = '$_POST[lawVsChaos] $_POST[evilVsGood]' WHERE character_name='$_SESSION[cname]'";
+  $sql = "UPDATE Characters SET background = '$_POST[backgrounds]', class_name = '$_POST[class]', allignment = '$_POST[lawVsChaos] $_POST[goodVsEvil]' WHERE character_name='$_SESSION[cname]'";
 
   mysqli_query($con, $sql);
   header('Location: step1.php');

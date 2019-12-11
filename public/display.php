@@ -676,7 +676,7 @@
        <div class="stat display-damage-1">
          <?php
 
-         if($weapon1 !== NULL){
+         if(isset($weapon1)){
            $resultSet = $mysqli->query("SELECT * FROM weapons WHERE weapon_name = '$weapon1'");
            while($rows = $resultSet->fetch_assoc()){
              echo $rows['damage'];
@@ -689,7 +689,7 @@
        <div class="stat display-damage-2">
          <?php
 
-         if($weapon2 !== NULL){
+         if(isset($weapon2)){
            $resultSet = $mysqli->query("SELECT * FROM weapons WHERE weapon_name = '$weapon2'");
            while($rows = $resultSet->fetch_assoc()){
              echo $rows['damage'];
@@ -702,7 +702,7 @@
        <div class="stat display-damage-3">
          <?php
 
-         if($weapon3 !== NULL){
+         if(isset($weapon3)){
            $resultSet = $mysqli->query("SELECT * FROM weapons WHERE weapon_name = '$weapon3'");
            while($rows = $resultSet->fetch_assoc()){
              echo $rows['damage'];
@@ -714,7 +714,7 @@
 
        <div class="stat display-attack-bonus-1">
          <?php
-         if($weapon1 !== NULL){
+         if(isset($weapon1)){
           echo "+5";
           }
           ?>
@@ -722,7 +722,7 @@
 
        <div class="stat display-attack-bonus-2">
          <?php
-         if($weapon2 !== NULL){
+         if(isset($weapon2)){
           echo "+5";
           }
           ?>
@@ -730,7 +730,7 @@
 
        <div class="stat display-attack-bonus-3">
          <?php
-         if($weapon3 !== NULL){
+         if(isset($weapon3)){
           echo "+5";
           }
           ?>
@@ -766,7 +766,6 @@
          <?php foreach ($spells as $value){
            echo $value;
            echo "<br>";
-           echo "Spell name";
          }
 
          ?>
