@@ -95,7 +95,7 @@
 .item-8 {
   background-image: url('../assets/images/tiefling.png');
 }
-*:target~.item-1 {
+*:target~.item-1, *:target~.item-9, {
 	opacity: 0;
 }
 #item-1:target~.item-1, #item-9:target~.item-9 {
