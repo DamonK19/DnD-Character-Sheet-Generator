@@ -23,7 +23,8 @@ if (isset($_POST['submit'])) {
 
     //if users contains 1 email
     if($result->rowCount() != 0) {
-      echo "Email already exists";
+      $message = "Email already exists";
+      echo "<script type='text/javascript'>alert('$message');</script>";
     }
     //else add user
     else{
@@ -74,7 +75,7 @@ if (isset($_POST['submit'])) {
             <!-- password -->
             <div>
               <!-- <label for="password">Password</label> -->
-              <input type="text" name="password" id="password" placeholder="Enter your password" required>
+              <input type="password" name="password" id="password" placeholder="Enter your password" required>
             </div>
             <!-- submit -->
             <div>
