@@ -2152,6 +2152,10 @@ button {
   z-index: 10000;
   text-align: center;
 }
+.logo img {
+  height: 80%;
+  margin-bottom: 20%;
+}
 
 .slideshows, .logo {
   position: fixed;
@@ -2190,8 +2194,9 @@ button {
 
 .button-home-container {
   text-align: center;
-  margin: 30% auto 0;
-  width: auto;
+  position: absolute;
+  width: 100%;
+  top: 60%;
 }
 
 .button-home::before, .button-home::after {

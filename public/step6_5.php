@@ -61,8 +61,6 @@ header("Location: display.php");
 
  ?>
 
-
-
 <form action="" method="post">
 <div class="step-background">
   <div class="site-wrapper full-height">
